@@ -22,6 +22,7 @@ def call(String buildStatus = 'STARTED') {
   } else if (buildStatus == 'SUCCESSFUL') {
     color = 'GREEN'
     colorCode = '#00FF00'
+    slackSend (color: colorCode, message: summary)
   }
 
   // Send notifications
