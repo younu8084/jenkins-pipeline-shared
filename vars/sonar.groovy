@@ -10,6 +10,7 @@ def call(String buildStatus = 'STARTEDNEX') {
     colorCode = '#1eaee3'
     slackSend (color: colorCode, message: summary)
   } 
+  slackSend (color: colorCode, message: summary)
   emailext (
       to: 'revathims1998@gmail.com',
       subject: subject,
