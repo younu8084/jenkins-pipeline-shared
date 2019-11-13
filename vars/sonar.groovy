@@ -8,7 +8,6 @@ def call(String buildStatus = 'SONARSTARTED') {
   if (buildStatus == 'SONARSTARTED') {
     color = 'BLUE'
     colorCode = '#1eaee3'
-    slackSend (color: colorCode, message: summary)
   } 
   slackSend (color: colorCode, message: summary)
   emailext (
