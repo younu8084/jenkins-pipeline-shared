@@ -30,6 +30,7 @@ def call(String buildStatus = 'STARTED') {
       to: 'revathims1998@gmail.com',
       subject: subject,
       body: details,
-      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+      recipientProviders: [[$class: 'DevelopersRecipientProvider']] , [$class: 'RequesterRecipientProvider']] 
+      //recipientProviders: [[$class: 'RequesterRecipientProvider']]
     )
 }
