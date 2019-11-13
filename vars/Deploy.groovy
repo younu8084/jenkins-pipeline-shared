@@ -8,7 +8,6 @@ def call(String buildStatus = 'DEPLOYMENTSTARTED') {
   if (buildStatus == 'DEPLOYMENTSTARTED') {
     color = 'BLUE'
     colorCode = '#1eaee3'
-    slackSend (color: colorCode, message: summary)
   } 
   slackSend (color: colorCode, message: summary)
   emailext (
