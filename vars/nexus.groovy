@@ -8,7 +8,6 @@ def call(String buildStatus = 'NEXUS STAGE STARTED') {
   if (buildStatus == 'NEXUS STAGE STARTED') {
     color = 'NBLUE'
     colorCode = '#032cfc'
-    slackSend (color: colorCode, message: summary)
   } 
   slackSend (color: colorCode, message: summary)
   emailext (
