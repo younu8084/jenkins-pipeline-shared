@@ -1,19 +1,6 @@
-def call(String buildStatus = 'NEXUS STAGE STARTED') {
-  // build status of null means successful
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL})"
-  def details = """<p>${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
-  
-  if (buildStatus == 'NEXUS STAGE STARTED') {
-    color = 'NBLUE'
-    colorCode = '#032cfc'
-  } 
-  slackSend (color: colorCode, message: summary)
-  emailext (
-      to: 'revathims1998@gmail.com',
-      subject: subject,
-      body: details,
-      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-    )
+def call(String msg = 'NEXUS') {
+echo "${msg}"
+       withCredentials([usernamePassword(credentialsId: 'nexus_creds', passwordVariable: 'password', usernameVariable:'username')]) {
+              sh 'curl -u ${username}:${password} --upload-file target/myWebApp_Test-${BUILD_NUMBER}.war http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/phoenixTeam/myWebApp_Test-${BUILD_NUMBER}.war'
+         }
 }
