@@ -12,7 +12,7 @@ def call(String buildStatus = 'STARTEDNEX') {
   } 
   slackSend (color: colorCode, message: summary)
   emailext (
-      to: 'revathisaraiswathi@gmail.com',
+      to: 'revathims1998@gmail.com',
       subject: subject,
       body: details,
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
