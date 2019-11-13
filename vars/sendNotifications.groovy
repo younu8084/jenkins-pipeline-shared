@@ -8,6 +8,7 @@ def call(String buildStatus = 'STARTED') {
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
   // Default values
+  def mailRecipients = "revathims1998@gmail.com"
   def color = 'RED'
   def colorCode = '#FF0000'
   def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
@@ -27,7 +28,8 @@ def call(String buildStatus = 'STARTED') {
   // Send notifications
  slackSend (color: colorCode, message: summary)
   emailext (
-      to: 'revathims1998@gmail.com',
+      to: mailRecipients,
+      replyTo: mailRecipients,
       subject: subject,
       body: details,
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
