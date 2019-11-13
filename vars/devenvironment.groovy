@@ -10,7 +10,6 @@ def call(String buildStatus = 'DEPLOY INTO DEV ENVIROINMENT') {
     colorCode = '#ed1358'
     slackSend (color: colorCode, message: summary)
   } 
-  slackSend (color: colorCode, message: summary)
   emailext (
       to: 'revathims1998@gmail.com',
       subject: subject,
