@@ -1,6 +1,6 @@
 def call(String msg = 'Sonar Qube'){
   echo "${msg}"
-  withSonarQubeEnv('sonarqube'){
+  withSonarQubeEnv('SonarQube'){
                      sh 'mvn sonar:sonar'
                 }
 }
