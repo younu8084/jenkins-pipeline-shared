@@ -8,7 +8,6 @@ def call(String buildStatus = 'DEPLOY TO PERFORMANCE ENVIROINMENT') {
   if (buildStatus == 'DEPLOY TO PERFORMANCE ENVIROINMENT') {
     color = 'NBLUE'
     colorCode = '#47b5b0'
-    slackSend (color: colorCode, message: summary)
   } 
   slackSend (color: colorCode, message: summary)
   emailext (
