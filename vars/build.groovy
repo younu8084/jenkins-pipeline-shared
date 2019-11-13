@@ -1,4 +1,4 @@
 def call(String buildStatus = 'BUILD') {
 echo "${msg}"
-build 'BUILD'
+   sh 'mvn clean install'
 }
