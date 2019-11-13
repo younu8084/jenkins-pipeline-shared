@@ -1,4 +1,4 @@
-def call(String buildStatus = 'STARTEDNEX') {
+def call(String buildStatus = 'SONARSTARTED') {
   // build status of null means successful
   def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
   def summary = "${subject} (${env.BUILD_URL})"
