@@ -1,4 +1,4 @@
-def call(String mail) {
+def mail(String mail) {
 def mailRecipients="mail"
  emailext (
       to: mailRecipients,
