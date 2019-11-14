@@ -1,4 +1,4 @@
-def call(String msg = 'deploy_ansible') {
+def call(String msg = 'performance_test') {
 echo "${msg}"
 blazeMeterTest abortJob: true, 
            credentialsId: 'blazemetre', 
