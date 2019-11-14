@@ -1,4 +1,6 @@
-def call(body){
+def call(String msg = 'SONAR'){
+  echo "${msg}"
+ 
   enviroinment{
     scannerHome=tool 'sonarScanner'  
   }
