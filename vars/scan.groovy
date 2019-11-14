@@ -1,4 +1,4 @@
 def call(String msg = 'SCAN') {
 echo "${msg}"
-appscan application: '49f54256-de9f-4a37-9fee-a836311ee015', credentials: 'IBM CREDENTIALS', email: true, failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 1000), failure_condition(failureType: 'total', threshold: 1000)], name: 'IBM Security', scanner: static_analyzer(hasOptions: false, target: '/var/lib/jenkins/workspace/'), type: 'Static Analyzer', wait: true
+appscan application: '5a4f60ed-f85e-4251-94ad-29481ec4e3dc', credentials: 'IBM new credentials', email: true, failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 1000), failure_condition(failureType: 'total', threshold: 1000)], name: 'IBM ', scanner: static_analyzer(hasOptions: false, target: '/var/lib/jenkins/workspace/'), type: 'Static Analyzer', wait: true
 }
