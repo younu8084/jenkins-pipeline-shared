@@ -3,7 +3,7 @@ echo "${msg}"
                       script{
                          emailext mimeType: 'text/html',
                  subject: "[Jenkins]${currentBuild.fullDisplayName}",
-                 to: "revathims1998.com",
+                 to: "hegdevijay118@gmail.com",
                  body: '''<a href="http://3.14.72.144:8080/">click to approve</a>'''
 
         def userInput = input id: 'userInput',
