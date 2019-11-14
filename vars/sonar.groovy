@@ -1,7 +1,7 @@
 def call(String msg = 'SONAR'){
   echo "${msg}"
  
-  enviroinment{
+  environment{
     scannerHome=tool 'sonarScanner'  
   }
   withSonarQubeEnv('SonarQube'){
