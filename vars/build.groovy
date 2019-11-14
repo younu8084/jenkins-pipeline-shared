@@ -1,4 +1,4 @@
 def call(String msg = 'clean') {
 echo "${msg}"
-   sh 'mvn clean install'
+   sh 'mvnn clean install'
 }
