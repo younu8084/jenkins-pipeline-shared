@@ -9,7 +9,7 @@ import org.jenkinsci.plugins.workflow.job.WorkflowJob
 def dryRun = true
 
 //Copy one of these Job Types available for deletion: FreeStyleProject, WorkflowJob
-def jobDeleteType = JOB_TYPE
+def jobDeleteType = FreeStyleProject 
 
 
 //Script:
