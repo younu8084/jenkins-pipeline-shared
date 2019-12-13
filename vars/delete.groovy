@@ -4,6 +4,8 @@ import hudson.model.FreeStyleProject
 import org.jenkinsci.plugins.workflow.job.WorkflowJob
 
 //Inputs:
+def call(body)
+{
 
 //If dryRun is true, will print list of jobs that would be included in the deletion
 def dryRun = true
@@ -25,3 +27,4 @@ Jenkins.instance.getAllItems(Job.class)
             }
         }
 return
+}
