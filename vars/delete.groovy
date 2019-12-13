@@ -11,7 +11,7 @@ def call(body)
 def dryRun = true
 
 //Copy one of these Job Types available for deletion: FreeStyleProject, WorkflowJob
-def jobDeleteType = [jenkins-pipeline-shared/bulklist]
+def jobDeleteType = FreeStyleProject
 
 
 //Script:
