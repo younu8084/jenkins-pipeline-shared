@@ -5,7 +5,7 @@ import jenkins.model.CauseOfInterruption.UserInterruption
 def call(body) {
     // https://stackoverflow.com/a/49901413/4763512
     Run previousBuild = currentBuild.rawBuild.getPreviousBuildInProgress()
-    def d= currentBuild.previousBuild.duration;
+    def d= previousBuild.duration;
     
     while (previousBuild != null) {
         if(d>0.5)
