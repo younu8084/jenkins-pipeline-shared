@@ -11,7 +11,7 @@ def call(body)
 def dryRun = true
 
 //Copy one of these Job Types available for deletion: FreeStyleProject, WorkflowJob
-def jobDeleteType = se
+def jobDeleteType = FreeStyleProject
 
 
 //Script:
