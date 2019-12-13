@@ -5,12 +5,11 @@ import jenkins.model.CauseOfInterruption.UserInterruption
 def call(body) {
     // https://stackoverflow.com/a/49901413/4763512
     Run previousBuild = currentBuild.rawBuild.getPreviousBuildInProgress()
-    def d= previousBuild.duration;
+    def d= currentBuild.previousBuild.duration;
     
     while (previousBuild != null) {
-        if(d>0.5)
-        {
-        if (previousBuild.isInProgress()) {
+        
+        if (previousBuild.isInProgress() && d>1) {
             def executor = previousBuild.getExecutor()
             if (executor != null) {
                 echo ">> Aborting older build #${previousBuild.number}."
@@ -20,7 +19,7 @@ def call(body) {
             }
         
         }
-        }
+    
         previousBuild = previousBuild.getPreviousBuildInProgress()
     }
 }
