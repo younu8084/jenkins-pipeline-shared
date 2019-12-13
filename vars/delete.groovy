@@ -19,12 +19,9 @@ Jenkins.instance.getAllItems(Job.class)
         .findAll { Job job -> (job in jobDeleteType) }
         .each { Job job ->
             def jobName = "${jobDeleteType} Job Name: ${job.fullName}"
-            if (dryRun) {
-                println "${jobName} will be removed."
-            } else {
+            
                 job.delete()
                 println "${jobName} has been removed."
-            }
         }
 return
 }
