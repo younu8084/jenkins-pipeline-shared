@@ -9,7 +9,7 @@ def call(body) {
     
     while (previousBuild != null) {
         
-        if (d>1) {
+        if (d>0.2) {
             def executor = previousBuild.getExecutor()
             if (executor != null) {
                 echo ">> Aborting older build #${previousBuild.number}."
