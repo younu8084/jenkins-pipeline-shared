@@ -4,6 +4,7 @@ import jenkins.model.CauseOfInterruption.UserInterruption
 
 def call(body) {
 timeout(time: 30, unit: 'SECONDS')
+    {
     Run previousBuild = currentBuild.rawBuild.getPreviousBuildInProgress()
     while (previousBuild != null) {
         if (previousBuild.isInProgress()) {
@@ -16,5 +17,6 @@ timeout(time: 30, unit: 'SECONDS')
             }
         }
         previousBuild = previousBuild.getPreviousBuildInProgress()
+    }
     }
 }
