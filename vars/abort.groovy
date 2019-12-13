@@ -3,8 +3,9 @@ import hudson.model.Run
 import jenkins.model.CauseOfInterruption.UserInterruption
 
 def call(body) {
-timeout(time: 01, unit: 'MINUTES')
-    {
+    options{
+        timeout(2.0)
+    }
     Run previousBuild = currentBuild.rawBuild.getPreviousBuildInProgress()
     while (previousBuild != null) {
         if (previousBuild.isInProgress()) {
@@ -18,5 +19,5 @@ timeout(time: 01, unit: 'MINUTES')
         }
         previousBuild = previousBuild.getPreviousBuildInProgress()
     }
-    }
+    
 }
