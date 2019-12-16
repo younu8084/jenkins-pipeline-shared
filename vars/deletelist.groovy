@@ -8,7 +8,7 @@ def dryRun = true
 
 Jenkins.get().getAllItems(WorkflowMultiBranchProject.class).each { WorkflowMultiBranchProject job ->
   if (dryRun) {
-      println "${job.fullName} will be removed."
+      println "${job.free1} will be removed."
   } 
 }
 return
