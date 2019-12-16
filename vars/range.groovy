@@ -2,6 +2,7 @@ import jenkins.model.*;
 import hudson.model.Fingerprint.RangeSet;
 def call(body) {
  def jobName = "${env.JOB_NAME}"
+ def buildRange = "100-105"
 def j = jenkins.model.Jenkins.instance.getItem(jobName);
 
 def r = RangeSet.fromString(buildRange, true);
