@@ -1,7 +1,7 @@
 import jenkins.model.*
  
-def  call(String name ='name',int s=0,int e=0)
+def  call(String name ='name')
 {
  jenkins = Jenkins.instance
- Jenkins.instance.getItemByFullName("${name}").builds.findAll { it.number > $s && it.number < $e }.each { it.delete() }
+ Jenkins.instance.getItemByFullName("${name}").builds.findAll { it.number > 110 && it.number < 138 }.each { it.delete() }
 }
