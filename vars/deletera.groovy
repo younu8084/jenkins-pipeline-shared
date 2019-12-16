@@ -1,4 +1,4 @@
-def call(name,s,e)
+def delete(name,s,e)
 {
 
 Jenkins.instance.getItemByFullName('$name').builds.findAll { it.number > $s && it.number < $e }.each { it.delete() }
