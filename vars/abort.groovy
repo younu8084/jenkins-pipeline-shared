@@ -3,12 +3,13 @@ import hudson.model.Run
 import jenkins.model.CauseOfInterruption.UserInterruption
 
 def call(body) {
-    options{
-        timeout(2.0)
-    }
+    // https://stackoverflow.com/a/49901413/4763512
     Run previousBuild = currentBuild.rawBuild.getPreviousBuildInProgress()
+    def d= currentBuild.previousBuild.duration;
+    
     while (previousBuild != null) {
-        if (previousBuild.isInProgress()) {
+        
+        if (d>0.1) {
             def executor = previousBuild.getExecutor()
             if (executor != null) {
                 echo ">> Aborting older build #${previousBuild.number}."
@@ -16,8 +17,9 @@ def call(body) {
                     "Aborted by newer build #${currentBuild.number}."
                 ))
             }
+        
         }
+    
         previousBuild = previousBuild.getPreviousBuildInProgress()
     }
-    
 }
