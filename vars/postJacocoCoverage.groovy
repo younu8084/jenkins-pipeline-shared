@@ -5,7 +5,7 @@ def call(Map args) {
   final Double coverageDeltaThreshold = args.deltaThreshold ?: null
   final String xmlPath = args.xmlPath ?: "target/site/jacoco/jacoco.xml"
 
-  final lib = new com.spotify.jenkinsfile.Coverage()
+  final lib = new Coverage()
 
   final Double coverage = lib.getCoverageFromJacoco(xmlPath)
   lib.postCoverage(coverage, coverageThreshold)
