@@ -1,6 +1,8 @@
 def call(){
 
-sh 'curl --user Megalai:Mumani1209@98 -H "Content-Type: application/json"  -X POST https://bitbucket.org//rest/api/1.0/Megalai/demo1/DEM/repos'
+sh 'curl -X POST -v -u Megalai:Mumani1209@98 -H "Content-Type: application/json" \
+  https://api.bitbucket.org/2.0/repositories/Megalai/new-repository4 \
+  -d '{"scm": "git", "is_private": "true", "fork_policy": "no_public_forks", "project": {"key": "DEM"} }''
 }
 
       
