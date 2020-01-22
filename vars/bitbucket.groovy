@@ -4,7 +4,7 @@ sh 'curl -X POST -H "Content-Type: application/json" -d '{
     "project": {
         "key": "DEM"
     }
-}' https://api.bitbucket.org/2.0/user/megalai1/projects/DEM/repositories/repo1'
+}' https://api.bitbucket.org/2.0/repositories/user/megalai1/projects/DEM/repo1'
 }
 
       
