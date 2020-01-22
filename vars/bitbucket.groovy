@@ -1,14 +1,4 @@
-def call(){curl -u Megalai:Mumani1209@98  -X POST -H "Content-Type: application/json" -d '{
-
-   "slug": "test",
-
-   "forkable": false,
-
-   "project": {
-
-        "key": "DEMO"
-
-    }
-
-}' https://bitbucket.org.com/rest/api/2.0/projects/demo/repos/test
+def call(){
+   sh 'curl -X POST -v -user Megalai:Mumani1209@98 "https://api.bitbucket.org/2.0/repositories/Megalai1/repo1" -d "scm=git", "is_private=true", "fork_policy=no_public_forks"'
 }
+
