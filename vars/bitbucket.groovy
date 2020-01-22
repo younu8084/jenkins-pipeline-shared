@@ -1,7 +1,3 @@
 def call(){
-httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''{
-    "name": "test_123",
-    "scmId": "git",
-    "forkable": true
-}''', responseHandle: 'NONE', url: 'http://api.bitbucket.org/Megalai/rest/api/1.0/projects/DEM/repos'
+sh curl -X POST -v -u ${username}:${password} "https://api.bitbucket.org/2.0/repositories/Megalai" -H "Content-Type: application/json"  -d '{"has_wiki": true, "is_private": true, "project": {"key": "PRJ_KEY"}}'
 }
