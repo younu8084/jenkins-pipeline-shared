@@ -1,6 +1,10 @@
 def call(){
-curl -H "Authorization:KAcuULzqy2ZcELHKMNH08A4F" 
-http://bitbucket.org/Megalai/rest/api/1.0/projects/WORK/repos/my-repo/commits/?until=master
+sh 'curl -X POST -H "Content-Type: application/json" -d '{
+    "scm": "git",
+    "project": {
+        "key": "DEM"
+    }
+}' https://api.bitbucket.org/2.0/user/megalai1/projects/DEM/repositories/repo1'
 }
 
       
