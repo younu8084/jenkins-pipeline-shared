@@ -1,7 +1,11 @@
 def call(){
-   sh 'curl -X POST -v -user Megalai:Mumani1209@98 "https://api.bitbucket.org/2.0/repositories/Megalai/repo1" -d '{"has_wiki" : true, "is_private": true, "project": {"key": "PRJ_KEY"}}''
+   curl -X POST -H "Content-Type: application/json" -d '{
+    "scm": "git",
+    "project": {
+        "key": "DEM"
+    }
+}' https://api.bitbucket.org/2.0/megalai1/projects/DEM/repositories/repo1
 }
-
 
       
 
