@@ -1,0 +1,12 @@
+{
+    "data": {
+        "repoType": "hosted",
+        "id": "somerepo",
+        "name": "Some Repo Name",
+        "repoPolicy": "RELEASE",
+        "provider": "maven2",
+        "providerRole": "org.sonatype.nexus.proxy.repository.Repository",
+        "exposed": true,
+        "format": "maven2"
+    }
+}
