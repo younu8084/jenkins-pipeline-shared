@@ -1,12 +1,12 @@
 import jenkins.model.*
  jenkins = Jenkins.instance
  
-def  call(String name ="name")
+def  call(String name ="name1")
 {
  
- Jenkins.instance.getItemByFullName("${name}")
+ Jenkins.instance.getItemByFullName("${name1}")
       
-sh 'curl -X POST -v --user Megalai:admin123 -H "ContentType: application/json; charset=UTF-8" "https://api.bitbucket.org/2.0/repositories/Megalai/$name"'
+sh 'curl -X POST -v --user Megalai:admin123 -H "ContentType: application/json; charset=UTF-8" "https://api.bitbucket.org/2.0/repositories/Megalai/name" -d {"name":"name1"}'
 }
 
       
