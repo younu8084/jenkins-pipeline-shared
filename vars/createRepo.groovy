@@ -1,11 +1,11 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createRepo(String data, String URL){
+createRepo(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def repoName = '"'+resultJson.name+'"'
-def projUrl = resultJson.url
+//def projUrl = resultJson.url
   
   println repoName
   println """
