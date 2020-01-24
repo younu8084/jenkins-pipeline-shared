@@ -1,6 +1,6 @@
 def call()
 {     
-sh 'curl -X POST -v --user Megalai:admin123 -H "ContentType: application/json; charset=UTF-8" "https://api.bitbucket.org/2.0/repositories/Megalai/repo9 -d {"name":"repo9"}'
+sh 'curl -X POST -v --user Megalai:admin123 -H "ContentType: application/json; charset=UTF-8" "https://api.bitbucket.org/2.0/repositories/Megalai/repo9" -d {"name":"repo9"}'
 }
 
       
