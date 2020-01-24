@@ -20,11 +20,11 @@ def projUrl = resultJson.url
     "name": ${repoName},
     "scmId": "git",
     "forkable": true
-}""", responseHandle: 'NONE', url: "${URL}"
+}""", responseHandle: 'NONE', url: "https://api.bitbucket.org/2.0/repositories/Megalai/proj"
 }
 
 
 def call(String BITBUCKETURL){
 def request = libraryResource 'data.json'
- createRepo(request,BITBUCKETURL)
+ createRepo(request)
 }
