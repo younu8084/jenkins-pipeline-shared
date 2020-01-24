@@ -24,7 +24,7 @@ def projUrl = resultJson.url
 }
 
 
-def call(String BITBUCKETURL){
+def call(String request,String BITBUCKETURL){
 
  createRepo(request,BITBUCKETURL)
 }
