@@ -11,12 +11,12 @@ def repoName = '"'+resultJson.name+'"'
   customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json'], 
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
  httpMode: 'POST', requestBody: """{
-{
+
     "name": ${repoName},
     "scmId": "git",
     "forkable": true
 }""", responseHandle: 'NONE', url:'https://api.bitbucket.org/2.0/repositories/Megalai/Proj'
-}
+
 
 
 def call(){
