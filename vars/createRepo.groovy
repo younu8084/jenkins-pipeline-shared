@@ -12,7 +12,7 @@ def repoName = '"'+resultJson.name+'"'
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
     httpMode: 'POST', requestBody: """{
     
-    "name": ${repotName},
+    "name": ${repoName},
     
 }""", responseHandle: 'NONE', url: 'https://api.bitbucket.org/2.0/repositories/Megalai/Proj'
 }
