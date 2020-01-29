@@ -5,9 +5,9 @@ collector(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def projUrl = resultJson.url
-httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'GET', responseHandle: 'NONE', url: "${projUrl}" requestBody: """
+httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'GET', responseHandle: 'NONE', url: "${projUrl}" responseBody: """
 {
-}""",responseHandle: 'NONE', url: "${projUrl}"
+}""",responseHandle: 'repositories', url: "${projUrl}"
 }
 def call(){
 def request = libraryResource 'datacollector.json'
