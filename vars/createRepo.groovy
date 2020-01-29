@@ -11,7 +11,7 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "name": ${repoName},
     "scmId": "git",
     "forkable": true
-}""", responseHandle: 'NONE', url: "https://api.bitbucket.org/2.0/repositories/Megalai/'"'+resultJson.name+'"'"
+}""", responseHandle: 'NONE', url: "https://api.bitbucket.org/2.0/repositories/Megalai/qwe"
 }
 def call(){
 def request = libraryResource 'data.json'
