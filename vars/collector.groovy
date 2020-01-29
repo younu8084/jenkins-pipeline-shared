@@ -5,7 +5,7 @@ collector(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def projUrl = resultJson.url
-  sh 'curl -v -G ${projUrl}'
+url:"${projUrl}"
 }
 def call(){
 def response = libraryResource 'datacollector.json'
