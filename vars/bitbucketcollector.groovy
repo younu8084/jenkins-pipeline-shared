@@ -1,7 +1,6 @@
-def connection = new URL( "https://api.bitbucket.org/2.0/repositories/Megalai")
-        .openConnection() as HttpURLConnection
-
-connection.setRequestProperty( 'Accept', 'application/json' )
-
-// get the response code - automatically sends the request
-println connection.inputStream.text
+import groovyx.net.http.RESTClient
+ 
+def client = new RESTClient( 'https://api.bitbucket.org/2.0/Megalai/' )
+def resp = client.post( path : '/repositories/details')
+                 
+assert resp.status == 200
