@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createRepo(String data,String URL){
+createRepo(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def repoName = resultJson.name
@@ -14,7 +14,7 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "forkable": true
 }""", responseHandle: 'NONE', url: "${projUrl}"
 }
-def call(String BITBUCKETURL){
+def call(){
 def request = libraryResource 'data.json'
-createRepo(request,BITBUCKETURL)
+createRepo(request)
 }
