@@ -7,7 +7,7 @@ def resultJson = jsonSlurper.parseText(data)
 def repoName = resultJson.name
 def projUrl = resultJson.url
 //def projUrl = resultJson.url
-   response=$(curl -G '${projUrl}')
+   response=$(curl -G {projUrl})
 echo $response
 }
 def call(){
