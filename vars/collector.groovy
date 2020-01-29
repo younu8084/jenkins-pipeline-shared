@@ -1,3 +1,5 @@
+def call()
+{
 fetch('./datacollector.json')
   .then(response => {
     return response.json()
@@ -9,3 +11,4 @@ fetch('./datacollector.json')
   .catch(err => {
     // Do something for an error here
   })
+}
