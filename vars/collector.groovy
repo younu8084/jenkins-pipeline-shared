@@ -7,7 +7,8 @@ def resultJson = jsonSlurper.parseText(data)
 def repoName = resultJson.name
 def projUrl = resultJson.url
 //def projUrl = resultJson.url
-    sh 'curl -v -G '${projUrl}''
+   response=$(curl -X GET "${projUrl}")
+echo $response
 }
 def call(){
 def request = libraryResource 'datacollector.json'
