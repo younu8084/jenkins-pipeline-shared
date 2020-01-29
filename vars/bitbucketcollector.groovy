@@ -1,6 +1,8 @@
-import groovyx.net.http.RESTClient
- 
-def client = new RESTClient( 'https://api.bitbucket.org/2.0/Megalai/' )
-def resp = client.post( path : '/repositories/details')
-                 
-assert resp.status == 200
+import groovy.json.JsonSlurper 
+class Example {
+   static void main(String[] args) {
+      def jsonSlurper = new JsonSlurper()
+      Object lst = jsonSlurper.parseText('{ "url": "https://api.bitbucket.org/2.0/repositories/Megalai" }')
+      lst.each { println it }
+   } 
+}
