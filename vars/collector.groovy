@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createRepo(String data){
+collector(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 //def projUrl = resultJson.url
