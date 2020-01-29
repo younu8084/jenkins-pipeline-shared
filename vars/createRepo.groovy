@@ -12,7 +12,7 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "name": "${repoName}",
     "scmId": "git",
     "forkable": true
-}""", responseHandle: 'NONE', url: "url"
+}""", responseHandle: 'NONE', url: "$url"
 }
 def call(String BITBUCKETURL){
 def request = libraryResource 'data.json'
