@@ -10,6 +10,6 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', name: 
 }""", responseHandle: 'NONE', url: "${projUrl}"
 }
 def call(){
-def response = libraryResource 'datacollector.json'
+def response = libraryResource 'delete.json'
 collector(response)
 }
