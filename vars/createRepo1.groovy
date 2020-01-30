@@ -13,6 +13,7 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "scmId": "git",
     "forkable": true
 }""", responseHandle: 'NONE', url: "${projUrl}"
+    println "Sucess repo created"
   }
 
 
