@@ -21,6 +21,6 @@ def call(){
 def request = libraryResource 'data.json'
 createRepo(request)
  
-echo "success ${repoName} created"
+echo "success repo created"
 
 }
