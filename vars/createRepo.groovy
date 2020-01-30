@@ -15,7 +15,7 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
 }""", responseHandle: 'NONE', url: "${projUrl}"
   }
 
-}
+
 def call(){
 def request = libraryResource 'data.json'
 createRepo(request)
