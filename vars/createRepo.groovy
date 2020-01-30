@@ -13,11 +13,15 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "scmId": "git",
     "forkable": true
 }""", responseHandle: 'NONE', url: "${projUrl}"
-    echo "success ${repoName} created" 
+  
   }
 
 
 def call(){
 def request = libraryResource 'data.json'
 createRepo(request)
+  println """
+{
+success ${repoName} created
+}"""
 }
