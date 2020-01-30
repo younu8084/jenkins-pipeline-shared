@@ -1,10 +1,17 @@
 def call()
 {
-
-File file = new File("out.txt")
-file.write "First line\n"
-file << "Second line\n"
- 
-println file.text
-
+#!/bin/bash
+#
+LOGFILE=/home/test/test.log
+echo "`date +%H:%M:%S : Starting work" >> $LOGFILE
+#
+service test stop >> $LOGFILE
+#
+mv /var/run/test/test.pid /var/run/test/test.pid.bak
+#
+echo "`date +%H:%M:%S : process file moved" >> $LOGFILE
+#
+service test start >> $LOGFILE
+#
+echo "`date +%H:%M:%S : Finished" >> $LOGFILE
 }
