@@ -1,14 +1,25 @@
-#!/bin/bash
-def call(){ 
-log=log_file.txt
- 
+def call()
+{
+class myClass implements Serializable {
+    def _logger
+    def script
+    myClass(def script, Map config) {
+        _logger = script.getContext(TaskListener.class).getLogger()
+        this.script = script
+        this.config = config // some data
+        log 'Initializing myClass...'
+    }
 
-printf "Log File - " > $log
- 
+  @NonCPS
+    private void log(message) {
+        script.getContext(TaskListener.class).getLogger().println(message)
+    }
+...
 
-date >> $log
- 
-x=$(( 3 + 1 ))
-
-echo value of x is $x >> $log
+def someMethod(){
+    ...
+    script.sh(someScript)
+    ...
+}
+}
 }
