@@ -1,22 +1,10 @@
+import io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel
+import io.wcm.devops.jenkins.pipeline.utils.logging.Logger
 def call()
-{
-class myClass implements Serializable {
-    def _logger
-    def script
-    myClass(def script, Map config) {
-        _logger = script.getContext(TaskListener.class).getLogger()
-        this.script = script
-        this.config = config // some data
-        log 'Initializing myClass...'
-    }
+{ 
+Logger.init(this, [ logLevel: LogLevel.TRACE ])
+Logger log = new Logger(this)
 
-  @NonCPS
-    private void log(message) {
-        script.getContext(TaskListener.class).getLogger().println(message)
-    }
+log.trace("I am a trace log message")
 
-def someMethod(){
-    script.sh(someScript)
-}
-}
 }
