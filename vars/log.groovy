@@ -1,8 +1,8 @@
 def call()
 {
-File file = new File("log.txt")
-file.write "First line\n"
-file << "Second line\n"
+def fileName = '/tmp/test.log'
+fileName.write "First line\n"
+fileName << "Second line\n"
  
-println file.text
+println fileName.text
 }
