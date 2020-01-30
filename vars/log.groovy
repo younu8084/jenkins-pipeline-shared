@@ -1,8 +1,6 @@
 #!/bin/bash
 def call()
 {
-
-#
 LOGFILE=/home/test/test.log
 echo "`date +%H:%M:%S : Starting work" >> $LOGFILE
 #
