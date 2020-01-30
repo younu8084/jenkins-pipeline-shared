@@ -13,9 +13,6 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
     "scmId": "git",
     "forkable": true
 }""", responseHandle: 'NONE', url: "${projUrl}"
-BUILD_STRING = "Response Code: HTTP/1.1 200 OK"   
-    if (log.contains(BUILD_STRING)) {
-    println "${repoName} is created sucessfully"
   }
 
 }
