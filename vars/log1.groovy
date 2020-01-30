@@ -14,12 +14,9 @@ class myClass implements Serializable {
     private void log(message) {
         script.getContext(TaskListener.class).getLogger().println(message)
     }
-...
 
 def someMethod(){
-    ...
     script.sh(someScript)
-    ...
 }
 }
 }
