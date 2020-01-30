@@ -1,8 +1,13 @@
 def call()
 {
-def fileName = '/tmp/test.log'
-fileName.write "First line\n"
-fileName << "Second line\n"
- 
-println fileName.log
+g = [:]       // create map
+println(g)
+
+g['name'] = []   // create array
+println(g)
+
+g['name'].add("foo")
+g['name'].add("bar")
+println(g)
+
 }
