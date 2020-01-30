@@ -6,7 +6,7 @@ import java.util.logging.LogManager
 import java.util.logging.Level
 
 int FILE_SIZE = 1024
-def call(){
+def call()
 
 def logger = Logger.getLogger("")
 LogManager.getLogManager().reset()
@@ -27,5 +27,4 @@ try {
 
 for (i = 0; i < 5000; i++) {
 	logger.info ("I am a test info log")
-}
 }
