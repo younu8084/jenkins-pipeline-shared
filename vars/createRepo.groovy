@@ -20,7 +20,10 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
 def call(){
 def request = libraryResource 'data.json'
 createRepo(request)
- 
-echo "success repo created"
+BUILD_STRING = "HTTP/1.1 200 OK" 
+    if (log.contains(BUILD_STRING)) {
+    println "success repo created"
+  }
+
 
 }
