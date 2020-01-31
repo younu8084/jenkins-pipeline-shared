@@ -20,13 +20,8 @@ httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', custom
 def call(){
 def request = libraryResource 'data.json'
 createRepo(request)
-JOB_NAME = "test"
-BUILD_STRING = "HTTP/1.1 200 OK"
-    def job = Jenkins.instance.items.find { it.name == JOB_NAME }
-    def log = build.log
-    if (log.contains(BUILD_STRING)) {
-    println "success repo created"
-  }
+
+
 
 
 }
