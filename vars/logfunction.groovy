@@ -6,7 +6,7 @@ def call(message)
  def request = libraryResource 'data.json'
  def jsonSlurper = new JsonSlurper() 
  def resultJson = jsonSlurper.parseText(request)
- def projectName = resultJson.key
+ def projectName = resultJson.name
   Date date = new Date() 
-  sh " echo '${date}' JIRA project with the projectname '${projectName}' ${message} >>log.txt"
+  sh " echo '${date}' Bitbucket repository with the reponame '${projectName}' ${message} >>log.txt"
 }
