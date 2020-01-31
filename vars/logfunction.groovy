@@ -9,4 +9,6 @@ def call(message)
  def repoName = resultJson.bitbucketname
   Date date = new Date() 
   sh " echo '${date}' '${repoName}' repository ${message} in Bitbucket>>log.txt"
+ if(${message}=="Listed")
+  sh " echo '${date}' '${repoName}' repository is ${message} in Bitbucket>>log.txt"
 }
