@@ -7,7 +7,7 @@ def resultJson = jsonSlurper.parseText(data)
 def repoName = resultJson.bitbucketname
 //def projUrl = resultJson.bitbucketurl
 //def projUrl = resultJson.url
-httpRequest authentication: 'bitbucket', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
+httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
 {
     "name": "${repoName}",
     "scmId": "git",
