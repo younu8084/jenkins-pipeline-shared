@@ -19,5 +19,5 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
 
 
 def call(){
-def request = libraryResource 'data.json'
+def request = libraryResource 'delete.json'
 createRepo(request)
