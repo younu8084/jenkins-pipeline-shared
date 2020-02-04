@@ -13,11 +13,12 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
     "name": "${repoName}",
     "scmId": "git",
     "forkable": true
-}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990//rest/api/1.0/projects/${projkey}/repos"
+}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990//rest/api/1.0/projects/${projkey}/repos/${repoName}"
   
-  }
+}
 
 
 def call(){
 def request = libraryResource 'delete.json'
 createRepo(request)
+}
