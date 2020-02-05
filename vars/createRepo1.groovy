@@ -15,7 +15,7 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
 {
     "key": "${projectKey}",
     "name": "${projectName}",
-     public: true
+     "public": true
 }""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects"
   
   }
