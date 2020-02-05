@@ -12,6 +12,7 @@ String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoin
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
 String d=jsonObj.scm.projects.project.repositories.repository.branches.branch.name 
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
+    println(branchname)
 httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
 {
     "name": "${branchname}",
