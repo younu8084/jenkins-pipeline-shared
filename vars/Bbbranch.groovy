@@ -14,7 +14,7 @@ String d=jsonObj.scm.projects.project.repositories.repository.branches.branch.na
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
     println(branchname)
     println(sPoint)
-httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'DELETE', requestBody: """
+httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
 {
     "name": "${branchname}",
     "startPoint": "${sPoint}"   
