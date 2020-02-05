@@ -12,10 +12,10 @@ String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoin
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
 String d=jsonObj.scm.projects.project.repositories.repository.branches.branch.name 
 String branch=d.replaceAll("\\[", "").replaceAll("\\]","");
-httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
+httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'DELETE', requestBody: """
 {
     "name": "dev",
     "startPoint": "refs/heads/master"   
-}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/${projectKey}/repos/${repoName}/branches"
+}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/branch-utils/1.0/projects/${projectKey}/repos/${repoName}/branches"
   
   }
