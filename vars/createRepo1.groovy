@@ -13,7 +13,7 @@ env.key = projectKey
 
 httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
 {
-    "key": "${projectKey}"
+    "key": "${projectKey}",
     "name": "${projectName}",
      public: true
 }""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects"
