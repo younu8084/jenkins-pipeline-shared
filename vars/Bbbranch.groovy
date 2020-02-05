@@ -18,6 +18,6 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
 {
     "name": "${branchname}",
     "startPoint": "${sPoint}"   
-}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/${projectKey}/repos/${repoName}/branches"
+}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/branch-utils/1.0/projects/${projectKey}/repos/${repoName}/branches"
   
   }
