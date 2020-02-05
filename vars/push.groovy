@@ -14,10 +14,9 @@ import hudson.plugin.git.extension.impl.*
     echo gitUrl
   
   
-  def link1 = "rm -rf ./* && git clone ${gitUrl} && git clone http://rig:${rig_password}@${BB_URL}/scm/DEM/app.git && cp -r ./JenkinsWar/* ./app && pwd && cd app && pwd && git init && git add --all && git status && git commit -m 'commit' && git push -u origin master"
+  def link1 = "rm -rf ./* && git clone ${gitUrl} && git clone http://rig:rigaDapt@devOps@http://rig@18.224.68.30:7990/scm/bit/newrepo3.git && cp -r ./TestProject/* ./app && pwd && cd app && pwd && git init && git add --all && git status && git commit -m 'commit' && git push -u origin master"
    
-   echo "************** Aman Repo ************"
-   
+  
    sh(link1)
    
     
