@@ -1,19 +1,5 @@
- 
-import jenkins.model.*
-import hudson.model.*
-import groovy.json.JsonSlurper 
-jenkins = Jenkins.instance
-import hudson.plugin.git.extension.impl.*
-  
-  @NonCPS
-  codePush(String data){
-    def jsonSlurper = new JsonSlurper() 
-    def resultJson = jsonSlurper.parseText(data)
-   
-    def gitUrl= resultJson.url
-    
-    echo gitUrl
-  
+ def call(){
+
   
   def link1 = "rm -rf ./* && git clone https://github.com/kavi1997/TestProject.git && git clone http://rig:rigaDapt%40devOps@18.224.68.30:7990/scm/edn/rig.git && cp -r ./TestProject/* ./app && pwd && cd app && pwd && git init && git add --all && git status && git commit -m 'commit' && git remote add origin http://rig:rigaDapt%40devOps@18.224.68.30:7990/scm/edn/rig.git && git push -u origin master"
    
@@ -24,7 +10,4 @@ import hudson.plugin.git.extension.impl.*
   }
 
          
- def call(){
- def request = libraryResource 'data.json'   
- codePush(request)
- }               
+ 
