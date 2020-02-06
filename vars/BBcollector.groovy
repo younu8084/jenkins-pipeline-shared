@@ -1,15 +1,13 @@
-def call(JSON){
-def jsonString = JSON
+def call(json){
+def jsonString = json
 def jsonObj = readJSON text: jsonString
 
-String a=jsonObj.ci.id.deploymentProjectId
-String id=a.replaceAll("\\[", "").replaceAll("\\]","");
- String b=jsonObj.ci.list.key
-String key=b.replaceAll("\\[", "").replaceAll("\\]","");
-println(id)
-sh 'curl -X GET -i -H  -d  -u rig:rigaDapt@devOps "http://18.220.143.53:8085/rest/api/latest/plan.json" '
-sh 'curl -X GET -i -H  -d  -u rig:rigaDapt@devOps "http://18.220.143.53:8085/rest/api/latest/project.json" '
-sh "curl -X GET -i -H  -d  -u rig:rigaDapt@devOps http://18.220.143.53:8085/rest/api/latest/deploy/project/'${id}' "  
-sh "curl -X GET -i -H  -d  -u rig:rigaDapt@devOps http://18.220.143.53:8085/rest/api/latest/deploy/project/'${id}'/versions " 
- sh "curl -X GET -i -H  -d  -u rig:rigaDapt@devOps http://18.220.143.53:8085/rest/api/latest/project/'${key}'.json " 
+String b=jsonObj.scm.projects.project.project_key 
+String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
+println(key)
+sh 'curl -X GET -i -H  -d  -u rig:rigaDapt@devOps "http://18.224.68.30:7990/rest/api/1.0/projects/BIT/repos" '
+sh "curl -X GET -i -H  -d  -u rig:rigaDapt@devOps http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'"
+sh 'curl -X GET -i -H  -d  -u rig:rigaDapt@devOps "http://18.224.68.30:7990/rest/api/1.0/projects/BIT/repos/newrepo/branches" '
+sh "curl -X GET -i -H  -d  -u rig:rigaDapt@devOps http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/newrepo/tags " 
+ sh 'curl -X GET -i -H  -d  -u rig:rigaDapt@devOps "http://18.224.68.30:7990/rest/api/1.0/users/rig/repos/newrepo/commits" '
 }
