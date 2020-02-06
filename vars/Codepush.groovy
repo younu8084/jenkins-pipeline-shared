@@ -1,24 +1,4 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
  
-@REVATHISARAISWATHI 
-REVATHISARAISWATHI
-/
-jenkins-pipeline-shared
-forked from bitwiseman/jenkins-pipeline-shared
-0
-163
- Code Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-jenkins-pipeline-shared/vars/push.groovy
-@REVATHISARAISWATHI REVATHISARAISWATHI Update push.groovy
-d4c31e0 16 hours ago
-29 lines (18 sloc)  813 Bytes
-  
 import jenkins.model.*
 import hudson.model.*
 import groovy.json.JsonSlurper 
