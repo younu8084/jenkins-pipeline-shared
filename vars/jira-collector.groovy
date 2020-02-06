@@ -1,5 +1,5 @@
-def call(json){
-def jsonString = json
+def call(Json){
+def jsonString = Json
 def jsonObj = readJSON text: jsonString
 
 String b=jsonObj.alm.projects.project.project_typeKey
