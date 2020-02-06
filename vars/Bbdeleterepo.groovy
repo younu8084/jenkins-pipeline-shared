@@ -4,7 +4,7 @@ def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 println(jsonObj.scm)
 
-String a=jsonObj.scm.projects.project.repositories[0].repository[1].repo_name
+String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
