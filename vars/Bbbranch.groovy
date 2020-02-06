@@ -4,11 +4,11 @@ def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 println(jsonObj.scm)
 
-String a=jsonObj.scm.projects.project.repositories.repository.repo_name
+String a=jsonObj.scm.projects.project.repositories[0].repository[0].repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
-String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint 
+String c=jsonObj.scm.projects.project.repositories[0].repository[0].branches[0].startPoint 
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[0]
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
