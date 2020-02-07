@@ -1,15 +1,5 @@
-def call(message,jsondata)
+def call(message)
 {
-  
-def jsonString = jsondata
-def jsonObj = readJSON text: jsonString
-println(jsonObj.scm)
-
-String a=jsonObj.scm.projects.project.project_name
-String projectName=a.replaceAll("\\[", "").replaceAll("\\]","");
-  
- 
- println(message)
   Date date = new Date() 
   sh " echo '${date}' BITBUCKET ${message} >>log.txt"
 }
