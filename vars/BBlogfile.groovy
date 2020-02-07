@@ -1,11 +1,18 @@
-def call(message)
+def call(message,JSON)
 {
   
+def jsonString = JSON
+def jsonObj = readJSON text: jsonString
+println(jsonObj.scm)
 
- println(message)
- 
-  Date date = new Date() 
+
+String b=jsonObj.scm.projects.project.project_key 
+String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
   
-      sh " echo '${date}' Bitbucket ${message}  >>log.txt"
-   
+ println(message)
+  Date date = new Date() 
+ 
+      sh " echo '${date}' Bitbucket  ${message} '${Key}' >>log.txt"
+    
+     
 }
