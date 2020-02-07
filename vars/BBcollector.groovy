@@ -1,5 +1,5 @@
-def call(json){
-def jsonString = json
+def call(jsondata){
+def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 
 String b=jsonObj.scm.projects.project.project_key 
