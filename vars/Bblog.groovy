@@ -1,5 +1,5 @@
-def call(message)
+def call(tool,message)
 {
   Date date = new Date() 
-  sh " echo '${date}' BITBUCKET ${message} >>log.txt"
+  sh " echo '${date}' ${tool} ${message} >>log.txt"
 }
