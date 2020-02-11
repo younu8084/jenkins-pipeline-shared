@@ -10,7 +10,7 @@ println(Key)
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
 
 def jso=sh """curl -X GET  -H -d  -u  $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}/commits -o ouput.json""" 
-  println "$jso"
+
   echo "$jso"
  }
 }
