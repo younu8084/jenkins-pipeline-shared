@@ -3,7 +3,7 @@ def jsonString = jsondata
 //println(jsonString)
 def jsonObj = readJSON text: jsonString
 println(jsonObj.scm)
-println(jsonObj.scm.projects.project.repositories.repository.branches.branch.name.size())
+println(jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].size())
 
 /*String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
