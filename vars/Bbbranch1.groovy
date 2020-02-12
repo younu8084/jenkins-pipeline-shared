@@ -10,7 +10,7 @@ String b=jsonObj.scm.projects.project.project_key
 String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
 String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
-println(jsonObj.scm.projects.project.repositories.repository.branch.size())
+println(jsonObj.scm.projects.project.repositories.repository.branches.branch.name.size())
 /*for(i=0;i<3;i++)
     {
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[i] 
