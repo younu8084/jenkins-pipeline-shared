@@ -4,15 +4,15 @@ def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 println(jsonObj.scm)
 println(jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].size())
-
+int count = jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].size()
 /*String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
 String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
-
-for(i=0;i<3;i++)
+*/
+for(i=0;i<count;i++)
     {
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[i] 
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
@@ -22,6 +22,6 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
 {
     "name": "${branchname}",
     "startPoint": "${sPoint}"   
-}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/newrepo3/branches"
-    }*/
+}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/BIT/repos/newrepo3/branches"
+    }
   }
