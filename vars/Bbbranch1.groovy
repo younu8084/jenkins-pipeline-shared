@@ -12,7 +12,7 @@ String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");*/
 String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
 
-for(i=1;i<count;i++)
+for(i=0;i<count;i++)
     {
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[i] 
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
