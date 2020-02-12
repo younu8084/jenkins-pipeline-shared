@@ -8,10 +8,10 @@ int count = jsonObj.scm.projects.project.repositories.repository.branches[0].bra
 /*String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
-String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
+String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");*/
 String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
-*/
+
 for(i=0;i<count;i++)
     {
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[i] 
