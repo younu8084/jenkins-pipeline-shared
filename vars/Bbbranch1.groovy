@@ -11,7 +11,7 @@ String projectKey=b.replaceAll("\\[", "").replaceAll("\\]","");
 String c=jsonObj.scm.projects.project.repositories.repository.branches.startPoint
 String sPoint=c.replaceAll("\\[", "").replaceAll("\\]","");
 println(jsonObj.scm.projects.project.repositories.repository.branches.size())
-for(i=0;i<3;i++)
+/*for(i=0;i<3;i++)
     {
 String d=jsonObj.scm.projects.project.repositories.repository.branches[0].branch[0].name[i] 
 String branchname=d.replaceAll("\\[", "").replaceAll("\\]","");
@@ -21,6 +21,6 @@ httpRequest authentication: 'bitbucket_cred', contentType: 'APPLICATION_JSON', c
 {
     "name": "${branchname}",
     "startPoint": "${sPoint}"   
-}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/${projectKey}/repos/${repoName}/branches"
-    }
+}""", responseHandle: 'NONE', url:"http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/newrepo3/branches"
+    }*/
   }
