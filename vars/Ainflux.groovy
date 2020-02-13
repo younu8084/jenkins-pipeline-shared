@@ -16,7 +16,7 @@ def pushToInflux(value)
       --data 'sonar vulnerabilities=${value}' > test.txt
   """
 
-def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME+ '/test.txt')
+def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME+ '/test.txt').text
 
  echo " ============ $response"
 
