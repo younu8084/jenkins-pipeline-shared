@@ -12,7 +12,7 @@ def value = resultJson.component.measures[0].value
 
  def response =new File('/var/lib/jenkins/workspace/sonarnew/test.txt').text
 
- 
+ echo "hi"
  echo " ++++++++++++ $response , HIIIII"
 println("hi")
  echo "hi"
