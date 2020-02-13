@@ -12,7 +12,7 @@ def response =  sh "curl -w '%{http_code}' -s -i -X GET  -H -d  -u  $userId:$pas
 def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test.txt').text
  
   echo " ============ $response"
- if(response == "204" || response == "200")
+ if(response == "200")
 {
  echo " Forks are listed successfully "
 }
