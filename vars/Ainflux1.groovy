@@ -7,7 +7,7 @@ def call ()
 
  echo " ============ $response"
 
-if(response == "HTTP/1.1 200 ")
+if(response == "200")
 {
  echo "Data pushed into influxDB"
 }
