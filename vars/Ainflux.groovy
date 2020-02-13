@@ -15,6 +15,7 @@ def value = resultJson.component.measures[0].value
  
  echo " ++++++++++++ $response"
 println("hi")
+ echo "hi"
 if(response == "204" || response == "200")
 {
  echo " Data pushed into influxDB "
