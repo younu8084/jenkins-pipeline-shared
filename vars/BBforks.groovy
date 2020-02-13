@@ -18,6 +18,6 @@ def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test.txt').t
 }
 else
 {
- error("Error while listing")
+ echo "Error while listing"
 }
 }
