@@ -1,6 +1,6 @@
 def call ()
 {
- sh """curl -i -w '%{http_code}' -XPOST 'http://3.16.33.107:9000/api/measures/component?metricKeys=vulnerabilities&component=comrades.bmi%3ABMI'  --header 'Authorization: Basic YWRtaW46YWRtaW4= ' >test.txt"""
+ sh """curl -i -w '%{http_code}' -X POST 'http://3.16.33.107:9000/api/measures/component?metricKeys=vulnerabilities&component=comrades.bmi%3ABMI'  --header 'Authorization: Basic YWRtaW46YWRtaW4= ' >test.txt"""
 
  def response =new File('/var/lib/jenkins/workspace/sonarnew/test.txt').text
 
