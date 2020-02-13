@@ -4,9 +4,9 @@ import groovy.json.*
 @NonCPS
 create(){
 def jsonSlurper = new JsonSlurper()
+ def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
  def value = resultJson.component.measures[0].value
- def value = resultJson.value
- pushToInflux(value);
+pushToInflux(value);
 }
 def pushToInflux(value)
 {
