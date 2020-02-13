@@ -5,8 +5,8 @@ import groovy.json.*
 create(){
 def jsonSlurper = new JsonSlurper()
  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
- def value = resultJson.component.measures[0].value
-pushToInflux(value);
+ def total = resultJson.component.measures[0].value
+pushToInflux(total);
 }
 def pushToInflux(value)
 {
