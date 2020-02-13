@@ -10,7 +10,7 @@ pushToInflux(total);
 }
 def pushToInflux(value)
 {
- sh """curl -i -w '%{http_code}' -XPOST 'http://ec2-13-58-47-71.us-east-2.compute.amazonaws.com:8086/write?db=Collector' --data-binary 'sonar vulnerabilities=${value}' >test.txt"""
+ sh """curl -i -w '%{http_code}' -XPOST 'http://ec2-13-58-47-71.us-east-2.compute.amazonaws.com:8086/write?db=Collector' --data-binary 'sonar vulnerabilities=${value}' """
 
  def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME+ '/test.txt').text
 
