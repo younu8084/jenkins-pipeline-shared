@@ -6,7 +6,7 @@ create(){
 def jsonSlurper = new JsonSlurper()
  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/ouput.json"))
  def value = resultJson.component.measures[0].value
- def value = resultJson.value
+ 
 pushToInflux(value);
 }
 def pushToInflux(value)
