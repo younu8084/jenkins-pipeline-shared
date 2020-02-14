@@ -25,7 +25,7 @@ def pushToInflux(value) {
   """
  def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test2.txt').text
  
-  echo "======================== $response" 
+  echo "====================== $response" 
   if (response.contains("204")) {
     //l = response.replaceAll("[^0-9][^0-9]*"," ")
  // if (response == "204" || response == "200") {
