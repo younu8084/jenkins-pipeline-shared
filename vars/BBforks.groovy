@@ -9,13 +9,13 @@ println(Key)
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
  sh " curl -w '%{http_code}' -s -i -X GET -u $userId:$pass 'http://18.224.68.30:7990/rest/api/1.0/projects/${Key}/repos/${repoName}/forks' > test.txt"
  }
-def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test.txt').readLines()
+def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test.txt').text
 
-def result = response.findAll { it.contains('200') }
 
-echo " $result"
+
+
   echo " ============ $response"
- if(result == "200")
+ if(response.contains("200"))
 {
  echo " Forks are listed successfully "
 }
