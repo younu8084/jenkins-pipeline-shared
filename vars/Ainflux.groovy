@@ -23,7 +23,7 @@ def pushToInflux(value) {
       'http://ec2-13-58-47-71.us-east-2.compute.amazonaws.com:8086/write?db=Collector' \
       --data 'sonar vulnerabilities=${value}' > test2.txt
   """
- def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test2.txt').txt
+ def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test2.txt').text
   echo "======================== $response" 
   
   if (response == "204" || response == "200") {
