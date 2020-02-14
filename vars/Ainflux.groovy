@@ -24,10 +24,11 @@ def pushToInflux(value) {
       --data 'sonar vulnerabilities=${value}' > test2.txt
   """
  def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test2.txt').text
-  Scanner s = new Scanner (new File ("test2.txt")).useDelimiter("\\s+");
+ 
   echo "======================== $response" 
-  
-  if (s == "204" || s == "200") {
+  if (response.contains("204")) {
+    //l = response.replaceAll("[^0-9][^0-9]*"," ")
+ // if (response == "204" || response == "200") {
       echo "DATA PUSHED TO INFLUX DB"
      } else {
      
