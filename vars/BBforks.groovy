@@ -13,7 +13,7 @@ def response =new File('/var/lib/jenkins/workspace/' + JOB_NAME + '/test.txt').r
 
 def result = response.findAll { it.contains('200') }
 
-
+echo " $result"
   echo " ============ $response"
  if(result == "200")
 {
