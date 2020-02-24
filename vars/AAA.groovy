@@ -14,6 +14,7 @@ def value=resultJson.values.author[0].name
   {
    def count=0
    count ++
+   echo "$count"
    }
  }
   
