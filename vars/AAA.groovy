@@ -13,10 +13,10 @@ def value=resultJson.values.author[0].name
  String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   
-  var theDay=new Date(timer);
-var today=new Date;
+  def theDay=new Date(timer)
+def today=new Date
 
-theDay.toISOString().substr(0,10) == today.toISOString().substr(0,10) ? console.log("same day"):null;
+theDay.toISOString().substr(0,10) == today.toISOString().substr(0,10) ? console.log("same day"):null
   def count=0
   //
  for(i=0;i<total;i++)
