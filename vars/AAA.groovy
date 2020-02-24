@@ -8,7 +8,7 @@ def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
-def timer=resultJson.values.committerTimestamp[0]
+ String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   LocalDate date = new LocalDate(Long.parseLong(timer), DateTimeZone.UTC);
   
