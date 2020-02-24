@@ -14,7 +14,7 @@ def value=resultJson.values.author[0].name
   echo "$value"
  // Date date = new Date() 
  // echo "$date"
- def Timestamp = new Timestamp(System.currentTimeMillis());  
+ def Timestamp = resultJson.authorTimestamp
   Date date= new Date(Timestamp.getTime());  
   echo "$date"
   def count=0
