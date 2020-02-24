@@ -4,7 +4,7 @@ import groovy.json.*
 create(){
   def jsonSlurper = new JsonSlurper()
   def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
- def value = resultJson.values.size
+ def value = resultJson.size
  println(value)
  for(i=0;i<=value;i++)
  {
