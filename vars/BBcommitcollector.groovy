@@ -1,6 +1,6 @@
 import groovy.json.*
 
-def call(){
+def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 String a=jsonObj.scm.projects.project.repositories.repository.repo_name
