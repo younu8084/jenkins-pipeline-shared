@@ -1,3 +1,5 @@
+import groovy.json.*
+
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
@@ -16,6 +18,7 @@ println(repoName)
  }
  create()
 }
+@NonCPS
 def create()
 {
   def jsonSlurper = new JsonSlurper()
