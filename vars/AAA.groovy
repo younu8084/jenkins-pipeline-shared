@@ -4,9 +4,9 @@ import groovy.json.*
 create(){
   def jsonSlurper = new JsonSlurper()
   def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
- def value = resultJson.size
- println(value)
- for(i=0;i<=value;i++)
+def total = resultJson.size
+  echo "$total"
+ for(i=0;i<=total;i++)
  {
   if(resultJson.author.name=="rig")
   {
