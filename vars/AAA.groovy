@@ -8,11 +8,12 @@ def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
+def timer=resultJson.values.committer[0].committerTimestamp
   def count=0
   Date date = new Date() 
  for(i=0;i<total;i++)
  {
-   if( resultJson.values.committer[i].committerTimestamp==${date})
+   if( resultJson.values.committer[i].committerTimestamp==$date)
   {
     count ++
    echo "$count"
