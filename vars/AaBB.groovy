@@ -1,17 +1,13 @@
 import requests, dateutil.parser
+baseUrlv1= "http://18.224.68.30:7990/rest/api/1.0"
+baseUrlv2 = "http://18.224.68.30:7990/rest/api/1.0"
 
-baseUrlv2 = "https://bitbucket.org/api/2.0"
-baseUrlv1 = "https://bitbucket.org/api/1.0"
 
-username = ""
-password = ""
-year = 2013
+username = "rig"
+password = "rigaDapt@devOps"
+year = 2020
 
 totalCommits = 0
-totalAdd = 0
-totalRemove = 0
-overallAdd = 0
-overallRemove = 0
 commitCount = 0
 commits = []
 
@@ -60,18 +56,11 @@ for repo in repos:
 					continue
 
 	print "Total commits in {user}/{repo}: {count}".format(user=username, repo=repoSlug, count=commitCount)		
-	print "\tLines added: {add}".format(add=totalAdd)
-	print "\tLines removed: {remove}\n".format(remove=totalRemove)
+
 	totalCommits += commitCount	
-	overallAdd += totalAdd
-	overallRemove += totalRemove
 	#reset counters
 	commitCount = 0
-	totalAdd = 0
-	totalRemove = 0
 	commits = []
 
 print ""
 print "Total commits: {count}".format(count=totalCommits)
-print "Total lines added: {count}".format(count=overallAdd)
-print "Total lines removed: {count}".format(count=overallRemove)
