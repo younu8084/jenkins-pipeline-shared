@@ -22,8 +22,13 @@ def total = resultJson.size
  for(i=0;i<total;i++)
  {
     Long timer=resultJson.values.committerTimestamp[i]
-   Date date=$($timer / 1000 +%Y-%m-%d)
-   echo "$date"
+   
+   SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+sdf.format(new Date(timer));
+   
+   
+  // Date date=$($timer / 1000 +%Y-%m-%d)
+   echo "$sdf"
 Date today_date = new Date() 
    echo "$today_date"
   // Long sub=Math.subtractExact(date,timer)
