@@ -13,13 +13,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+public class BitBucket {
 def call ()
 {
-
-
-
-public class BitBucket {
-
 public static void main(String[] args) throws Exception {
     String username = "rig";
     String password = "rigaDapt@devOps";
