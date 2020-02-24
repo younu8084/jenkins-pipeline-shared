@@ -9,9 +9,10 @@ def total = resultJson.size
 def value=resultJson.values.author[0].name
   echo "$value"
   def count=0
+  Date date = new Date() 
  for(i=0;i<total;i++)
  {
-  if(resultJson.values.author[i].name=="Mohamed Younus A (Digital)")
+   if(resultJson.values.author[i].name=="rig"&& resultJson.values.committerTimestamp=="$date" )
   {
    
    count ++
