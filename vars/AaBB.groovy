@@ -1,4 +1,34 @@
+
+import groovy.json.*
+import java.util.*
+@NonCPS
+create(){
+  def jsonSlurper = new JsonSlurper()
+  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
+def total = resultJson.size
+  echo "$total"
+def value=resultJson.values.author[0].name
+  echo "$value"
+ String timer=resultJson.values.committerTimestamp[0]
+  echo "$timer"
+  Date date = new Date() 
+  echo "$date"
+  
+  def count=0
+  //
+ for(i=0;i<total;i++)
+ {
+   //if(resultJson.values.committerTimestamp[i]==1582522990000)
+   if (resultJson.values.committerTimestamp[i]==date)
+   {
+    count ++
+   echo "$count"
+   }
+ }
+  
+ 
+}
 def call()
 {
-  sh "curl -X GET -s -u rig:rigaDapt@devOps http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/demo12/commits?merges=exclude&since=f01525bb2d3&until=f01525bb2d3 "
+create()
 }
