@@ -25,7 +25,7 @@ def create()
   def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
  def value = resultJson.values
  
- for(int i=0;i<=value;i++)
+ for(i=0;i<=value;i++)
  {
   if(resultJson.author.name=="rig")
   {
