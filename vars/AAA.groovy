@@ -6,7 +6,7 @@ create(){
   def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
   echo "$total"
-def value=resultJson.author.name
+def value=resultJson.author.name[0]
   echo "$value"
  for(i=1;i<=total;i++)
  {
