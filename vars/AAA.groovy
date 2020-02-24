@@ -23,9 +23,9 @@ def total = resultJson.size
  for(i=0;i<total;i++)
  {
     Long timer=resultJson.values.committerTimestamp[i]
-   //echo "$timer"
+   echo "$timer"
    Long sub=Math.subtractExact(date,timer)
-  echo "$sub"
+  //echo "$sub"
    //if(resultJson.values.committerTimestamp[i]==1582522990000)
    if (resultJson.values.author[i].name=="Jenkins Automation Server" && sub<86400000)
    {
