@@ -11,7 +11,7 @@ def value=resultJson.values.author[0].name
   def count=0
  for(i=0;i<total;i++)
  {
-  if(resultJson.values.author[i].name=="rig")
+  if(resultJson.values.author[i].name=="Jenkins Automation Server")
   {
    
    count ++
