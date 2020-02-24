@@ -24,9 +24,9 @@ def value=resultJson.values.author[0].name
    if (resultJson.values.committerTimestamp[i]==date)
    {
     count ++
-   echo "$count"
    }
  }
+  echo "$count"
  }
 def call()
 {
