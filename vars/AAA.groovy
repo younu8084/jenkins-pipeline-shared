@@ -14,8 +14,9 @@ def timer=resultJson.values.committerTimestamp[0]
   Date date = new Date() 
  for(i=0;i<total;i++)
  {
-   if(resultJson.values.committerTimestamp[i]==1582522990000)
-  {
+   //if(resultJson.values.committerTimestamp[i]==1582522990000)
+   if (TimeCalc.isToday(resultJson.values.committerTimestamp[i]))
+   {
     count ++
    echo "$count"
    }
