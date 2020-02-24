@@ -16,15 +16,14 @@ print ""
 print "Stats for {year}".format(year=year)
 print ""
 
-r = requests.get("{base}/user/repositories/".format(base=baseUrlv1),
-auth=(username , password))
+r = requests.get("{base}/user/repositories/".format(base=baseUrlv1),auth=(username, password))
 
 repos = r.json()
 
 for repo in repos:
 	repoSlug = repo['slug']
 	r = requests.get("{base}/repositories/{username}/{repo}/commits".format(base=baseUrlv2, username=username, repo=repoSlug),
-	auth=(username, password))
+	auth=(username, password)
 
 	c = r.json()
 	commits.extend(c['values'])
