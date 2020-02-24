@@ -1,3 +1,5 @@
+def call ()
+{
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -75,4 +77,5 @@ public static String processRequest(String url, String username, String password
     return result.toString();
 }
 
+}
 }
