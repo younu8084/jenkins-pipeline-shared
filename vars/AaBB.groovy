@@ -13,9 +13,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-public class BitBucket {
-    def create(){    
+public class BitBucket {   
 public static void main(String[] args) throws Exception {
+      def create(){ 
     String username = "rig";
     String password = "rigaDapt@devOps";
     String url = "http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/"+username;
