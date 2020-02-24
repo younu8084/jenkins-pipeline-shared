@@ -10,7 +10,7 @@ def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
- String timer=resultJson.values.committerTimestamp[0]
+ Long timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   
  Long date= System.currentTimeMillis() 
