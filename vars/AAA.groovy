@@ -14,7 +14,7 @@ def timer=resultJson.values.committerTimestamp[0]
   Date date = new Date() 
  for(i=0;i<total;i++)
  {
-   if( resultJson.values.committerTimestamp[i]=="${date}")
+   if( resultJson.values.committerTimestamp[i]=="1582522990000")
   {
     count ++
    echo "$count"
