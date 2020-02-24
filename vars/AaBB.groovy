@@ -1,6 +1,7 @@
 
 import groovy.json.*
 import java.util.*
+import java.sql.Timestamp.* 
 import java.util.Date.*
 @NonCPS
 create(){
@@ -13,8 +14,10 @@ def value=resultJson.values.author[0].name
   echo "$value"
  // Date date = new Date() 
  // echo "$date"
-  def Timestamp = resultJson.values.committerTimestamp[0]
-  Date date= new Date(Timestamp);  
+  Timestamp ts=new Timestamp(System.currentTimeMillis());  
+  Date date=ts;  
+//  def Timestamp = resultJson.values.committerTimestamp[0]
+ // Date date= new Date(Timestamp);  
   echo "$date"
   def count=0
   //
