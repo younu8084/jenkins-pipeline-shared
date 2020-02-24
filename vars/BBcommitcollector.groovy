@@ -9,7 +9,7 @@ println(Key)
 println(repoName)
  Date date = new Date() 
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-  sh "curl -X GET  -H -d  -u  $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits?since=1581424977000&until='${date}' -o output.json"
+  sh "curl -X GET  -H -d  -u  $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits?since='${date}'&until='${date}' -o output.json"
   
 
  
