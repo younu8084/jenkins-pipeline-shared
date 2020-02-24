@@ -10,7 +10,7 @@ def value=resultJson.values.author[0].name
   echo "$value"
  for(i=1;i<=total;i++)
  {
-  if(resultJson.author[i].name[i]=="rig")
+  if(resultJson.values.author[i].name=="rig")
   {
    def count=0
    count ++
