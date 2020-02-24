@@ -15,7 +15,7 @@ def value=resultJson.values.author[0].name
  // Date date = new Date() 
  // echo "$date"
  def Timestamp = resultJson.authorTimestamp
-  Date date= new Date(Timestamp.getTime());  
+  Date date= new Date(Timestamp);  
   echo "$date"
   def count=0
   //
