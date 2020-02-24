@@ -1,6 +1,5 @@
 import groovy.json.*
-import java.lang.Long
-import java.lang.Math
+
 
 @NonCPS
 create(){
@@ -13,8 +12,8 @@ def total = resultJson.size
 
   
   
- Long date= System.currentTimeMillis() 
- echo "$date"
+// Long date= System.currentTimeMillis() 
+ //echo "$date"
   
   
   def count=0
@@ -23,11 +22,14 @@ def total = resultJson.size
  for(i=0;i<total;i++)
  {
     Long timer=resultJson.values.committerTimestamp[i]
-   echo "$timer"
-   Long sub=Math.subtractExact(date,timer)
+   Date date=$(date -d @`expr $time / 1000` +%Y-%m-%d)
+   echo "$date"
+Date today_date=$(date +%Y-%m-%d)
+   echo "$today_date"
+  // Long sub=Math.subtractExact(date,timer)
   //echo "$sub"
    //if(resultJson.values.committerTimestamp[i]==1582522990000)
-   if (resultJson.values.author[i].name=="rig" && sub<86400000)
+   if (resultJson.values.author[i].name=="rig" && date==today_date)
    {
     count ++
    
