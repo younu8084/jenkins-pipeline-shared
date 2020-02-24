@@ -1,5 +1,6 @@
 import groovy.json.*
 import java.lang.Long
+import java.lang.Math
 
 @NonCPS
 create(){
@@ -15,7 +16,7 @@ def value=resultJson.values.author[0].name
  Long date= System.currentTimeMillis() 
   echo "$date"
   
-  Long sub=date-timer
+  Long sub=Math.subtractExact(date,timer)
   echo "$sub"
   def count=0
   //
