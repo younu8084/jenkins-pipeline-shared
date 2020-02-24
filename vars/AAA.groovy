@@ -27,7 +27,7 @@ def total = resultJson.size
    Long sub=Math.subtractExact(date,timer)
   echo "$sub"
    //if(resultJson.values.committerTimestamp[i]==1582522990000)
-   if (resultJson.values.author[i].name=="rig" && sub<86400000)
+   if (resultJson.values.author[i].name=="Jenkins Automation Server" && sub<86400000)
    {
     count ++
    
