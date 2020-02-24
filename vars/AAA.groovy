@@ -13,11 +13,8 @@ def value=resultJson.values.author[0].name
  String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   
-  def theDay=new Date(timer)
-def today=new Date
-
-if($theDay==$today)
-  { echo "same day" }
+ Date date= System.currentTimeMillis() 
+  echo "$date"
   def count=0
   //
  for(i=0;i<total;i++)
