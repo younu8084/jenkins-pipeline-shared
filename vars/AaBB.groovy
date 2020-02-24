@@ -14,9 +14,6 @@ commits = []
 
 print ""
 print "Stats for {year}".format(year=year)
-print ""
-
-r = requests.get("{base}/user/repositories/".format(base=baseUrlv1),auth=(username password))
 
 repos = r.json()
 
