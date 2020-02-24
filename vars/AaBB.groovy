@@ -1,6 +1,8 @@
 
 import groovy.json.*
 import java.util.*
+import java.sql.timestamp.*   
+import java.util.Date.*
 @NonCPS
 create(){
   def jsonSlurper = new JsonSlurper()
@@ -9,9 +11,11 @@ def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
-  Date date = new Date() 
+ // Date date = new Date() 
+ // echo "$date"
+ def timestamp ts=new timestamp(System.currentTimeMillis());  
+  Date date=new Date(ts.getTime());  
   echo "$date"
-  
   def count=0
   //
  for(i=0;i<total;i++)
@@ -23,10 +27,9 @@ def value=resultJson.values.author[0].name
    echo "$count"
    }
  }
-  
- 
-}
+ }
 def call()
 {
 create()
 }
+
