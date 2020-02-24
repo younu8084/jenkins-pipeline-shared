@@ -10,9 +10,7 @@ def value=resultJson.values.author[0].name
   echo "$value"
 def timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
-  LocalDate date = Instant.ofEpochMilli(Long.parseLong(timer))
-            .atOffset(ZoneOffset.UTC)
-            .toLocalDate();
+  LocalDate date = new LocalDate(Long.parseLong(timer), DateTimeZone.UTC);
   
   echo "$date"
   
