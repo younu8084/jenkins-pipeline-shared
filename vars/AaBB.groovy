@@ -19,9 +19,9 @@ def value=resultJson.values.author[0].name
 //  def Timestamp = resultJson.values.committerTimestamp[0]
  // Date date= new Date(Timestamp);  
   function convert(){
-
+ def Timestamp = resultJson.values.committerTimestamp[0]
  // Unixtimestamp
- var unixtimestamp = document.getElementById('committerTimestamp').value;
+ var unixtimestamp = document.getElementById('Timestamp').value;
 
  // Months array
  var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -54,13 +54,13 @@ def value=resultJson.values.author[0].name
  
 }
   
-  echo "$date"
+  echo "$convdataTime"
   def count=0
   //
  for(i=0;i<total;i++)
  {
    //if(resultJson.values.committerTimestamp[i]==1582522990000)
-   if (resultJson.values.committerTimestamp[i]==date)
+   if (resultJson.values.committerTimestamp[i]==convdataTime)
    {
     count ++
    }
