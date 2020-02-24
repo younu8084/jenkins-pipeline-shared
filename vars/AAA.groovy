@@ -11,7 +11,7 @@ def value=resultJson.values.author[0].name
  String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   Date date = new Date() 
-  echo "$date"
+  echo "$date.getTime()"
   
   def count=0
   //
