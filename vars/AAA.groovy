@@ -8,7 +8,7 @@ def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
-def timer=resultJson.values.committer[0].committerTimestamp
+def timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
   def count=0
   Date date = new Date() 
