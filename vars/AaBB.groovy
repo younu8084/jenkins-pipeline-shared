@@ -1,81 +1,64 @@
+import requests, dateutil.parser
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-public class BitBucket {   
-public static void main(String[] args) throws Exception {
-      def create(){ 
-    String username = "rig";
-    String password = "rigaDapt@devOps";
-    String url = "http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/"+username;
+def call()
+{
+baseUrlv2 = "http://18.224.68.30:7990/rest/api/1.0"
+baseUrlv1 = "http://18.224.68.30:7990/rest/api/1.0"
 
-    HttpClient client = new DefaultHttpClient();
+username = "rig"
+password = "rigaDapt@devOps"
+year = 2020
 
-    JSONParser parser = new JSONParser();
+totalCommits = 0
+commitCount = 0
+commits = []
 
-    Object obj = parser.parse(processRequest(url, username, password, client));
+print ""
+print "Stats for {year}".format(year=year)
+print ""
 
-    JSONObject jsonObject = (JSONObject) obj;
+r = requests.get("{base}/user/repositories/".format(base=baseUrlv1),
+	auth=(username, password))
 
-    JSONArray array = (JSONArray) jsonObject.get("values");
-    Set<String> repoNames = new HashSet<>();
-    for(int i = 0; i < array.size(); i++){
-        repoNames.add(((JSONObject) array.get(i)).get("name").toString());
-    }
+repos = r.json()
 
-    long commitCount = 0;
-    for(String repoName : repoNames){
-        String repoUrl = "http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/"+username + "/" + repoName.toLowerCase() + "/changesets?limit=0";
-        Object commitobj = parser.parse(processRequest(repoUrl, username, password, client));
+for repo in repos:
+	repoSlug = repo['slug']
+	r = requests.get("{base}/repositories/{username}/{repo}/commits".format(base=baseUrlv2, username=username, repo=repoSlug),
+	auth=(username, password))
 
-        commitCount += (Long) ((JSONObject) commitobj).get("count");
-    }
-    System.out.println("Total Commit Count across "+repoNames.size() +" repos for user "+username+" = " + commitCount);
+	c = r.json()
+	commits.extend(c['values'])
 
-}
+	while 'next' in c:
+		r = requests.get("{next}".format(next=c['next']), 
+			auth=(username, password))
+		c = r.json()
+		commits.extend(c['values'])
 
-private static String getBasicAuthenticationEncoding(String username, String password) {
+	for commit in commits:
+		commitDate = dateutil.parser.parse(commit['date'])
+		if commitDate.year == year:
+			commitCount += 1
 
-    String userPassword = username + ":" + password;
-    return new String(Base64.encodeBase64(userPassword.getBytes()));
-}
+			r = requests.get("{base}/repositories/{username}/{repo}/changesets/{hash}/diffstat/".format(base=baseUrlv1, username=username, repo=repoSlug, hash=commit['hash']),
+				auth=(username, password))
+			
+			try:
+				stats = r.json()
+			except ValueError:
+			    # decoding failed
+			    continue
 
-public static String processRequest(String url, String username, String password, HttpClient client) throws ClientProtocolException, IOException{
-    HttpGet request = new HttpGet(url);
+	print "Total commits in {user}/{repo}: {count}".format(user=username, repo=repoSlug, count=commitCount)	
+	totalCommits += commitCount	
 
-    request.addHeader("Authorization", "Basic " + getBasicAuthenticationEncoding(username, password));
+	#reset counters
+	commitCount = 0
+	commits = []
 
-    HttpResponse response = client.execute(request);
+print ""
+print "Total commits: {count}".format(count=totalCommits)
 
-    System.out.println("\nSending 'GET' request to URL : " + url);
-    System.out.println("Response Code : " + 
-            response.getStatusLine().getStatusCode());
 
-    BufferedReader rd = new BufferedReader(
-            new InputStreamReader(response.getEntity().getContent()));
-
-    StringBuffer result = new StringBuffer();
-    String line = "";
-    while ((line = rd.readLine()) != null) {
-        result.append(line);
-    }
-
-    return result.toString();
-}
-    }
-}
-def call ()
-{ 
-    create()
 }
