@@ -1,4 +1,3 @@
-import requests, dateutil.parser
 
 def call()
 {
