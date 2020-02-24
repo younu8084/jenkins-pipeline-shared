@@ -11,8 +11,8 @@ println(Key)
 println(repoName)
  Date date = new Date() 
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-  sh "curl -X GET  -H -d  -u  rig:rigaDapt@devOps  http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/demo12/commits  -o output.json"
-  
+  sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/demo12/commits  -o output.json"
+ } 
 
  
  }
