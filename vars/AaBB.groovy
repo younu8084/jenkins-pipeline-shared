@@ -14,8 +14,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 public class BitBucket {
-def call ()
-{
+    def create(){    
 public static void main(String[] args) throws Exception {
     String username = "rig";
     String password = "rigaDapt@devOps";
@@ -74,6 +73,9 @@ public static String processRequest(String url, String username, String password
 
     return result.toString();
 }
-
+    }
 }
+def call ()
+{ 
+    create()
 }
