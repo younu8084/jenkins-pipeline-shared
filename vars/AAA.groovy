@@ -13,7 +13,7 @@ def total = resultJson.size
 
   
   
- Long date= System.currentTime() 
+ Long date= System.currentTimeMillis() 
  echo "$date"
   
   
