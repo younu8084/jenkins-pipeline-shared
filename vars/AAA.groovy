@@ -16,7 +16,7 @@ def value=resultJson.values.author[0].name
   def theDay=new Date(timer)
 def today=new Date
 
-if(theDay==today)
+if($theDay==$today)
   { echo "same day" }
   def count=0
   //
