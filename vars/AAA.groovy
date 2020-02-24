@@ -10,12 +10,11 @@ def value=resultJson.values.author[0].name
   echo "$value"
  String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
-  LocalDate date = new LocalDate(Long.parseLong(timer), DateTimeZone.UTC);
-  
+  Date date = new Date() 
   echo "$date"
   
   def count=0
-  //Date date = new Date() 
+  //
  for(i=0;i<total;i++)
  {
    //if(resultJson.values.committerTimestamp[i]==1582522990000)
