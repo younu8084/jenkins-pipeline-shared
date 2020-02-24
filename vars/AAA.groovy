@@ -1,4 +1,6 @@
 import groovy.json.*
+
+import java.time.Instant
 import java.util.Date
 @NonCPS
 create(){
@@ -10,9 +12,9 @@ def value=resultJson.values.author[0].name
   echo "$value"
  String timer=resultJson.values.committerTimestamp[0]
   echo "$timer"
-  Date date = new Date() 
-  echo "$date.getTime()"
   
+  Date date = Date.from(Instant.ofEpochSecond(timer))
+  echo "$date"
   def count=0
   //
  for(i=0;i<total;i++)
