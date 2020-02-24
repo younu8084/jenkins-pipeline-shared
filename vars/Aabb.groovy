@@ -7,7 +7,7 @@ def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/
 def resultJson = jsonSlurper.parse(reader)
   def size = resultJson.size()
   for(i=0;i<size;i++){
-def uname=resultJson[i].name
+def uname=resultJson[i].user
   println(uname)
 def commit=resultJson[i].commits
 println(commit)
