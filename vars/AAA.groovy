@@ -15,7 +15,7 @@ def value=resultJson.values.author[0].name
  Long date= System.currentTimeMillis() 
   echo "$date"
   
-  def sub=date-timer
+  Long sub=date-timer
   echo "$sub"
   def count=0
   //
