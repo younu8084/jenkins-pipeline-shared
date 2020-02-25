@@ -12,7 +12,7 @@ def create(){
 def BITBUCKET_USER="rig" 
 def BITBUCKET_PASS="rigaDapt@devOps"
 def bitbucket_url="http://18.224.68.30:7990"
-  def bitbucket_project_name="EDN250"
+  def bitbucket_project_name="edn250"
   def bitbucket_repo_name="rig"
 defiterate_flag=true
   def commits_start=0
