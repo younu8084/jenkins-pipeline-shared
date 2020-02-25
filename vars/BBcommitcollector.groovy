@@ -7,8 +7,9 @@ String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
-String c=jsonObj.config.emails.email[0]
-String Email=c.replaceAll("\\[", "").replaceAll("\\]","");
+String c=jsonObj.config.emails.email[0] 
+int count = jsonObj.config.emails.email.size()
+println(count)
 println(Email)
 println(Key)
 println(repoName)
@@ -20,6 +21,8 @@ def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
+ 
+ for(i=0;i<total;i++)
  
  }
 
