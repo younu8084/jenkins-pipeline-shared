@@ -41,4 +41,4 @@ def value=resultJson.values.author[0].name
  }
   echo "$count"
  }
-}
+
