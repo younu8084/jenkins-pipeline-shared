@@ -34,5 +34,5 @@ for(i=0;i<ecount;i++)
 
 String 
 println(JSON)
-	sh "echo '${JSON}' >> new.json"
+	
  }
