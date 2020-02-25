@@ -1,10 +1,13 @@
-
 import groovy.json.*
 
-@NonCPS
-create(){
-  def jsonSlurper = new JsonSlurper()
-  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
+def call(jsondata){
+def jsonString = jsondata
+def jsonObj = readJSON text: jsonString
+	
+	withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
+  sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/rig/commits -o output.json"
+ } 
+
  // def String="timestamp"
 def total = resultJson.size
   echo "$total"
@@ -38,9 +41,4 @@ def value=resultJson.values.author[0].name
  }
   echo "$count"
  }
-def call()
-{
-create()
-  function convert()
 }
-
