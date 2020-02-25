@@ -26,11 +26,15 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
+	   for (x in resultJson.values.author) {
+    y = resultJson.values.author[x];
+    console.log(y);
+    }
 	  //Long commitdate=resultJson.values.committerTimestamp[j]
-	  def name=resultJson.values.author[j].name
-	  println(name)
-	  def email=resultJson.values.author[j].emailAddress
-	  println(email)
+	  //def name=resultJson.values.author[j].name
+	  //println(name)
+	  //def email=resultJson.values.author[j].emailAddress
+	  //println(email)
 	 // sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
          
 	
