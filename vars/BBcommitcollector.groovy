@@ -11,7 +11,7 @@ int ecount = jsonObj.config.emails.email.size()
 println("No of users "+ ecount)
 println(Key)
 println(repoName)
- Date date = new Date() 
+// Date date = new Date() 
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
   sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits -o output.json"
  } 
