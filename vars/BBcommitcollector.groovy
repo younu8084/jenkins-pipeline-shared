@@ -28,7 +28,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	JSON(JsonOutput.toJson(resultJson.values[j])) 
+	JSON.add(JsonOutput.toJson(resultJson.values[j])) 
     
     }
 	  
