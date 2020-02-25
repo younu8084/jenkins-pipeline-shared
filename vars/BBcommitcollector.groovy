@@ -27,8 +27,10 @@ for(i=0;i<ecount;i++)
    {
 	  //Long commitdate=resultJson.values.committerTimestamp[j]
 	  def name=resultJson.values.author[j].name
+	  println(name)
 	  def email=resultJson.values.author[j].emailAddress
-    echo "{\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
+	  println(email)
+    //echo "{\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
    }
   }
