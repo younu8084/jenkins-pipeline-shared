@@ -26,7 +26,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	   for (x in resultJson.values.author) {
+	   for (x=0;x<resultJson.values.author[j];x++) {
     y = resultJson.values.author[x];
     console.log(y);
     }
