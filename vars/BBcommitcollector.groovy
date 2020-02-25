@@ -1,5 +1,5 @@
 import groovy.json.*
-import java.util.ArrayList.*
+
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
@@ -26,7 +26,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	   for (x=0;x<resultJson.values.author[j];x++) {
+   for (x=0;x<resultJson.values.author[j].size();x++) {
     y = resultJson.values.author[x];
     println(y)
     }
