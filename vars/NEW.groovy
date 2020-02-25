@@ -3,8 +3,8 @@
 def call()
 {
 	def BITBUCKET_USER=rig 
-	def BITBUCKET_PASS=rituparna.ghosh@wipro.com
-	def bitbucket_url=http://18.224.68.30:7990/
+	def BITBUCKET_PASS="rigaDapt@devOps"
+	def bitbucket_url=http://18.224.68.30:7990
   def bitbucket_project_name=edn250
   def bitbucket_repo_name=rig
 	defiterate_flag=true
@@ -15,7 +15,7 @@ def call()
 
   while $iterate_flag; do
 
-		echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
+echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
 
     scm_commits=$(curl -X GET -k --fail -s --user $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start")
 		
