@@ -19,22 +19,27 @@ def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
- jq -c '.[]' output.json | while read i; do
+for(i=0;i<ecount;i++)
+ {
+  for(j=0;j<total;j++)
+  {
+   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
+   {
+	  Long commitdate=resultJson.values.committerTimestamp[j]
+	  def name=resultJson.values.author[j].name
+	  def email=resultJson.values.author[j].emailAddress
+    echo "{\"commitDate\":"$commitdate",\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
-		time=`echo $i | jq '.committerTimestamp'`
+   }
+  }
+ }
+	
+	
+	
+	
+	
+	
 
-		data_date=$(date -d @`expr $time / 1000` +%Y-%m-%d)
-
-		data_date=\"$data_date\"
-
-		name=`echo $i | jq '.committer.name'`
-
-		email=`echo $i | jq '.committer.emailAddress'`
-
-		dateArr=$dateArr$data_date,
-		echo $dateArr > dateData
-
-		echo "{\"commitDate\":$data_date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
  }
 
 
