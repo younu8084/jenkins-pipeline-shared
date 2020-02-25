@@ -31,8 +31,8 @@ for(i=0;i<ecount;i++)
 	  println(name)
 	  def email=resultJson.values.author[j].emailAddress
 	  println(email)
-	   sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
-         commiter++;
+	  sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
+          commiter++
    }
   }
  }
