@@ -11,7 +11,7 @@ def call()
   def commits_start=0
 	def rigletName=sample riglet name
 	cd ..
-	mkdir -p -- "$rigletName"_bitbucket
+	//mkdir -p -- "$rigletName"_bitbucket
 
   while $iterate_flag; do
 
