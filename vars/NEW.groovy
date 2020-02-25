@@ -3,7 +3,7 @@
 def call()
 {
 	def BITBUCKET_USER=rig 
-	def BITBUCKET_PASS=rigaDapt@devOps
+	def BITBUCKET_PASS=rituparna.ghosh@wipro.com
 	def bitbucket_url=http://18.224.68.30:7990/
   def bitbucket_project_name=edn250
   def bitbucket_repo_name=rig
