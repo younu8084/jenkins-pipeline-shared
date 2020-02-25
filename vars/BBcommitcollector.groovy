@@ -35,8 +35,8 @@ for(i=0;i<ecount;i++)
          
 	
    }
-println(y)	
-println(y.size())
+println(JSON)	
+println(JSON.size())
   }
  
 
