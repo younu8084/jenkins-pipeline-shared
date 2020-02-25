@@ -1,12 +1,15 @@
-#!/bin/sh
-	export BITBUCKET_USER=rig 
-	export BITBUCKET_PASS=rigaDapt@devOps
-	export bitbucket_url=http://18.224.68.30:7990/
-  export bitbucket_project_name=edn250
-  export bitbucket_repo_name=rig
-	export iterate_flag=true
-  export commits_start=0
-	export rigletName=sample # riglet name
+//#!/bin/sh
+
+def call()
+{
+	def BITBUCKET_USER=rig 
+	def BITBUCKET_PASS=rigaDapt@devOps
+	def bitbucket_url=http://18.224.68.30:7990/
+  def bitbucket_project_name=edn250
+  def bitbucket_repo_name=rig
+	defiterate_flag=true
+  def commits_start=0
+	def rigletName=sample # riglet name
 	cd ..
 	mkdir -p -- "$rigletName"_bitbucket
 
@@ -59,3 +62,4 @@ jq -c '.[]' bitAllDataResult.json | while read i; do
 		echo "{\"commitDate\":$data_date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
   done
+}
