@@ -30,7 +30,7 @@ for(i=0;i<ecount;i++)
 	  println(name)
 	  def email=resultJson.values.author[j].emailAddress
 	  println(email)
-    //echo "{\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
+	   echo "{contributorsName :'${name}', contributorsEmail :'${email}'}" >> bitAllDataDb.json
 
    }
   }
