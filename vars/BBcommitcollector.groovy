@@ -35,8 +35,9 @@ for(i=0;i<ecount;i++)
    }
   }
  }*/
-	
-def jsonString1 = output.json
+def jsonSlurper = new JsonSlurper()
+def jsonString1 = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
+//def jsonString1 = output.json
 def jsonObj1 = readJSON text: jsonString1	
 String total=jsonObj1.size
 String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
