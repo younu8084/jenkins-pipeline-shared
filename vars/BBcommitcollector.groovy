@@ -20,7 +20,7 @@ def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NA
 def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 //def commiter=1
-List<String> JSON = new ArrayList<String>();
+//List<String> JSON = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
  {
@@ -28,7 +28,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	 y = resultJson.values[j];
+	def y = resultJson.values[j];
     
     }
 	  
