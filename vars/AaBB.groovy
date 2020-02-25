@@ -20,7 +20,8 @@ def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NA
     def email =resultJson.values[0].committer.emailAddress
 		//dateArr=$dateArr$data_date,
    Date date = new Date(time) 
-
+   Name name =new Name(name)
+	Email email =new Email(email)
 //echo $dateArr > dateData
 echo "{\"commitDate\":$date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
