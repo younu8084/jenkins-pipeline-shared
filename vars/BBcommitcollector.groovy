@@ -26,7 +26,9 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-     sh "echo resultJson.values[j] >>commiter'${commiter}'.json "
+    y = resultJson.values.author[j];
+    println(y)
+	   sh "echo '${y}' >>commiter'${commiter}'.json "
     }
 	  //Long commitdate=resultJson.values.committerTimestamp[j]
 	  //def name=resultJson.values.author[j].name
