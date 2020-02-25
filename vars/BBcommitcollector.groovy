@@ -56,6 +56,7 @@ println(commits)
 	
 */	
 println(JSON)
+	sh "echo '${JSON}' >> new.json"
  }
 
 
