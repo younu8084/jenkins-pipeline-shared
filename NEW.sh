@@ -1,28 +1,28 @@
 #!/bin/sh
-	export BITBUCKET_USER=rig 
-	export BITBUCKET_PASS=rigaDapt@devOps
-	export bitbucket_url=http://18.224.68.30:7990/
-  export bitbucket_project_name=edn250
-  export bitbucket_repo_name=rig
-	export iterate_flag=true
-  export commits_start=0
-	export rigletName=sample # riglet name
-	cd ..
-	mkdir -p -- "$rigletName"_bitbucket
+export BITBUCKET_USER=rig 
+export BITBUCKET_PASS=rigaDapt@devOps
+export bitbucket_url=http://18.224.68.30:7990/
+export bitbucket_project_name=edn250
+export bitbucket_repo_name=rig
+export iterate_flag=true
+export commits_start=0
+export rigletName=sample # riglet name
+cd ..
+mkdir -p -- "$rigletName"_bitbucket
 
-  while $iterate_flag; do
+ while $iterate_flag; do
 
-		echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
+echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
 
-    scm_commits=$(curl -X GET -k --fail -s --user $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start")
+scm_commits=$(curl -X GET -k --fail -s --user $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start")
 		
-		echo $scm_commits | jq -r '.values' | sed '1d;$d' >> ${rigletName}_bitbucket/bitAllData.json
+echo $scm_commits | jq -r '.values' | sed '1d;$d' >> ${rigletName}_bitbucket/bitAllData.json
 
-    isLastPage=$(echo $scm_commits | jq -r ".isLastPage")
+isLastPage=$(echo $scm_commits | jq -r ".isLastPage")
 
-  	if [ ! $isLastPage = false ];then
-			iterate_flag=false
-		else
+if [ ! $isLastPage = false ];then
+iterate_flag=false
+else
 			echo , >> ${rigletName}_bitbucket/bitAllData.json
 			commits_start=`expr $commits_start + 50`
 		
