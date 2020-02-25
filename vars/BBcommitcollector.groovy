@@ -26,7 +26,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-    y = resultJson.values.author[j];
+    y = resultJson.values[j];
     println(y)
 	   sh "echo '${y}' >>commiter'${commiter}'.json "
     }
