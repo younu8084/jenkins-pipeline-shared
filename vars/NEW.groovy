@@ -23,15 +23,14 @@ defiterate_flag=true
 
   //while $iterate_flag; do
 
-echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start -o output.json"
-
+echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
    sh """ curl -X GET -k --fail -s --user $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start" 
 		
-	"""	//echo $scm_commits | jq -r '.values' | sed '1d;$d' >> ${rigletName}_bitbucket/bitAllData.json
+	"""	echo $scm_commits | jq -r '.values' | sed '1d;$d' >> ${rigletName}_bitbucket/bitAllData.json
 
-  //  isLastPage=$(echo $scm_commits | jq -r ".isLastPage")
+   isLastPage=$(echo $scm_commits | jq -r ".isLastPage")
 
-  	/*if [ ! $isLastPage = false ];then
+  	if [ ! $isLastPage = false ];then
 			iterate_flag=false
 		else
 			echo , >> ${rigletName}_bitbucket/bitAllData.json
@@ -69,7 +68,7 @@ jq -c '.[]' bitAllDataResult.json | while read i; do
 
 		echo "{\"commitDate\":$data_date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
-  done*/
+  done
 }
 def call()
 {
