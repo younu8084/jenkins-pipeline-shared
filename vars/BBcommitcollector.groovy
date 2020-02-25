@@ -25,10 +25,10 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	  Long commitdate=resultJson.values.committerTimestamp[j]
+	  //Long commitdate=resultJson.values.committerTimestamp[j]
 	  def name=resultJson.values.author[j].name
 	  def email=resultJson.values.author[j].emailAddress
-    echo "{\"commitDate\":"$commitdate",\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
+    echo "{\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
    }
   }
