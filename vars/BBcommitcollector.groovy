@@ -15,10 +15,11 @@ println(repoName)
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
   sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits -o output.json"
  } 
-/*def jsonSlurper = new JsonSlurper()
+def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
+def commiter=1
 for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
@@ -30,11 +31,12 @@ for(i=0;i<ecount;i++)
 	  println(name)
 	  def email=resultJson.values.author[j].emailAddress
 	  println(email)
-	sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>bitAllDataDb.txt "
-
+	   sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
+         commiter++;
    }
   }
- }*/
+ }
+/*
 def jsonSlurper = new JsonSlurper()
 def jsonString1 = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def jsonString1 = output.json
@@ -43,7 +45,7 @@ String total=jsonObj1.size
 String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
 println(commits)
 	
-	
+*/	
 
  }
 
