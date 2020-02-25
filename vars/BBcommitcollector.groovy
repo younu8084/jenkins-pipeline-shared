@@ -28,6 +28,7 @@ for(i=0;i<ecount;i++)
    {
     y = resultJson.values[j];
     println(y)
+    sh "echo '${y}' >>commiter'${commiter}'.txt "
     }
 	  //Long commitdate=resultJson.values.committerTimestamp[j]
 	  //def name=resultJson.values.author[j].name
