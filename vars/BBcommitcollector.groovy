@@ -28,7 +28,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	def y = resultJson.values[j];
+	String y = resultJson.values[j];
     
     }
 	  
