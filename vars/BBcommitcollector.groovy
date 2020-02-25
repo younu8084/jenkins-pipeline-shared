@@ -26,8 +26,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-   for (x=0;x<resultJson.values.author[j].size();x++) {
-    y = resultJson.values.author[x];
+    y = resultJson.values.author[j];
     println(y)
     }
 	  //Long commitdate=resultJson.values.committerTimestamp[j]
