@@ -16,7 +16,10 @@ println(repoName)
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
   sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits -o output.json"
  } 
-
+def jsonSlurper = new JsonSlurper()
+def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
+def total = resultJson.size
+  echo "$total"
  
  }
 
