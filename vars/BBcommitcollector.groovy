@@ -37,7 +37,7 @@ for(i=0;i<ecount;i++)
  }*/
 	
 def jsonString1 = output.json
-def jsonObj1 = readJSON text: jsonString	
+def jsonObj1 = readJSON text: jsonString1	
 String total=jsonObj1.size
 String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
 println(commits)
