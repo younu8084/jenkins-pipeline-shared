@@ -15,9 +15,9 @@ def jsonObj = readJSON text: jsonString
 	def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 
- def time=resultJson.values[0].committerTimestamp
-   def name=resultJson.values[0].committer.name
-    def email=resultJson.values[0].committer.emailAddress
+ def time =resultJson.values[0].committerTimestamp
+   def name =resultJson.values[0].committer.name
+    def email =resultJson.values[0].committer.emailAddress
 		//dateArr=$dateArr$data_date,
    Date date = new Date(time) 
 
