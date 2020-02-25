@@ -1,60 +1,31 @@
 
 import groovy.json.*
-import java.util.*
-import java.sql.Timestamp.* 
-import java.util.Date.*
+
 @NonCPS
 create(){
   def jsonSlurper = new JsonSlurper()
-  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output12.json"))
+  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
  // def String="timestamp"
 def total = resultJson.size
   echo "$total"
 def value=resultJson.values.author[0].name
   echo "$value"
  // Date date = new Date() 
- // echo "$date"
- // Timestamp ts=new Timestamp(System.currentTimeMillis());  
-  //Date date=ts;  
-//  def Timestamp = resultJson.values.committerTimestamp[0]
- // Date date= new Date(Timestamp);  
-  function convert(){
- def Timestamp = resultJson.values.committerTimestamp[0]
- // Unixtimestamp
- var unixtimestamp = document.getElementById('Timestamp').value;
+ //echo "$date"
+ def time=resultJson.values[0].committerTimestamp
+   //data_date=$(date -d @`expr $time / 1000` +%Y-%m-%d)
+    //data_date=\"$data_date\"
+   def name=resultJson.values.committer[0].name
+		email=resultJson.values.committer[0].emailAddress
+		//dateArr=$dateArr$data_date,
+   Date date = new Date(time=*1000L) 
+   SimpleDateFormat jdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
+   jdf.setTimeZone(TimeZone.getTimeZone("GMT-4"))
+   String data_date = jdf.format(date)
+   
+		//echo $dateArr > dateData
+		echo "{\"commitDate\":$data_date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
- // Months array
- var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
- // Convert timestamp to milliseconds
- var date = new Date(unixtimestamp*1000);
-
- // Year
- var year = date.getFullYear();
-
- // Month
- var month = months_arr[date.getMonth()];
-
- // Day
- var day = date.getDate();
-
- // Hours
- var hours = date.getHours();
-
- // Minutes
- var minutes = "0" + date.getMinutes();
-
- // Seconds
- var seconds = "0" + date.getSeconds();
-
- // Display date time in MM-dd-yyyy h:m:s format
- var convdataTime = month+'-'+day+'-'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
- 
- document.getElementById('datetime').innerHTML = convdataTime;
- 
-}
-  
-  echo "$convdataTime"
   def count=0
   //
  for(i=0;i<total;i++)
