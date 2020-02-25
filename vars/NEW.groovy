@@ -1,19 +1,26 @@
 //#!/bin/sh
 
-def call()
-{
-	def BITBUCKET_USER="rig" 
-	def BITBUCKET_PASS="rigaDapt@devOps"
-	def bitbucket_url="http://18.224.68.30:7990"
+import groovy.json.*
+
+@NonCPS
+def create(){
+  def jsonSlurper = new JsonSlurper()
+  //def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/ouput.json"),"UTF-8"))
+  
+  def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/ouput.json"))
+  
+def BITBUCKET_USER="rig" 
+def BITBUCKET_PASS="rigaDapt@devOps"
+def bitbucket_url="http://18.224.68.30:7990"
   def bitbucket_project_name="EDN250"
   def bitbucket_repo_name="rig"
-	defiterate_flag=true
+defiterate_flag=true
   def commits_start=0
-	def rigletName=sample riglet name
-	cd ..
-	//mkdir -p -- "$rigletName"_bitbucket
+//def rigletName=sample riglet name
+//	cd ..
+//	mkdir -p -- "$rigletName"_bitbucket
 
-  while $iterate_flag; do
+  //while $iterate_flag; do
 
 echo $BITBUCKET_USER:$BITBUCKET_PASS "$bitbucket_url/rest/api/1.0/projects/${bitbucket_project_name}/repos/${bitbucket_repo_name}/commits?limit=50&start=$commits_start"
 
@@ -62,4 +69,8 @@ jq -c '.[]' bitAllDataResult.json | while read i; do
 		echo "{\"commitDate\":$data_date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
 
   done
+}
+def call()
+{
+create()
 }
