@@ -16,6 +16,7 @@ def bitbucket_url="http://18.224.68.30:7990"
   def bitbucket_repo_name="rig"
 defiterate_flag=true
   def commits_start=0
+	def String="scm_commits"
 //def rigletName=sample riglet name
 //	cd ..
 //	mkdir -p -- "$rigletName"_bitbucket
