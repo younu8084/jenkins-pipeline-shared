@@ -9,7 +9,7 @@ def call()
   def bitbucket_repo_name="rig"
 	defiterate_flag=true
   def commits_start=0
-	def rigletName=sample # riglet name
+	def rigletName=sample riglet name
 	cd ..
 	mkdir -p -- "$rigletName"_bitbucket
 
