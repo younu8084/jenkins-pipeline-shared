@@ -21,7 +21,7 @@ def value=resultJson.values.author[0].name
    def name=resultJson.values.committer[0].name
 		email=resultJson.values.committer[0].emailAddress
 		//dateArr=$dateArr$data_date,
-   Date date = new Date(time=*1000L) 
+   Date date = new Date(time*1000L) 
    SimpleDateFormat jdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
    jdf.setTimeZone(TimeZone.getTimeZone("GMT-4"))
    String data_date = jdf.format(date)
