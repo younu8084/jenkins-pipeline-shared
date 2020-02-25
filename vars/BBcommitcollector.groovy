@@ -1,5 +1,5 @@
 import groovy.json.*
-
+@NonCPS
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
