@@ -20,8 +20,8 @@ def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NA
 def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 def commiter=1
-def i=0
-while(i<ecount)
+
+for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
   {
@@ -40,7 +40,7 @@ while(i<ecount)
          
 	
    }
-	 i++
+	
   }
  
 /*
