@@ -3,38 +3,36 @@ import groovy.json.*
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
-
- sh""" 
- curl -X GET  -H -d  -u rig:rigaDapt@devOps "http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/rig/commits -o output.json"  
-    """
-	
-//def total = resultJson.size
-  //echo "$total"
-//def value=resultJson.values.author[0].name
- // echo "$value"
-	def jsonSlurper = new JsonSlurper()
+String a=jsonObj.scm.projects.project.repositories.repository.repo_name
+String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
+String b=jsonObj.scm.projects.project.project_key 
+String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
+int ecount = jsonObj.config.emails.email.size()
+println("No of users "+ ecount)
+println(Key)
+println(repoName)
+ withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
+  sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits -o output.json"
+ } 
+def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
+def total = resultJson.size
+ echo "Total no.of commits in ${repoName} $total"
+def commiter=1
+List<String> JSON = new ArrayList<String>();
 
- def time =resultJson.values[0].committerTimestamp
-   def name =resultJson.values[0].committer.name
-    def email =resultJson.values[0].committer.emailAddress
-		//dateArr=$dateArr$data_date,
-   Date date = new Date(time) 
-   Name name =new Name(name)
-	Email email =new Email(email)
-//echo $dateArr > dateData
-echo "{\"commitDate\":$date,\"contributorsName\":"$name",\"contributorsEmail\":"$email"}," >> bitAllDataDb.json
-
-	//def count=0
-  //
-/* for(i=0;i<total;i++)
+for(i=0;i<ecount;i++)
  {
-   //if(resultJson.values.committerTimestamp[i]==1582522990000)
-   if (resultJson.values.committerTimestamp[i]==date)
+  for(j=0;j<total;j++)
+  {
+   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-    count ++
-   }
- }
-  echo "$count"*/
- }
+	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
+    }
+}
+}
 
+String 
+println(JSON)
+	sh "echo '${JSON}' >> new.json"
+ }
