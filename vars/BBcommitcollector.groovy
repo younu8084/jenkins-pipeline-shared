@@ -31,7 +31,7 @@ for(i=0;i<ecount;i++)
    {
 	//JSON[i].add(JsonOutput.toJson(resultJson.values[j]))
 	 JSON[i]= resultJson.values[j]
-	  JSON[i].addAll(Jcopy[i])
+	  JSON[i].addAll(JCOPY[i])
     
     }
 JCOPY[i]=JSON[i]	  
