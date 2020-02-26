@@ -21,7 +21,7 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
-List<String> JCOPY = new ArrayList<String>();
+//List<String> JCOPY = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
  {
@@ -39,7 +39,7 @@ for(i=0;i<ecount;i++)
 }
 println(JSON)	
 //def resultJson = jsonSlurper.parse(JSON)
- if (JSON.author[0].name==jsonObj.config.emails.email[2]))
+ if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
 		println("GOT IT")
 	}
