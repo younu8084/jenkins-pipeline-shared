@@ -36,7 +36,7 @@ for(i=0;i<ecount;i++)
 println(JSON)	
 println(JSON.size())
 String Array = JSON;
-String Property = "email";
+String Property = "emailAddress";
 String commitsbyuser = _.groupBy(Array, Property);
 println(commitsbyuser)
   }
