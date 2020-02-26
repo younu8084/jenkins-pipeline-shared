@@ -21,8 +21,7 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 
 List<String> JSON = new ArrayList<String>();
-	//int[] i=0;
-	//int[] j=0;
+	
 for(i=0;i<ecount;i++)
  {
  for(j=0;j<=1;j++)
@@ -30,26 +29,12 @@ for(i=0;i<ecount;i++)
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
 	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
-	   
-  //  y = resultJson.values[j];
-    //echo "y >>commiter'${commiter}'.txt"
+    }
 }
-}
-}
- 
-/*
-def jsonSlurper = new JsonSlurper()
-def jsonString1 = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
-//def jsonString1 = output.json
-def jsonObj1 = readJSON text: jsonString1	
-String total=jsonObj1.size
-String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
-println(commits)
-	
-*/
+
+ }
 
 String 
 println(JSON)
-//	sh "echo '${JSON}' >> new.json"
  }
 
