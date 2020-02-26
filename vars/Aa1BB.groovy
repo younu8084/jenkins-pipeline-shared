@@ -37,6 +37,4 @@ for(i=0;i<ecount;i++)
 
 String 
 println(JSON)
-	println(JSON1)
- }
-
+}
