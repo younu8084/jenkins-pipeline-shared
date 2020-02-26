@@ -35,9 +35,9 @@ for(i=0;i<ecount;i++)
       }
 println(JSON)	
 println(JSON.size())
-String Array = JSON;
-String Property = "resultJson.values.author[j].emailAddress";
-String commitsbyuser = _.groupBy(Array, Property);
+def Array = JSON;
+def Property = "resultJson.values.author[j].emailAddress";
+def commitsbyuser = _.groupBy(Array, Property);
 println(commitsbyuser)
 	 
 //def n=JsonOutput.toJson(JSON.groupBy{it.resultJson.values.author[j].emailAddress}.collect{['resultJson.values.author[j].emailAddress':it.key]})
