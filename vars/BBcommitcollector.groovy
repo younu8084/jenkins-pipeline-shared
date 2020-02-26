@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
       }
 }
 println(JSON)	
- if (JSON.contains(jsonObj.config.emails.email[1]))
+ if (JSON.contains(JSON,jsonObj.config.emails.email[1]))
 	{
 		println("GOT IT")
 	}
