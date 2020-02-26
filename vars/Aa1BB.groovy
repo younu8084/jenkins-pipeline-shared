@@ -3,14 +3,66 @@ import groovy.json.*
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
-//String a=jsonObj.scm.projects.project.repositories.repository.repo_name
-//String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
-//String b=jsonObj.scm.projects.project.project_key 
-//String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
-//println(Key)
-//println(repoName)
- Date date = new Date() 
+String a=jsonObj.scm.projects.project.repositories.repository.repo_name
+String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
+String b=jsonObj.scm.projects.project.project_key 
+String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
+int ecount = jsonObj.config.emails.email.size()
+println("No of users "+ ecount)
+println(Key)
+println(repoName)
+// Date date = new Date() 
  withCredentials([usernamePassword(credentialsId: 'bitbucket_cred', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-  sh 'curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/EDN/repos/demo12/commits -o output12.json'
+  sh "curl -X GET  -H -d  -u $userId:$pass http://18.224.68.30:7990/rest/api/1.0/projects/'${Key}'/repos/'${repoName}'/commits -o output.json"
  } 
-}
+def jsonSlurper = new JsonSlurper()
+def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
+def total = resultJson.size
+ echo "Total no.of commits in ${repoName} $total"
+
+List<String> JSON = new ArrayList<String>();
+ def emailAddressMap =[:]
+emailAddressMap['Kavitha']="kavitha.r15@wipro.com" 
+emailAddressMap['Manimekalai']="manimekalai.murugan@wipro.com" 
+ //def wordList = ['kavitha.r15@wipro.com', 'manimekalai.murugan@wipro.coma']
+//def wordCountMap = wordList.collectEntries{ [(it):it.length()] }
+for(i=0;i<ecount;i++)
+ {
+  for(j=0;j<total;j++)
+  {
+   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
+   {
+	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
+  //  y = resultJson.values[j];
+    //echo "y >>commiter'${commiter}'.txt"
+	//   sh "echo '${y}' >>commiter'${commiter}'.json "
+    }
+	  //Long commitdate=resultJson.values.committerTimestamp[j]
+	  //def name=resultJson.values.author[j].name
+	  //println(name)
+	  //def email=resultJson.values.author[j].emailAddress
+	  //println(email)
+	 // sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
+         
+	
+   }
+	
+  }
+ 
+/*
+def jsonSlurper = new JsonSlurper()
+def jsonString1 = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
+//def jsonString1 = output.json
+def jsonObj1 = readJSON text: jsonString1	
+String total=jsonObj1.size
+String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
+println(commits)
+	
+*/
+ String 
+ println "emailAddressMap: ${emailAddressMap['Kavitha']}"
+//String 
+//println(JSON)
+//	sh "echo '${JSON}' >> new.json"
+ }
+
