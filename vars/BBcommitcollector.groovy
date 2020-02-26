@@ -30,14 +30,14 @@ for(i=0;i<ecount;i++)
    {
 	JSON[i]=JsonOutput.toJson(resultJson.values[j])
 	// JSON[i]= resultJson.values[j]
-	   println(JSON[i])
-	   
+	  
     
     }
 	  
       }
 
-
+ println(JSON[i])
+	   
 //println(JSON[i].size())
   }
  
