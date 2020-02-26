@@ -58,7 +58,7 @@ println(commits)
 */
 
 String 
-println(map)
+println(JSON)
 //	sh "echo '${JSON}' >> new.json"
  }
 
