@@ -48,8 +48,9 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
+def Array = jsonSlurper.parse(JSON)
 def Property = "resultJson.values.author[1].emailAddress";
-def commitsbyuser = JSON.groupBy(JSON, Property);
+def commitsbyuser = JSON.groupBy(Array, Property);
 println(commitsbyuser)
 	 
  }
