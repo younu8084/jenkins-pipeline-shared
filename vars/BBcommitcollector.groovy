@@ -38,7 +38,8 @@ for(i=0;i<ecount;i++)
       }
 }
 println(JSON)	
- if (JSON.contains(JSON,jsonObj.config.emails.email[1]))
+//def resultJson = jsonSlurper.parse(JSON)
+ if (JSON.author[0].name==jsonObj.config.emails.email[2]))
 	{
 		println("GOT IT")
 	}
