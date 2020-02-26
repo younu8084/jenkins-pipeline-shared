@@ -55,10 +55,10 @@ println(JSON.size())
      ]
 }
 println(result)	*/
-	
+def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def Array = jsonSlurper.parse(JSON)
-def Property = "resultJson.values.author[1].emailAddress";
-def commitsbyuser = resultJson.groupBy(resultJson, Property);
+def Property = "Array.values.author[1].emailAddress";
+def commitsbyuser = Array.groupBy(Array, Property);
 println(commitsbyuser)
 	 
  }
