@@ -48,7 +48,10 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-
+def Property = "resultJson.values.author[1].emailAddress";
+def commitsbyuser = JSON.groupBy(JSON, Property);
+println(commitsbyuser)
+	 
  }
 
 
