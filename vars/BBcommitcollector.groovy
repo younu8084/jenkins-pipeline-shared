@@ -28,7 +28,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	JSON.add(JsonOutput.toJson(resultJson.values[j])) 
+	JSON.add(JsonOutput(resultJson.values[j])) 
     
     }
 	  
@@ -48,9 +48,9 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-def Array = jsonSlurper.parse(JSON)
+//def Array = jsonSlurper.parse(JSON)
 def Property = "resultJson.values.author[1].emailAddress";
-def commitsbyuser = JSON.groupBy(Array, Property);
+def commitsbyuser = JSON.groupBy(JSON, Property);
 println(commitsbyuser)
 	 
  }
