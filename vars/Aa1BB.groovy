@@ -22,7 +22,7 @@ def total = resultJson.size
 
 List<String> JSON = new ArrayList<String>();
 	def map = [:]
-      map = "resultJson.values.author[1].emailAddress";	
+      map ['resultJson.values.author[1].emailAddress']=JSON	
 for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
