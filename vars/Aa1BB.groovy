@@ -23,28 +23,19 @@ def total = resultJson.size
 List<String> JSON = new ArrayList<String>();
 	//int[] i=0;
 	//int[] j=0;
-//for(i=0;i<ecount;i++)
- //{
- // for(j=0;j<total;j++)
+for(i=0;i<ecount;i++)
+ {
+ for(j=0;j<=1)
  
-   if(jsonObj.config.emails.email[1]==resultJson.values.author[1].emailAddress)
+   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
 	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
+	   
   //  y = resultJson.values[j];
     //echo "y >>commiter'${commiter}'.txt"
-	//   sh "echo '${y}' >>commiter'${commiter}'.json "
-    }
-	  //Long commitdate=resultJson.values.committerTimestamp[j]
-	  //def name=resultJson.values.author[j].name
-	  //println(name)
-	  //def email=resultJson.values.author[j].emailAddress
-	  //println(email)
-	 // sh "echo contributorsName :'${name}', contributorsEmail :'${email}' >>commiter'${commiter}'.txt "
-         
-	
-  // }
-	
-  //}
+}
+}
+}
  
 /*
 def jsonSlurper = new JsonSlurper()
