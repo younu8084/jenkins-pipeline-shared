@@ -22,7 +22,7 @@ def total = resultJson.size
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-
+JCOPY="null"
 for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
