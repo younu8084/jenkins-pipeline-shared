@@ -21,11 +21,8 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 
 List<String> JSON = new ArrayList<String>();
- def emailAddressMap =[:]
-emailAddressMap['Kavitha']="kavitha.r15@wipro.com" 
-emailAddressMap['Manimekalai']="manimekalai.murugan@wipro.com" 
- //def wordList = ['kavitha.r15@wipro.com', 'manimekalai.murugan@wipro.coma']
-//def wordCountMap = wordList.collectEntries{ [(it):it.length()] }
+	def map = [:]
+       def map = "resultJson.values.author[1].emailAddress";	
 for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
@@ -59,10 +56,9 @@ String commits=total.replaceAll("\\[", "").replaceAll("\\]","");
 println(commits)
 	
 */
- String 
- println "emailAddressMap: ${emailAddressMap['Kavitha']}"
-//String 
-//println(JSON)
+
+String 
+println(map)
 //	sh "echo '${JSON}' >> new.json"
  }
 
