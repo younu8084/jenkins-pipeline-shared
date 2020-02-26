@@ -28,7 +28,7 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	JSON.add(JsonOutput.toJson(resultJson.values[j])) 
+	JSON(JsonOutput.toJson(resultJson.values[j])) 
     
     }
 	  
@@ -55,11 +55,11 @@ println(JSON.size())
      ]
 }
 println(result)	*/
-def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
+//def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def Array = jsonSlurper.parse(JSON)
-def Property = "Array.values.author[1].emailAddress";
+/*def Property = "Array.values.author[1].emailAddress";
 def commitsbyuser = Array.groupBy(Array, Property);
-println(commitsbyuser)
+println(commitsbyuser)*/
 	 
  }
 
