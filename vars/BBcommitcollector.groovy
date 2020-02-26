@@ -48,10 +48,10 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-def result = JSON.groupBy { [id:it.id, name:it.author[1].name] }.collect { k, v ->
-    [emailAddress:k.author[1].emailAddress,
-     id:k.id,
-     name:k.author[1].name,
+def result = resultJson.groupBy { [emailAddress:it.resultJson.values.author[1].emailAddress, id:it.resultJson.values.id, name:it.resultJson.values.author[1].name] }.collect { k, v ->
+    [emailAddress:k.resultJson.values.author[1].emailAddress,
+     id:k.resultJson.values.id,
+     name:k.resultJson.values.author[1].name,
      ]
 }
 println(result)	
