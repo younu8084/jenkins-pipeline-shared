@@ -35,10 +35,13 @@ for(i=0;i<ecount;i++)
       }
 println(JSON)	
 println(JSON.size())
-String Array = JSON;
+/*String Array = JSON;
 String Property = "emailAddress";
 String commitsbyuser = _.groupBy(Array, Property);
-println(commitsbyuser)
+println(commitsbyuser)*/
+	 
+def n=groovy.json.JsonOutput.toJson(Json.groupBy{it.emailAddress}.collect{['emailAddress':it.key]})
+println(n)
   }
  
 
