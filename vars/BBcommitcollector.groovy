@@ -50,7 +50,7 @@ println(JSON)
 println(JSON.size())
 if(JSON.find(displayId="a3042a6b042"))
 	{
-		println(jsonObj.config.emails.email[1])
+		println("got it")
 	}
 //def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def Array = jsonSlurper.parse(JSON)
