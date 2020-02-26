@@ -37,12 +37,13 @@ for(i=0;i<ecount;i++)
 //JCOPY[i]=JSON[i]	  
       }
 }
-println(JSON)	
+println(JSON)
+println(JSON.author[0].name[0])
 //def resultJson = jsonSlurper.parse(JSON)
- if (JSON.author[0].name==jsonObj.config.emails.email[2])
+ /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
 		println("GOT IT")
-	}
+	}*/
 
 }
 
