@@ -35,9 +35,9 @@ for(i=0;i<ecount;i++)
       }
 println(JSON)	
 println(JSON.size())
-const Array = JSON;
-const Property = "email";
-const commitsbyuser = _.groupBy(Array, Property);
+String Array = JSON;
+String Property = "email";
+String commitsbyuser = _.groupBy(Array, Property);
 println(commitsbyuser)
   }
  
