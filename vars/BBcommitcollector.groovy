@@ -33,8 +33,7 @@ for(i=0;i<ecount;i++)
     }
 	  
       }
-println(JSON)	
-println(JSON.size())
+
 //def result = JSON.groupBy({ customer -> customer.country })	 
 	 
 //def Array = JSON;
@@ -47,7 +46,8 @@ println(JSON.size())
   }
  
 
-
+println(JSON)	
+println(JSON.size())
 
  }
 
