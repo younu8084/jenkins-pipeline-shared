@@ -48,13 +48,10 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-/*def result = resultJson.groupBy { [values.author[1].emailAddress:it.emailAddress, values.id:it.values.id, values.author[1].name:it.values.author[1].name] }.collect { k, v ->
-    [emailAddress:k.values.author[1].emailAddress,
-     id:k.values.id,
-     name:k.values.author[1].name
-     ]
-}
-println(result)	*/
+if(JSON.contains(jsonObj.config.emails.email[1]))
+	{
+		println(jsonObj.config.emails.email[1])
+	}
 //def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def Array = jsonSlurper.parse(JSON)
 /*def Property = "Array.values.author[1].emailAddress";
