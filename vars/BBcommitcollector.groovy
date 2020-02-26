@@ -48,10 +48,18 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-//def Array = jsonSlurper.parse(JSON)
+def result = JSON.groupBy { [emailAddress:it.resultJson.values.author[1].emailAddress, id:it.resultJson.values.id, name:it.resultJson.values.author[1].name] }.collect { k, v ->
+    [emailAddress:k.resultJson.values.author[1].emailAddress,
+     id:k.resultJson.values.id,
+     name:k.resultJson.values.author[1].name,
+     ]
+}
+println(result)	
+	
+/*def Array = jsonSlurper.parse(JSON)
 def Property = "resultJson.values.author[1].emailAddress";
 def commitsbyuser = JSON.groupBy(JSON, Property);
-println(commitsbyuser)
+println(commitsbyuser)*/
 	 
  }
 
