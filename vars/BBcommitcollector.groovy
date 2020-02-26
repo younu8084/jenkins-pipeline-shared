@@ -35,10 +35,12 @@ for(i=0;i<ecount;i++)
       }
 println(JSON)	
 println(JSON.size())
-/*def Array = JSON;
+//def result = JSON.groupBy({ customer -> customer.country })	 
+	 
+def Array = JSON;
 def Property = "resultJson.values.author[j].emailAddress";
-def commitsbyuser = _.groupBy(Array, Property);
-println(commitsbyuser)*/
+def commitsbyuser = JSON.groupBy(Array, Property);
+println(commitsbyuser)
 	 
 //def n=JsonOutput.toJson(JSON.groupBy{it.resultJson.values.author[j].emailAddress}.collect{['resultJson.values.author[j].emailAddress':it.key]})
 //println(n)
