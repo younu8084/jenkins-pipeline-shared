@@ -24,7 +24,7 @@ List<String> JSON = new ArrayList<String>();
 	
 for(i=0;i<ecount;i++)
  {
- for(j=0;j<=1;j++)
+ for(j=0;j<=total;j++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
