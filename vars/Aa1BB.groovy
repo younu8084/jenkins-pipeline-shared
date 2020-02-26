@@ -21,13 +21,13 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 
 List<String> JSON = new ArrayList<String>();
-	def map = [:]
-      map ['resultJson.values.author[1].emailAddress']=JSON	
-for(i=0;i<ecount;i++)
- {
-  for(j=0;j<total;j++)
-  {
-   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
+	//int[] i=0;
+	//int[] j=0;
+//for(i=0;i<ecount;i++)
+ //{
+ // for(j=0;j<total;j++)
+ 
+   if(jsonObj.config.emails.email[1]==resultJson.values.author[1].emailAddress)
    {
 	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
   //  y = resultJson.values[j];
