@@ -37,9 +37,9 @@ println(JSON)
 println(JSON.size())
 //def result = JSON.groupBy({ customer -> customer.country })	 
 	 
-def Array = JSON;
+//def Array = JSON;
 def Property = "resultJson.values.author[j].emailAddress";
-def commitsbyuser = JSON.groupBy(Array, Property);
+def commitsbyuser = JSON.groupBy(JSON, Property);
 println(commitsbyuser)
 	 
 //def n=JsonOutput.toJson(JSON.groupBy{it.resultJson.values.author[j].emailAddress}.collect{['resultJson.values.author[j].emailAddress':it.key]})
