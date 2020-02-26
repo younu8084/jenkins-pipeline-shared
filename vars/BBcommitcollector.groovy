@@ -28,7 +28,8 @@ for(i=0;i<ecount;i++)
   {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	JSON.add(JsonOutput.toJson(resultJson.values[j]))
+	//JSON.add(JsonOutput.toJson(resultJson.values[j]))
+	 def y = resultJson.values[j]
     
     }
 	  
@@ -46,12 +47,9 @@ for(i=0;i<ecount;i++)
   }
  
 
-println(JSON)	
-println(JSON.size())
-if(JSON.find(displayId="a3042a6b042"))
-	{
-		println("got it")
-	}
+println(y)	
+println(y.size())
+
 //def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
 //def Array = jsonSlurper.parse(JSON)
 /*def Property = "Array.values.author[1].emailAddress";
