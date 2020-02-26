@@ -35,12 +35,12 @@ for(i=0;i<ecount;i++)
 	  
       }
 
-
+println(JSON[i])	
+println(JSON[i].size())
   }
  
 
-println(JSON[0])	
-println(JSON[0].size())
+
 
 
 	 
