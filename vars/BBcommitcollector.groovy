@@ -37,14 +37,14 @@ for(i=0;i<ecount;i++)
 //JCOPY[i]=JSON[i]	  
       }
 
- println(JSON)
+
 	   
-//println(JSON[i].size())
+
   }
  
 
 
-//println(JSON[1])	
+println(JSON)	
 
 	 
  }
