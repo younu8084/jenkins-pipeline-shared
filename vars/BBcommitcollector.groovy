@@ -36,17 +36,13 @@ for(i=0;i<ecount;i++)
     }
 //JCOPY[i]=JSON[i]	  
       }
-
-
-	   
-
-  }
- 
-
-
+}
 println(JSON)	
+ if (JSON.contains(jsonObj.config.emails.email[1]))
+	{
+		println("GOT IT")
+	}
 
-	 
- }
+}
 
 
