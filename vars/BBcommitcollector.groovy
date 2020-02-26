@@ -35,26 +35,14 @@ for(i=0;i<ecount;i++)
 	  
       }
 
-//def result = JSON.groupBy({ customer -> customer.country })	 
-	 
-//def Array = JSON;
-//def Property = "resultJson.values.author[i].emailAddress";
-//def commitsbyuser = JSON.groupBy(JSON, Property);
-//println(commitsbyuser)
-	 
-//def n=JsonOutput.toJson(JSON.groupBy{it.resultJson.values.author[j].emailAddress}.collect{['resultJson.values.author[j].emailAddress':it.key]})
-//println(n)
+
   }
  
 
-println(JSON)	
-println(JSON.size())
+println(JSON[0])	
+println(JSON[0].size())
 
-//def Array= jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))	
-//def Array = jsonSlurper.parse(JSON)
-/*def Property = "Array.values.author[1].emailAddress";
-def commitsbyuser = Array.groupBy(Array, Property);
-println(commitsbyuser)*/
+
 	 
  }
 
