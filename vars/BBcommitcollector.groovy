@@ -40,7 +40,7 @@ String Property = "emailAddress";
 String commitsbyuser = _.groupBy(Array, Property);
 println(commitsbyuser)*/
 	 
-def n=groovy.json.JsonOutput.toJson(Json.groupBy{it.emailAddress}.collect{['emailAddress':it.key]})
+def n=groovy.json.JsonOutput.toJson(JSON.groupBy{it.emailAddress}.collect{['emailAddress':it.key]})
 println(n)
   }
  
