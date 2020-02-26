@@ -48,7 +48,7 @@ for(i=0;i<ecount;i++)
 
 println(JSON)	
 println(JSON.size())
-if(JSON.contains(jsonObj.config.emails.email[1]))
+if(JSON.find(author.name="rig"))
 	{
 		println(jsonObj.config.emails.email[1])
 	}
