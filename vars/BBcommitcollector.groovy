@@ -39,7 +39,7 @@ for(i=0;i<ecount;i++)
 }
 println(JSON.size())
 println(JSON[0])
-def Array =jsonSlurper.parseText(JSON);
+def Array =JSON;
 String Property = "jsonObj.config.emails.email[1]";
 String commitusers =_.groupBy(Array, Property);
 //def resultJson = jsonSlurper.parse(JSON)
