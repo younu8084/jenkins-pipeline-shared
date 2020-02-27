@@ -39,7 +39,7 @@ for(i=0;i<ecount;i++)
 }
 println(JSON.size())
 println(JSON[0])
-println JSON.findAll { map -> map.email == 'rituparna.ghosh@wipro.com' && map.id == 'a3042a6b0427ab4b049f27dde71ef3f5340d1f57' }
+println JSON.findAll { map -> map.JSON.author[0].email == 'rituparna.ghosh@wipro.com' && map.JSON.id[0] == 'a3042a6b0427ab4b049f27dde71ef3f5340d1f57' }
 //def resultJson = jsonSlurper.parse(JSON)
  /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
