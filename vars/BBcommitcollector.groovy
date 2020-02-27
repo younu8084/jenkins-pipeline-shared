@@ -41,7 +41,7 @@ println(JSON.size())
 println(JSON[0])
 def Array =jsonSlurper.parseText(JSON);
 String Property = "jsonObj.config.emails.email[1]";
-String commitusers = Array.groupBy(Array, Property);
+String commitusers =_.groupBy(Array, Property);
 //def resultJson = jsonSlurper.parse(JSON)
  /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
