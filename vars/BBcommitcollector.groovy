@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
       }
 }
 println(JSON)
-println(JSON[1])
+println(JSON[0])
 //def resultJson = jsonSlurper.parse(JSON)
  /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
