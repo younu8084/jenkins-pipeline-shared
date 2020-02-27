@@ -39,9 +39,7 @@ for(i=0;i<ecount;i++)
 }
 println(JSON.size())
 println(JSON[0])
-List<String> Array =JSON;
-String Property = "jsonObj.config.emails.email[1]";
-String commitusers =_.groupBy(Array, Property);
+println JSON.findAll { map -> map.email == 'rituparna.ghosh@wipro.com' && map.id == 'a3042a6b0427ab4b049f27dde71ef3f5340d1f57' }
 //def resultJson = jsonSlurper.parse(JSON)
  /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
 	{
