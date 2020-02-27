@@ -37,8 +37,9 @@ for(i=0;i<ecount;i++)
 //JCOPY[i]=JSON[i]	  
       }
 }
-println(JSON)
+println(JSON.size())
 println(JSON[0])
+	//for(i=0;i<
 	if(JSON[0].contains(jsonObj.config.emails.email[1]))
 	{
 		println("GOT IT")
