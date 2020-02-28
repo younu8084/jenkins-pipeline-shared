@@ -22,7 +22,7 @@ def total = resultJson.size
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-
+Map<String, List<String>> map = new HashMap<String, List<String>>();
 for(i=0;i<ecount;i++)
  {
   for(j=0;j<total;j++)
@@ -40,32 +40,24 @@ for(i=0;i<ecount;i++)
       }
 	 println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
-	// JCOPY.add(JsonOutput.toJson(JCOPY[i])
-	 println(JCOPY[i])
-	// println(JCOPY[i].size())
+	 map.put(jsonObj.config.emails.email[i],JCOPY[i])
+	 //println(JCOPY[i])
+	
 	 JSON.clear()
 	 
 
 	  
 }
-//println(JCOPY)
-for(i=0;i<JCOPY.size();i++)
+println(map)
+/*for(i=0;i<JCOPY.size();i++)
 	{
-		def count=0
-		println(JCOPY[i])
-		//println(JCOPY[i].size())
-	while(i<JCOPY.size())
-		{
-       if(JCOPY[i].contains(author[j].emailAddress)
-	  {
-		  count++
-	  }
-	  }
-	println(count)
-	}
+		
+		
+		println(map[i])
+		
 	
 	
 
-}
+}*/
 
 
