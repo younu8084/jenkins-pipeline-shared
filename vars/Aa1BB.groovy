@@ -36,7 +36,7 @@ List<String> JSON1 = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
  {	 
- for(j=0;j<=total;j++)
+ for(j=0;j<total;j++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
        if(JSON[i]==JSON[j+1])
