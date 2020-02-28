@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
   
       }
 	 println(jsonObj.config.emails.email[i])
-	 JCOPY[i]=JsonOutput.toJson(JSON)
+	 JCOPY[i]=JsonOutput.JsonUnescaped(JSON)
 	 println(JCOPY[i])
 	 println(JCOPY[i].size())
 	 JSON.clear()
