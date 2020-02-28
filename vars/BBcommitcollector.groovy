@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
   
       }
 	 println(jsonObj.config.emails.email[i])
-	 JCOPY[i]=JsonOutput.toJson(JSON)
+	 JCOPY[i]=JsonOutput.toJson(JSON).replaceAll("\\[", "").replaceAll("\\]","");
 	 println(JCOPY[i])
 	 JSON.clear()
 	  
