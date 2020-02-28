@@ -34,12 +34,13 @@ List<String> JSON1 = new ArrayList<String>();
 
  }*/
 
-for(i=0;i<ecount;i++)
+for(i=1;i<=ecount;i++)
  {	 
  for(j=0;j<total;j++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
-        if(JSON[i]==JSON[i+1])
+    // for(i=0;i<ecount;i++)
+        if(JSON[i]==JSON[j+1])
 	      {
                 JSON.add(JsonOutput.toJson(resultJson.values[j]))
 		continue;
@@ -53,5 +54,5 @@ for(i=0;i<ecount;i++)
 	
 String 
 println(JSON)
-	println(JSON1)
+println(JSON1)
 }
