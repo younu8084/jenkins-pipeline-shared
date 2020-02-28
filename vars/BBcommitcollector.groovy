@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
   
       }
 	 println(jsonObj.config.emails.email[i])
-	 JCOPY[i]=jsonSlurper.parse(JSON)
+	 JCOPY[i]=jsonSlurper.parseText(JSON)
 	 println(JCOPY[i])
 	 
 	 JSON.clear()
