@@ -25,6 +25,7 @@ List<String> JCOPY = new ArrayList<String>();
 Map<String, List<String>> map = new HashMap<String, List<String>>();
 for(i=0;i<ecount;i++)
  {
+	 def email=jsonObj.config.emails.email[i]
   for(j=0;j<total;j++)
   {
  if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
@@ -40,7 +41,7 @@ for(i=0;i<ecount;i++)
       }
 	 println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
-	 map.put(jsonObj.config.emails.email[i],JCOPY[i])
+	 map.put(email,JCOPY[i])
 	 //println(JCOPY[i])
 	
 	 JSON.clear()
