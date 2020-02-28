@@ -42,7 +42,7 @@ for(i=0;i<ecount;i++)
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
 	// JCOPY.add(JsonOutput.toJson(JCOPY[i])
 	 println(JCOPY[i])
-	 
+	 println(JCOPY[i].size())
 	 JSON.clear()
 	 
 
@@ -52,12 +52,9 @@ for(i=0;i<ecount;i++)
 for(i=0;i<JCOPY.size();i++)
 	{
 		println(JCOPY[i])
+		println(JCOPY[i].size())
        
-	/*if(JCOPY[i].contains("rig"))
-	{
-		
-	    
-	}*/
+	
 	
 	}
 	
