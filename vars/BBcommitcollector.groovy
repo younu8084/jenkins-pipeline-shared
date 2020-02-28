@@ -53,6 +53,11 @@ for(i=0;i<JCOPY.size();i++)
 	{
 		println(JCOPY[i])
 	}
+	
+	if(JCOPY.contains("rig"))
+	{
+		printn("HI")
+	}
 
 }
 
