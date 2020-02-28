@@ -56,8 +56,10 @@ println(size)*/
 	for(i=0;i<total;i++)
 	{
 	if(JCOPY.contains("jsonObj.config.emails.email[i]")
+	   {
 	   count++
 	   println(count)
+	   }
 	 }
 	   
 }
