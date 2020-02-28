@@ -44,7 +44,10 @@ for(i=0;i<ecount;i++)
 	  
 }
 
-
+for(i=0;i<JCOPY.size();i++)
+	{
+		println(JCOPY[i])
+	}
 
 }
 
