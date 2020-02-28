@@ -48,15 +48,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-println(map)
-/*for(i=0;i<JCOPY.size();i++)
-	{
-		
-		
-		println(map[i])
-		
-	
-	}*/
+println(map[0].size)
 
 }
 
