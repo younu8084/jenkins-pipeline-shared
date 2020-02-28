@@ -46,17 +46,15 @@ for(i=0;i<ecount;i++)
                 JSON.add(JsonOutput.toJson(resultJson.values[j]))
 		continue;
 	       }
+       }
 		  else 
 		  {
 		  JSON1.add(JsonOutput.toJson(resultJson.values[j]))
 		  }
-	  }
 		  
 }
 
  }	
-	
-
 String 
 println(JSON)
 	println(JSON1)
