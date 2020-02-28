@@ -55,7 +55,7 @@ for(i=0;i<JCOPY.size();i++)
 
 	if(JCOPY[i].contains("rig"))
 	{
-		prinln("HI")
+		println("HI")
 	}
 	
 	}
