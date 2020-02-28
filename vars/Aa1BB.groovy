@@ -45,13 +45,22 @@ for(i=0;i<ecount;i++)
                 JSON.add(JsonOutput.toJson(resultJson.values[j]))
 		continue;
 	      }
-	     else 
-		  {
-		  JSON1.add(JsonOutput.toJson(resultJson.values[i]))
-		  }
  }
  }
 	
+for(i=0;i<ecount;i++)
+ {	 
+ for(j=0;j<total;j++)
+	 {
+   if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
+	   for(i=0;i<ecount;i++)
+            if(JSON[i+1]==JSON1[j+1])
+	     {
+                JSON1.add(JsonOutput.toJson(resultJson.values[j]))
+		continue;
+	      }
+ }
+ }	
 String 
 println(JSON)
 println(JSON1)
