@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
 
   
       }
-	 println(jsonObj.config.emails.email[i])
+	 //println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
 	 map.put(jsonObj.config.emails.email[i],JCOPY[i])
 	 //println(JCOPY[i])
@@ -48,7 +48,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-println(map.size())
+println(map)
 /*for(i=0;i<JCOPY.size();i++)
 	{
 		
