@@ -54,12 +54,13 @@ for(i=0;i<JCOPY.size();i++)
 		def count=0
 		println(JCOPY[i])
 		//println(JCOPY[i].size())
-	while(i<JCOPY.size())	
+	while(i<JCOPY.size())
+		{
        if(JCOPY[i].contains(author[j].emailAddress)
 	  {
 		  count++
 	  }
-	
+	  }
 	println(count)
 	}
 	
