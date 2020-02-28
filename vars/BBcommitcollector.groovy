@@ -34,6 +34,9 @@ for(i=0;i<ecount;i++)
 	 // JSON[i].addAll(JCOPY[i])
     
     }
+def q=JSON.contains(resultJson.values.author[j].emailAddress)	
+println(q)
+	  
    if((resultJson.values.author[j].emailAddress==JSON.contains(resultJson.values.author[j].emailAddress)))
    {
 	JCOPY.add(JsonOutput.toJson(resultJson.values[j]))
