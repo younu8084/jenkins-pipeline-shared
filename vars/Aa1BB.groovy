@@ -45,7 +45,8 @@ for(i=0;i<ecount;i++)
 	      {
                 JSON.add(JsonOutput.toJson(resultJson.values[j]))
 		continue;
-	       }i++;
+		      i++;
+	       }
               else 
 		  {
 		  JSON1.add(JsonOutput.toJson(resultJson.values[j]))
