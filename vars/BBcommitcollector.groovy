@@ -41,6 +41,7 @@ for(i=0;i<ecount;i++)
 	 println(i)
 	 JCOPY[i]=JSON
 	 println(JCOPY[i])
+	 JSON.clear()
 	  
 }
 
