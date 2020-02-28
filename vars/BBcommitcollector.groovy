@@ -46,7 +46,7 @@ for(i=0;i<ecount;i++)
 //JCOPY[i]=JSON[i]	  
       }
 	 JCOPY[i]=JSON
-	 println(JCOPY)
+	 println(JCOPY[i])
 	  
 }
 
