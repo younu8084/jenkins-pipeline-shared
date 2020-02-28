@@ -40,7 +40,7 @@ for(i=0;i<ecount;i++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
           {
-           if(email[i]==author[j+1])
+           if(JSON[i]==JSON[j+1])
 	      {
 		      continue;
 	       }
