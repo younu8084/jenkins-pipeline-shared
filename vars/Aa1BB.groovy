@@ -44,15 +44,13 @@ for(i=0;i<ecount;i++)
            if(JSON[i]==JSON[j+1])
 	      {
                 JSON.add(JsonOutput.toJson(resultJson.values[j]))
-		
-	       }continue;
+		continue;
+	       }
               else 
 		  {
 		  JSON1.add(JsonOutput.toJson(resultJson.values[j]))
 		  }
 	  }
-		 
-		  
 }
 
  }	
