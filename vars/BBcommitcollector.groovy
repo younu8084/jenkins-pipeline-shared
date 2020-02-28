@@ -35,7 +35,7 @@ for(i=0;i<ecount;i++)
 		     
     }
 	
-
+       println(JSON.size())
   
       }
 	 //println(jsonObj.config.emails.email[i])
@@ -51,7 +51,7 @@ for(i=0;i<ecount;i++)
 println(map)
 /*def resultJson1 = jsonSlurper.parse(JCOPY)
 def size=resultJson1.size()
-println(size)*/
+println(size)
 	def count=0
 	for(i=0;i<total;i++)
 	{
@@ -60,7 +60,7 @@ println(size)*/
 	   count++
 	   println(count)
 	   }
-	 }
+	 }*/
 	   
 }
 
