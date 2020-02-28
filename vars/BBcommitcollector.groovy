@@ -52,11 +52,12 @@ for(i=0;i<ecount;i++)
 for(i=0;i<JCOPY.size();i++)
 	{
 		println(JCOPY[i])
-
-	if(JCOPY[i].contains("rig"))
+       
+	/*if(JCOPY[i].contains("rig"))
 	{
-		println("HI")
-	}
+		
+	    
+	}*/
 	
 	}
 	
