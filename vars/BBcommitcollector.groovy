@@ -34,16 +34,16 @@ for(i=0;i<ecount;i++)
 	 // JSON[i].addAll(JCOPY[i])
     
     }
-def q=JSON.contains(resultJson.values.author[j].emailAddress)	
-println(q)
+	
+println(JSON)
 	  
-   if((resultJson.values.author[j].emailAddress==JSON.contains(resultJson.values.author[j].emailAddress)))
+  /* if((resultJson.values.author[j].emailAddress==JSON.contains(resultJson.values.author[j].emailAddress)))
    {
 	JCOPY.add(JsonOutput.toJson(resultJson.values[j]))
 	 //JSON[i]= resultJson.values[j]
 	 // JSON[i].addAll(JCOPY[i])
     
-    }
+    }*/
 //JCOPY[i]=JSON[i]	  
       }
 }
