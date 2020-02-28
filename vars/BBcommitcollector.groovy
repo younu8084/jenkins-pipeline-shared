@@ -43,7 +43,7 @@ for(i=0;i<ecount;i++)
 	 JSON.clear()
 	  
 }
-println(JCOPY)
+println(JCOPY[1])
 /*for(i=0;i<JCOPY.size();i++)
 	{
 		println(JCOPY[i])
