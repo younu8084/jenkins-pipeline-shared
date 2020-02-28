@@ -21,7 +21,7 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
-//List<String> JCOPY = new ArrayList<String>();
+List<String> JCOPY = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
  {
@@ -34,9 +34,9 @@ for(i=0;i<ecount;i++)
 	 // JSON[i].addAll(JCOPY[i])
     
     }
-   if((jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress) && (resultJson.values.author[j].emailAddress==JSON.contains(resultJson.values.author[j].emailAddress)))
+   if((resultJson.values.author[j].emailAddress==JSON.contains(resultJson.values.author[j].emailAddress)))
    {
-	JSON.add(JsonOutput.toJson(resultJson.values[j]))
+	JCOPY.add(JsonOutput.toJson(resultJson.values[j]))
 	 //JSON[i]= resultJson.values[j]
 	 // JSON[i].addAll(JCOPY[i])
     
@@ -46,6 +46,7 @@ for(i=0;i<ecount;i++)
 }
 println(JSON.size())
 println(JSON)
+println(JCOPY)
 //println JSON.findAll { map.id[0] == 'a3042a6b0427ab4b049f27dde71ef3f5340d1f57' }
 //def resultJson = jsonSlurper.parse(JSON)
  /*if (JSON.author[0].name==jsonObj.config.emails.email[2])
