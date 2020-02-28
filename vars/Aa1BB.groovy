@@ -42,11 +42,10 @@ for(i=0;i<ecount;i++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
-	   if(key==JSON[j+1]
+	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
+	   if(key==JSON[j+1])
 	      {
 		      continue;
-	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
-
 	      }
 	      }
 }
