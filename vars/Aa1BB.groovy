@@ -40,15 +40,15 @@ for(i=0;i<ecount;i++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
           {
-		   
-           if(JSON[i].contains(JSON[j+1]))
+	   for(i=0;i<50;i++)
+           if(JSON[i]==JSON[j+1])
 	      {
 		  JSON.add(JsonOutput.toJson(resultJson.values[j]))
 		  continue;
 	       }
-		  else
+		  else 
 		  {
-		   JSON1.add(JsonOutput.toJson(resultJson.values[j]))
+		  JSON1.add(JsonOutput.toJson(resultJson.values[j]))
 		  }
 	  }
 		  
