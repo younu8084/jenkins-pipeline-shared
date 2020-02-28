@@ -33,17 +33,15 @@ for(i=0;i<ecount;i++)
 }
 
  }
-int key;
+
 for(i=0;i<ecount;i++)
- {
-	 key =JSON[i]
-	 
+ {	 
  for(j=0;j<total;j++)
 	 {
    if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
    {
 	   JSON.add(JsonOutput.toJson(resultJson.values[j]))
-	   if(key==JSON[j+1])
+	   if(JSON[i]==JSON[j+1])
 	      {
 		      continue;
 	      }
