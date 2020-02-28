@@ -42,7 +42,7 @@ for(i=0;i<ecount;i++)
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
 	// JCOPY.add(JsonOutput.toJson(JCOPY[i])
 	 println(JCOPY[i])
-	 println(JCOPY[i].size())
+	// println(JCOPY[i].size())
 	 JSON.clear()
 	 
 
@@ -51,11 +51,16 @@ for(i=0;i<ecount;i++)
 //println(JCOPY)
 for(i=0;i<JCOPY.size();i++)
 	{
+		def count=0
 		println(JCOPY[i])
-		println(JCOPY[i].size())
-       
+		//println(JCOPY[i].size())
+	while(i<JCOPY.size())	
+       if(JCOPY[i].contains(author[j].emailAddress)
+	  {
+		  count++
+	  }
 	
-	
+	println(count)
 	}
 	
 	
