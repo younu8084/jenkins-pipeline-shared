@@ -31,10 +31,7 @@ for(i=0;i<ecount;i++)
 	     {
 	JSON.add(JsonOutput.toJson(resultJson.values[j]))
 	//println(JSON) 
-    GsonBuilder gsonBuilder = new GsonBuilder();
-    Gson gson = gsonBuilder.create();
-    String JSONObject = gson.toJson(JSON);
-    println(JSONObject)
+    def newObj=new Obj(JSON)
 		     
     }
 	
