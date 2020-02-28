@@ -49,7 +49,10 @@ for(i=0;i<ecount;i++)
 	  
 }
 println(map)
-
+def resultJson1 = jsonSlurper.parse(JCOPY)
+def size=resultJson1.size()
+println(size)
+	
 }
 
 
