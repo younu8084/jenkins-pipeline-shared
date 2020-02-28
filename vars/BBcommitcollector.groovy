@@ -38,8 +38,8 @@ for(i=0;i<ecount;i++)
   
       }
 	 println(jsonObj.config.emails.email[i])
-	 JCOPY[i]=JsonOutput.toJson(JSON)
-	 println(JCOPY[0])
+	 JCOPY[i].add(JsonOutput.toJson(JSON))
+	 println(JCOPY[i])
 	 JSON.clear()
 	  
 }
