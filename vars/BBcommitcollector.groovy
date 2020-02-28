@@ -48,7 +48,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-println(map[0].size)
+println(map[1].size)
 
 }
 
