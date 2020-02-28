@@ -43,11 +43,11 @@ for(i=0;i<ecount;i++)
 	 JSON.clear()
 	  
 }
-
-for(i=0;i<JCOPY.size();i++)
+println(JCOPY)
+/*for(i=0;i<JCOPY.size();i++)
 	{
 		println(JCOPY[i])
-	}
+	}*/
 
 }
 
