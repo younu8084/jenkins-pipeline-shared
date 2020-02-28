@@ -39,7 +39,7 @@ for(i=0;i<ecount;i++)
       }
 	 println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JSON)
-	 println(JCOPY[i])
+	 println(JCOPY[1])
 	 JSON.clear()
 	  
 }
