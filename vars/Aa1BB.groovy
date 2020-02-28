@@ -21,8 +21,8 @@ def total = resultJson.size
  echo "Total no.of commits in ${repoName} $total"
 
 List<String> JSON = new ArrayList<String>();
-	List<String> JSON1 = new ArrayList<String>();
-for(i=0;i<ecount;i++)
+List<String> JSON1 = new ArrayList<String>();
+/*for(i=0;i<ecount;i++)
  {
  for(j=0;j<total;j++)
 	 {
@@ -32,7 +32,7 @@ for(i=0;i<ecount;i++)
     }
 }
 
- }
+ }*/
 
 for(i=0;i<ecount;i++)
  {	 
@@ -58,7 +58,6 @@ for(i=0;i<ecount;i++)
 	
 
 String 
-	println(JSON1)
 println(JSON)
-	
+	println(JSON1)
 }
