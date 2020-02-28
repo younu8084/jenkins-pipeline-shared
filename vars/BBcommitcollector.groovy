@@ -26,6 +26,7 @@ Map<String, List<String>> map = new HashMap<String, List<String>>();
 for(i=0;i<ecount;i++)
  {
 	 def email=jsonObj.config.emails.email[i]
+	 println(email)
   for(j=0;j<total;j++)
   {
  if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
