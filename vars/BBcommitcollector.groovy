@@ -39,14 +39,14 @@ for(i=0;i<ecount;i++)
       }
 	 println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JSON)
-	 println(JCOPY[i].size)
+	 println(JCOPY[i])
 	 JSON.clear()
 	  
 }
 //println(JCOPY)
 for(i=0;i<JCOPY.size();i++)
 	{
-		println(JsonOutput.toJson(JCOPY[i]))
+		println(JCOPY[i])
 	}
 
 }
