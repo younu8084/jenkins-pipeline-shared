@@ -26,7 +26,7 @@ echo "Total no.of commits in $repoName $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-JSONArray arr_strJson = new JSONArray()
+
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
@@ -46,9 +46,9 @@ for(i=0;i<ecount;i++)
 	
 	 count=JSON.size()
 	 //  println(USER)
-       arr_strJson=JSON   	
+         	
      
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":arr_strJson,"Commit_count":count])
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
@@ -67,8 +67,8 @@ jsonBuilder.bitbucket(
  "Individual_commits":JCOPY
 )
 
-
-
+def list = new JsonSlurper().parseText( JCOPY )
+list.each { println it }
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits1.json")
 file.write(jsonBuilder.toPrettyString())	
 
