@@ -62,7 +62,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
- "commit_count": resultJson.size()
+ "commit_count": resultJson.size(),
  "individual":JCOPY
 )
 
