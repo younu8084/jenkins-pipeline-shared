@@ -1,5 +1,5 @@
 import groovy.json.*
- 
+import groovy.json.JsonOutput
 
 def call(jsondata){
 def jsonString = jsondata
@@ -65,7 +65,7 @@ jsonBuilder.bitbucket(
 //inputFile.createNewFile() 
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
 //inputFile.write(jsonBuilder)
-File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/totalcommits.json")
+File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json")
 file.write(jsonBuilder)	
 
 }
