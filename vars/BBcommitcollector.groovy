@@ -61,7 +61,8 @@ jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size()
 )
-echo  "println jsonBuilder.toPrettyString()" >totalcommit.json
+	
+sh "echo '$jsonBuilder' >>totalcommit.json" 
 
 	
 
