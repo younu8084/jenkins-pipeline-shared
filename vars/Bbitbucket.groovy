@@ -68,7 +68,6 @@ for(i=0;i<JCOPY.size();i++)
 	 jsonBuilder.bitbucket(
  "totalcommit" : resultJson,
   "commit_cnt" : resultJson.size()
-"indivudalcommits":JCOPY
 	 )
 def user1 = new user1(email:'rituparna.ghosh@wipro.com')
 //def user3 = new user3(email:'MO20090733@wipro.com')
