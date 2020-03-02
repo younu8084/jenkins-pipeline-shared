@@ -24,7 +24,7 @@ echo "Total no.of commits in $repoName $total"
 //File file = new File(output.json)
 //file.write(total)
 //def commiter=1
-List<String> JSON = new ArrayList<String>();
+def JSON = " ";
 List<String> JCOPY = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
