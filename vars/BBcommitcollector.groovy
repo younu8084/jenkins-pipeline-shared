@@ -1,4 +1,5 @@
 import groovy.json.*
+import groovy.json.JsonBuilder
 
 def call(jsondata){
 def jsonString = jsondata
@@ -53,7 +54,7 @@ for(i=0;i<ecount;i++)
 	  
 }
 	
-
+def builder = new JsonBuilder()
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
@@ -61,14 +62,11 @@ jsonBuilder.bitbucket(
  "commit_count": resultJson.size()
 )
  println(jsonBuilder)
-for(i=0;i<JCOPY.size();i++)
-{
-jsonBuilder.bitbucket(
-	"individual_commit": JCOPY[i]
-	)
+builder {
+    values((1..6).collect { [id: "id for ${it}", author.name: "Author for ${it}"] })
 }
 	
-
+println builder.toPrettyString()
 }
 
 
