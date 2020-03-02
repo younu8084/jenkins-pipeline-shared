@@ -61,10 +61,10 @@ def jsonBuilder = new groovy.json.JsonBuilder()
   "commit_count" : resultJson.size(),
 )
  println(jsonBuilder)
-def jsonBuilder = new groovy.json.JsonBuilder()
+//def jsonBuilder = new groovy.json.JsonBuilder()
 for(i=0;i<JCOPY.size();i++)
 {
-jsonBuilder.bitbucket(
+jsonBuilder.add(
 "Individualcommmit" : JCOPY[i]
 	)}
 }
