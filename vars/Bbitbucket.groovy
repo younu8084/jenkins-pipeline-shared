@@ -22,7 +22,7 @@ def total = resultJson.size
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-Map<String, List<String>> map = new HashMap<String, List<String>>();
+//Map<String, List<String>> map = new HashMap<String, List<String>>();
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
@@ -50,7 +50,6 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-echo"map" >> output.json
 
 
 }
