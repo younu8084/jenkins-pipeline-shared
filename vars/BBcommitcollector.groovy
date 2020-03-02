@@ -47,8 +47,8 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
           	
-     
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+     JSONArray arr_strJson = new JSONArray(JSON)
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":arr_strJson,"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
