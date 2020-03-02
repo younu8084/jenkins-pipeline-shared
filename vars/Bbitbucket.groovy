@@ -72,6 +72,6 @@ def user1 = new user1(email:'rituparna.ghosh@wipro.com')
 def indivudalcommits = [user1]
 jsonBuilder(Indivudal:indivudalcommits)
 //println("Using list of objects")
-println(jsonBuilder.toPrettyString())
-
+//println(jsonBuilder.toPrettyString())
+println(jsonBuilde)
 }
