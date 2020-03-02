@@ -60,15 +60,7 @@ for(i=0;i<JCOPY.size();i++)
   "commit_cnt" : resultJson.size()
   )
  println(jsonBuilder)*/
-	class user1{
-		def email
-	}
-	class user2{
-		def email
-	}
-	class user3{
-		def email
-	}
+
 
 	def jsonBuilder = new groovy.json.JsonBuilder()
 	jsonBuilder.bitbucket{
