@@ -1,5 +1,7 @@
 import groovy.json.*
 import groovy.json.JsonOutput
+import com.google.gson.Gson.*
+import com.google.gson.GsonBuilder.*
 
 def call(jsondata){
 def jsonString = jsondata
