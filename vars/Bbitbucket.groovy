@@ -60,22 +60,19 @@ for(i=0;i<JCOPY.size();i++)
   "commit_cnt" : resultJson.size()
   )
  println(jsonBuilder)*/
-	class indivudalcommits{
-	def user1
-	}
 
 	def jsonBuilder = new groovy.json.JsonBuilder()
 	 jsonBuilder.bitbucket(
- "totalcommit" : resultJson,
-  "commit_cnt" : resultJson.size(),
-   "user1" :JCOPY
+     "totalcommit" : resultJson,
+     "commit_cnt" : resultJson.size(),
+      "user1" :["JCOPY[0]","JCOPY[1]","JCOPY[2]"]
 		 )
 	
 //def user1 = new user1(email:'rituparna.ghosh@wipro.com')
 //def user3 = new user3(email:'MO20090733@wipro.com')
 		 
-def indivudalcommits = [user1]
-jsonBuilder(Indivudal:indivudalcommits)
+//def indivudalcommits = [user1]
+//jsonBuilder(Indivudal:indivudalcommits)
 		  
 //println("Using list of objects")
 //println(jsonBuilder.toPrettyString())
