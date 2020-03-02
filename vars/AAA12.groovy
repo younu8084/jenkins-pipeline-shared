@@ -1,7 +1,5 @@
 import groovy.json.*
 import groovy.json.JsonOutput
-import com.google.gson.Gson.*
-import com.google.gson.GsonBuilder.*
 
 def call(jsondata){
 def jsonString = jsondata
@@ -48,17 +46,15 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
           
-	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.assert json.toString(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 JSON.clear()
 	  
 }
-	 GsonBuilder gsonBuilder = new GsonBuilder();
-		Gson gson = gsonBuilder.create();
+	// GsonBuilder gsonBuilder = new GsonBuilder();
+	//	Gson gson = gsonBuilder.create();
  
-		String JSONObject = gson.toJson(JCOPY);
-	
-
+	//	String JSONObject = gson.toJson(JCOPY);
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
