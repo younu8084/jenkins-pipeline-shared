@@ -57,14 +57,14 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-	
-JSONArray jsArray = new JSONArray(JCOPY)
+String jsonFormattedString = JCOPY.replaceAll("\\\\", "");	
+
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "Total_commits": resultJson.values,
  "Commit_count": resultJson.size(),
- "Individual_commits":jsArray
+ "Individual_commits":jsonFormattedString
 )
 
 
