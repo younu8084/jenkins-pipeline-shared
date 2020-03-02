@@ -60,8 +60,8 @@ for(i=0;i<JCOPY.size();i++)
   "commit_cnt" : resultJson.size()
   )
  println(jsonBuilder)*/
-	class user1{
-	def indivudalcommits
+	class indivudalcommits{
+	def user1
 	}
 
 	def jsonBuilder = new groovy.json.JsonBuilder()
