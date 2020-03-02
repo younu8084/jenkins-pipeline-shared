@@ -30,10 +30,10 @@ for(i=0;i<ecount;i++)
 	     {
 	JSON.add(resultJson.values[j])	     
     }
-      }	 count=JSON.size()
-
-          
-	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+      
+  }	 
+	count=JSON.size()
+             JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_pull":JsonOutput.toJson(JSON),"pullreq_count":count])
 	 JSON.clear()
 }
 
@@ -44,7 +44,7 @@ jsonBuilder.bitbucket(
  "pullreq_count": resultJson.size(),
  "individual":JCOPY
 )
-File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
+File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/pulls.json")
 file.write(jsonBuilder.toPrettyString())
 	
  }
