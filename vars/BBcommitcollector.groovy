@@ -57,7 +57,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-String jsonFormattedString = JCOPY.replaceAll("\\\\", "");	
+String jsonFormattedString = JCOPY.replaceAll("\\\"", "\"");	
 
 def jsonBuilder = new groovy.json.JsonBuilder()
 
