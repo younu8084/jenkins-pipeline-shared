@@ -55,7 +55,7 @@ for(i=0;i<ecount;i++)
 }
 	
 
-def jsonBuilder = new groovy.json.JsonBuilder().setPrettyPrinting().create()
+def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
@@ -65,9 +65,10 @@ jsonBuilder.bitbucket(
 //inputFile.createNewFile() 
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
 //inputFile.write(jsonBuilder)
+def pretty = JsonOutput.prettyPrint(jsonBuilder)
 try{
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-file.write(jsonBuilder.toString())	
+file.write(pretty)	
 }
 catch(IOException e)
 {
