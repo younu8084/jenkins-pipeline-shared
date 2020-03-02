@@ -67,8 +67,7 @@ jsonBuilder.bitbucket(
  "Individual_commits":JCOPY
 )
 
-def list = new JsonSlurper().parseText( JCOPY )
-list.each { println it }
+
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits1.json")
 file.write(jsonBuilder.toPrettyString())	
 
