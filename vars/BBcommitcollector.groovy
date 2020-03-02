@@ -50,7 +50,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-	echo "${JCOPY}" 
+	println(${JCOPY})
 
 
 }
