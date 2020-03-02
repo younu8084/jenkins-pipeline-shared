@@ -55,7 +55,7 @@ for(i=0;i<ecount;i++)
 }
 	
 
-def jsonBuilder = new groovy.json.JsonBuilder()
+def jsonBuilder = new groovy.json.JsonBuilder().setPrettyPrinting().create()
 
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
