@@ -60,11 +60,11 @@ for(i=0;i<ecount;i++)
 }
 
 def jsonBuilder = new groovy.json.JsonBuilder()
-
+String Jcopy=JCOPY.replaceAll(""", "").replaceAll(""","")
 jsonBuilder.bitbucket(
   "Total_commits": resultJson.values,
  "Commit_count": resultJson.size(),
- "Individual_commits":JsonOutput.toJson(JCOPY)
+ "Individual_commits":JsonOutput.toJson(Jcopy)
 )
 
 
