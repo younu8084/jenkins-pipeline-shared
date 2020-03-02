@@ -29,20 +29,15 @@ for(i=0;i<ecount;i++)
  if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
 	     {
 	JSON.add(resultJson.values[j])	     
-    }
-      
-  }	 
-	count=JSON.size()
-             JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_pull":JsonOutput.toJson(JSON),"pullreq_count":count])
-	 JSON.clear()
+         }
+}	 
 }
 
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "total_pullrequesr": resultJson,
- "pullreq_count": resultJson.size(),
- "individual":JCOPY
+ "pullreq_count": resultJson.size()
 )
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/pulls.json")
 file.write(jsonBuilder.toPrettyString())
