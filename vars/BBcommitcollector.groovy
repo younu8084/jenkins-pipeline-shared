@@ -63,7 +63,7 @@ jsonBuilder.bitbucket(
 )
  println(jsonBuilder)
 builder {
-    values((1..6).collect { [id: "id for ${it}", author.name: "Author for ${it}"] })
+    values((1..6).collect { [id: "id for ${it}", name: "Author for ${it}"] })
 }
 	
 println builder.toPrettyString()
