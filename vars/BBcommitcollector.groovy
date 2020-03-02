@@ -61,9 +61,9 @@ jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size()
 )
-	
+def inputFile = new File("/var/lib/jenkins/workspace/${JOB_NAME}/totalcommits.json")	
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
-new File("/var/lib/jenkins/workspace/${JOB_NAME}/totalcommits.json").write(jsonBuilder)
+inputFile.write(jsonBuilder)
 	
 
 }
