@@ -62,10 +62,10 @@ jsonBuilder.bitbucket(
  "commit_count": resultJson.size()
 )
 
-def pretty=JsonOutput.prettyPrint(jsonBuilder)
+
 try{
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-file.write(pretty)	
+file.write(jsonBuilder)	
 }
 catch(IOException e)
 {
