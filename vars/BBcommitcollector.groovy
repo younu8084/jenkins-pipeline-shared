@@ -64,7 +64,7 @@ jsonBuilder.bitbucket(
 def inputFile = new File("/var/lib/jenkins/workspace/${JOB_NAME}/totalcommits.json")
 //inputFile.createNewFile() 
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
-inputFile.write($jsonBuilder)
+inputFile.write(jsonBuilder)
 	
 
 }
