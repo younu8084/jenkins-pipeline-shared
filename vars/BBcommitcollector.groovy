@@ -66,7 +66,7 @@ jsonBuilder.bitbucket(
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
 //inputFile.write(jsonBuilder)
 try{
-def file = new File("commits.json")
+File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
 file.write(jsonBuilder.toString())	
 }
 catch(IOException e)
