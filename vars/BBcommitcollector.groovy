@@ -50,7 +50,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-sh "echo '$map' >> output.json"
+sh "echo '$JCOPY' >> output.json"
 
 
 }
