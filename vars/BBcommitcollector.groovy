@@ -58,7 +58,7 @@ for(i=0;i<ecount;i++)
 	  
 }
 	
-JSONArray jsArray = new JSONArray(JCOPY);
+JSONArray jsArray = new JSONArray(JCOPY)
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
