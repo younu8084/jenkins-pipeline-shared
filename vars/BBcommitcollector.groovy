@@ -19,8 +19,8 @@ def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
 echo "Total no.of commits in $repoName $total"
-File file = new File(output.json)
-file.write(total)
+//File file = new File(output.json)
+//file.write(total)
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
@@ -58,7 +58,12 @@ for(i=0;i<ecount;i++)
 		println(JCOPY[i])
 	}
 
-
+def jsonBuilder = new groovy.json.JsonBuilder()
+ jsonBuilder.bitbucket(
+  "totalcommit" : resultJson,
+  "commit_cnt" : resultJson.size()
+  )
+ println(jsonBuilder)
 }
 
 
