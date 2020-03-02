@@ -38,7 +38,7 @@ for(i=0;i<ecount;i++)
       
   
       }
-	 def count=JSON.size()
+	 //def count=JSON.size()
 	
 	 //println(jsonObj.config.emails.email[i])
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
