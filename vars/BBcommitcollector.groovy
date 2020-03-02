@@ -18,7 +18,7 @@ println(repoName)
 def jsonSlurper = new JsonSlurper()
 def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/output.json"))
 def total = resultJson.size
-sh "echo Total no.of commits in ${repoName} $total >>output.json"
+sh "echo Total no.of commits in '$repoName' '$total' -o output.json"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
