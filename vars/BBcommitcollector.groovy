@@ -63,7 +63,7 @@ jsonBuilder.bitbucket(
  println(jsonBuilder)
 for(i=0;i<JCOPY.size();i++)
 {
-jsonBuilder.Individual_bitbucket(
+jsonBuilder.bitbucket(
 	"individual_commit": JCOPY[i]
 	)
 }
