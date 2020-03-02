@@ -49,5 +49,10 @@ for(i=0;i<ecount;i++)
 	  
 }
 
-println(${JCOPY})
+for(i=0;i<JCOPY.size();i++)
+
+	{
+		println(JCOPY[i])
+	}
+
 }
