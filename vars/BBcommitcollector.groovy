@@ -22,7 +22,7 @@ sh "echo Total no.of commits in '${repoName}' '$total' >>output.json"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-//Map<String, List<String>> map = new HashMap<String, List<String>>();
+
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
@@ -38,11 +38,11 @@ for(i=0;i<ecount;i++)
       
   
       }
-	 //def count=JSON.size()
+	 
 	
-	 //println(jsonObj.config.emails.email[i])
+	 
 	 JCOPY[i]=(JsonOutput.toJson(JSON))
-	 //map.put(jsonObj.config.emails.email[i],JCOPY[i])
+	 
 	
 	
 	 JSON.clear()
