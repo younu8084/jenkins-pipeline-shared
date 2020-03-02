@@ -48,7 +48,7 @@ for(i=0;i<ecount;i++)
 	 //  println(USER)
           	
      String res = String.join(",", JSON);
-        println(JSON);
+        println(res);
 	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
