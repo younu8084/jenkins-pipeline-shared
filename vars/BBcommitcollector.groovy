@@ -50,7 +50,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-println(map)
+echo(map) >>output.json
 
 
 }
