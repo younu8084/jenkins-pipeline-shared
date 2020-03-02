@@ -43,7 +43,7 @@ for(i=0;i<ecount;i++)
 	 
 	
 	 
-	 JCOPY[i]=(JsonOutput.toJson(JSON))
+	 JCOPY[i]=(JSON)
 	 
 	
 	
