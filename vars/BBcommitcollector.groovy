@@ -43,7 +43,7 @@ for(i=0;i<ecount;i++)
 	 
 	
 	 
-	 JCOPY[i].put(JSON)
+	 JCOPY[i]+=JSON
 	 
 	
 	
