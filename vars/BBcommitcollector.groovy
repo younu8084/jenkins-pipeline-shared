@@ -52,19 +52,7 @@ for(i=0;i<ecount;i++)
 }
 println(map)
 
-/*def resultJson1 = jsonSlurper.parse(JCOPY)
-def size=resultJson1.size()
-println(size)
-	def count=0
-	for(i=0;i<total;i++)
-	{
-	if(JCOPY.contains(jsonObj.config.emails.email[i]))
-	   {
-	   count++
-	   println(count)
-	   }
-	 }*/
-	   
+
 }
 
 
