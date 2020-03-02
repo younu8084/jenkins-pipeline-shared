@@ -53,7 +53,7 @@ for(i=0;i<ecount;i++)
 	 
 	
 	
-	 JSON.clear()
+	 JSON=" "
 	 
 
 	  
