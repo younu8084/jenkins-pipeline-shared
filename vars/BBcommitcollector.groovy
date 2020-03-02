@@ -50,7 +50,7 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-sh "echo '$JCOPY' >> output.json"
+	echo "${JCOPY}" 
 
 
 }
