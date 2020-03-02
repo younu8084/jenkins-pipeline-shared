@@ -60,7 +60,7 @@ for(i=0;i<ecount;i++)
 	
 
 def jsonBuilder = new groovy.json.JsonBuilder()
-String json = new Gson().toJson(JCOPY);
+String json = new json().toJson(JCOPY);
 jsonBuilder.bitbucket(
   "Total_commits": resultJson.values,
  "Commit_count": resultJson.size(),
