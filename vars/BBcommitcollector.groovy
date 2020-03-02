@@ -43,7 +43,7 @@ for(i=0;i<ecount;i++)
 	 
 	
 	 
-	 JCOPY[i]=(JSON)
+	 JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
 	
@@ -52,17 +52,13 @@ for(i=0;i<ecount;i++)
 
 	  
 }
-	for(i=0;i<JCOPY.size();i++)
-
-	{
-		println(JCOPY[i])
-	}
+	
 
 def jsonBuilder = new groovy.json.JsonBuilder()
  jsonBuilder.bitbucket(
   "totalcommit" : resultJson,
   "commit_count" : resultJson.size(),
-  "Individual_commits" : JsonOutput.toJson(JCOPY)
+  "Individual_commits" : JCOPY
   )
  println(jsonBuilder)
 }
