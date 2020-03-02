@@ -51,7 +51,7 @@ for(i=0;i<ecount;i++)
 	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
-	
+	JCOPY.toString()
 	
 	 JSON.clear()
 	 
@@ -64,7 +64,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 jsonBuilder.bitbucket(
   "Total_commits": resultJson.values,
  "Commit_count": resultJson.size(),
- "Individual_commits":JCOPY.toString()
+ "Individual_commits":JCOPY
 )
 
 
