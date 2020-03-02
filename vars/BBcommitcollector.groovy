@@ -1,5 +1,5 @@
 import groovy.json.*
-import java.io.File 
+ 
 
 def call(jsondata){
 def jsonString = jsondata
@@ -62,9 +62,9 @@ jsonBuilder.bitbucket(
  "commit_count": resultJson.size()
 )
 def inputFile = new File("/var/lib/jenkins/workspace/${JOB_NAME}/totalcommits.json")
-inputFile.createNewFile() 
+//inputFile.createNewFile() 
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
-inputFile.write(jsonBuilder)
+inputFile.write($jsonBuilder)
 	
 
 }
