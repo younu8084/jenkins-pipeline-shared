@@ -65,9 +65,14 @@ jsonBuilder.bitbucket(
 //inputFile.createNewFile() 
 //sh "echo '$jsonBuilder' >>totalcommit.json" 
 //inputFile.write(jsonBuilder)
+try{
 def file = new File("commits.json")
-file.write(jsonBuilder)	
-
+file.write(jsonBuilder.toString())	
+}
+catch(IOException e)
+{
+	e.printStackTrace()
+}
 }
 
 
