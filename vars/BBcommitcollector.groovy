@@ -54,7 +54,7 @@ for(i=0;i<ecount;i++)
 	 
 	
 	
-	 JSON[i].clear()
+	 JSON.clear()
 	 
 
 	  
