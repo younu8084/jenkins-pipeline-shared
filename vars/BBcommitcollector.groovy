@@ -1,5 +1,5 @@
 import groovy.json.*
-import groovy.json.JsonOutput
+import com.google.gson.Gson;
 
 def call(jsondata){
 def jsonString = jsondata
@@ -26,7 +26,7 @@ echo "Total no.of commits in $repoName $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-
+Gson gson = new Gson();
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
@@ -48,8 +48,8 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
          	
-  JSON.replaceAll("[", "").replaceAll("]","");   
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+ String output = gson.toJson(JSON);
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":output,"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
