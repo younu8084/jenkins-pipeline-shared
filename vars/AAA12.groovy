@@ -49,7 +49,7 @@ for(i=0;i<ecount;i++)
           
 	   JCOPY.add("email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count)
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
-	  
+	  var obj = JSON.parse(JCOPY);
 	 JSON.clear()
 	  
 }
@@ -67,9 +67,9 @@ jsonBuilder.bitbucket(
 )
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-//file.write(jsonBuilder.toPrettyString())	
+file.write(jsonBuilder.toPrettyString())	
 //def copyAndReplaceText(source, dest, targetText, replaceText){
-    file.write(jsonBuilder.toPrettyString().replaceAll("\", ""))
+   // file.write(jsonBuilder.toPrettyString())
 }
 
 
