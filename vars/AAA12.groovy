@@ -63,7 +63,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size(),
-	"individual":[JCOPY]
+	"individual":JCOPY
 )
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
