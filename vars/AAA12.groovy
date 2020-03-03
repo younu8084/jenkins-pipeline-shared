@@ -9,8 +9,6 @@ String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
-String c=jsonObj.config.individual.Individual_commit
-String JCOPY=c.replaceAll("\","");
 int ecount = jsonObj.config.emails.email.size()
 println("No of users "+ ecount)
 println(Key)
@@ -69,8 +67,9 @@ jsonBuilder.bitbucket(
 )
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-file.write(jsonBuilder.toPrettyString())	
-
+//file.write(jsonBuilder.toPrettyString())	
+//def copyAndReplaceText(source, dest, targetText, replaceText){
+    file.write(jsonBuilder.toPrettyString().replaceAll("\", ""))
 }
 
 
