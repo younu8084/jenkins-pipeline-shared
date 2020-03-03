@@ -20,19 +20,7 @@ def total = resultJson.size
  echo "Total no.of Pull reqests ${repoName} $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
-List<String> JCOPY = new ArrayList<String>();
-
-for(i=0;i<ecount;i++)
-{	 
-  for(j=0;j<total;j++)
-  {
- if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
-	     {
-	JSON.add(resultJson.values[j])	     
-         }
-}	 
-}
-
+	
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
