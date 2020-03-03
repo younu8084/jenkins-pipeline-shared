@@ -34,40 +34,45 @@ for(i=0;i<ecount;i++)
  if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
 	     {
 	JSON.add(resultJson.values[j])
-	//println(JSON) 
-    
-		     
-    }
+	 }
+ }
+   count=JSON.size()
+    JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	
-      
-  
-      }
-	 
-	
-	 count=JSON.size()
-	 //  println(USER)
-          
-	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
-	 //JCOPY[i]=JsonOutput.toJson(JSON)
-	  //var obj = JSON.parse(JCOPY);
 	 JSON.clear()
 	  
 }
+ class Myuser
+ {
+ def total_commit
+ def commit_count
+  }
+	def jsonBuilder = new groovy.json.JsonBuilder()
+def myuser = new Myuser
+(
+ "total_commit": resultJson.values,
+ "commit_count": resultJson.size,
+)
+	def myuser1 = new Myuser1
+(
+ "total_commit": resultJson.values,
+ "commit_count": resultJson.size,
+)
+	def myuserlist = [myuser,myuser1]
+jsonBuilder(users: myuserlist )
+//println("Using list of objects")
+println(jsonBuilder.toPrettyString())
 
-	// GsonBuilder gsonBuilder = new GsonBuilder();
-	//	Gson gson = gsonBuilder.create();
- 
-	//	String JSONObject = gson.toJson(JCOPY);
-def jsonBuilder = new groovy.json.JsonBuilder()
+/*def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size(),
 	"individual":JCOPY
 )
-
-File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-file.write(jsonBuilder.toPrettyString())	
+*/
+//File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
+//file.write(jsonBuilder.toPrettyString())	
 //def copyAndReplaceText(source, dest, targetText, replaceText){
    // file.write(jsonBuilder.toPrettyString())
 }
