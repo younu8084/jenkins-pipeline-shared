@@ -69,7 +69,7 @@ jsonBuilder.bitbucket(
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
 //file.write(jsonBuilder.toPrettyString())	
 //def copyAndReplaceText(source, dest, targetText, replaceText){
-    file.write(jsonBuilder.toPrettyString().replaceAll("\", ""))
+    file.write(jsonBuilder.toPrettyString())
 }
 
 
