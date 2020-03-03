@@ -9,6 +9,8 @@ String a=jsonObj.scm.projects.project.repositories.repository.repo_name
 String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
+String c=jsonObj.config.individual.Individual_commit
+String JCOPY=c.replaceAll("\"," ").replaceAll("\"," ");
 int ecount = jsonObj.config.emails.email.size()
 println("No of users "+ ecount)
 println(Key)
@@ -53,8 +55,7 @@ for(i=0;i<ecount;i++)
 	 JSON.clear()
 	  
 }
-String c=jsonObj.config.individual.Individual_commit
-String JSON=c.replaceAll("\"," ");
+
 	// GsonBuilder gsonBuilder = new GsonBuilder();
 	//	Gson gson = gsonBuilder.create();
  
