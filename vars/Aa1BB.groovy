@@ -19,12 +19,12 @@ def resultJson = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NA
 def total = resultJson.size
  echo "Total no.of Pull reqests ${repoName} $total"
 //def commiter=1
-List<String> JSON = new ArrayList<String>();
+//List<String> JSON = new ArrayList<String>();
 	
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
-  "total_pullrequests": resultJson,
+  "total_pullrequests": resultJson.values,
  "pullreq_count": resultJson.size
 )
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/pulls.json")
