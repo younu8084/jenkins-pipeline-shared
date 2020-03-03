@@ -42,11 +42,7 @@ for(i=0;i<ecount;i++)
 	 JSON.clear()
 	  
 }
- class Myuser
- {
- def total_commit
- def commit_count
-  }
+ 
 	def jsonBuilder = new groovy.json.JsonBuilder()
 def myuser = new Myuser
 (
