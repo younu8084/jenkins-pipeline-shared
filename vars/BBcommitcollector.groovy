@@ -26,7 +26,7 @@ echo "Total no.of commits in $repoName $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-
+List<String> JSON1= new ArrayList<String>();
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
@@ -48,9 +48,9 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
          	
-
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JSON[i],"Commit_count":count])
-	 //JCOPY[i]=JsonOutput.toJson(JSON)
+ JSON1[i]=JsonOutput.toJson(JSON)
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JSON1[i],"Commit_count":count])
+	
 	 
 	
 	
