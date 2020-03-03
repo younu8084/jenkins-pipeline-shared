@@ -45,7 +45,7 @@ for(i=0;i<ecount;i++)
       }
 	 
 	
-	 count=append.size()
+	 count=JSON.size()
 	 //  println(USER)
          	
      
