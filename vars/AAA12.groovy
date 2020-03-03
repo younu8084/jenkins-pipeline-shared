@@ -49,10 +49,12 @@ for(i=0;i<ecount;i++)
           
 	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
-	  var myJsonString = JSON.stringify(JCOPY);
+	  
 	 JSON.clear()
 	  
 }
+String c=jsonObj.config.emails.email.Individual_commit
+String JCOPY=c.replaceAll("\", "").replaceAll("\","");
 	// GsonBuilder gsonBuilder = new GsonBuilder();
 	//	Gson gson = gsonBuilder.create();
  
