@@ -10,7 +10,7 @@ String repoName=a.replaceAll("\\[", "").replaceAll("\\]","");
 String b=jsonObj.scm.projects.project.project_key 
 String Key=b.replaceAll("\\[", "").replaceAll("\\]","");
 String c=jsonObj.config.individual.Individual_commit
-String JCOPY=c.replaceAll("\"," ").replaceAll("\"," ");
+String JCOPY=c.replaceAll("\","");
 int ecount = jsonObj.config.emails.email.size()
 println("No of users "+ ecount)
 println(Key)
