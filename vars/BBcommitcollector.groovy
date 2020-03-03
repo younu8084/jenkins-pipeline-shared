@@ -47,11 +47,11 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
          	
-     
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+     String newsLetterJSON = mapper.writeValueAsString(JSON);
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":newsLetterJSON,"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
-	JCOPY.toString()
+	
 	
 	 JSON.clear()
 	 
