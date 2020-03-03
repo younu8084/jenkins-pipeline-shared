@@ -37,7 +37,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
   "total_pullrequests": resultJson,
- "pullreq_count": resultJson.size()
+ "pullreq_count": resultJson.size
 )
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/pulls.json")
 file.write(jsonBuilder.toPrettyString())
