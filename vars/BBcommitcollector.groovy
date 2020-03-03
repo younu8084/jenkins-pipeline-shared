@@ -24,19 +24,19 @@ echo "Total no.of commits in $repoName $total"
 //File file = new File(output.json)
 //file.write(total)
 //def commiter=1
-//List<String> JSON = new ArrayList<String>();
+List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
 {	 
   for(j=0;j<total;j++)
   {
-def append=" "
+
  if(jsonObj.config.emails.email[i]==resultJson.values.author[j].emailAddress)
 	     {
-	//JSON.add(resultJson.values[j])
+	JSON.add(resultJson.values[j])
 	//println(JSON) 
-      append+=resultJson.values[j]
+     
 		     
     }
 	
@@ -49,7 +49,7 @@ def append=" "
 	 //  println(USER)
          	
      
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(append),"Commit_count":count])
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
@@ -65,7 +65,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 jsonBuilder.bitbucket(
   "Total_commits": resultJson.values,
  "Commit_count": resultJson.size(),
- "Individual_commits":append
+ "Individual_commits":JSON
 )
 
 
