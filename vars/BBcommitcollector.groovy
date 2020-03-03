@@ -71,8 +71,9 @@ jsonBuilder.bitbucket(
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits1.json")
 file.write(jsonBuilder.toPrettyString())	
-
-
+def result = jsonSlurper.parse(new File("/var/lib/jenkins/workspace/${JOB_NAME}/commit1.json"))
+def commits = result.bitbucket.Commit_count
+println(commits)
 }
 
 
