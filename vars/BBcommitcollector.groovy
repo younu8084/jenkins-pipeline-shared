@@ -49,7 +49,7 @@ for(i=0;i<ecount;i++)
 	 //  println(USER)
          	
 
-	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
+	   JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JSON,"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	 
 	
