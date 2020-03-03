@@ -47,7 +47,7 @@ for(i=0;i<ecount;i++)
 	 count=JSON.size()
 	 //  println(USER)
           
-	   JCOPY.add("email":jsonObj.config.emails.email[i],"Individual_commit":Jsonoutput.toJson(JSON),"Commit_count":count)
+	   JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":Jsonoutput.toJson(JSON),"Commit_count":count])
 	 //JCOPY[i]=JsonOutput.toJson(JSON)
 	  //var obj = JSON.parse(JCOPY);
 	 JSON.clear()
@@ -63,7 +63,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size(),
-	"individual":JCOPY
+	"individual":[JCOPY]
 )
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
