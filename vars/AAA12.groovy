@@ -54,7 +54,7 @@ for(i=0;i<ecount;i++)
 	  
 }
 String c=jsonObj.config.emails.email.Individual_commit
-String JCOPY=c.replaceAll("\", "").replaceAll("\","");
+String JCOPY=c.replaceAll("\","").replaceAll("\","");
 	// GsonBuilder gsonBuilder = new GsonBuilder();
 	//	Gson gson = gsonBuilder.create();
  
