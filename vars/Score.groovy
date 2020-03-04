@@ -6,5 +6,5 @@ def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.config.emails.email.size()
 def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
-println(jsonObja)
+println(jsonObja.bitbucket.Commit_count)
 }
