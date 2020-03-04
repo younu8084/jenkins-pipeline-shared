@@ -8,4 +8,5 @@ def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
 int total=jsonObja.bitbucket.Commit_count
   println(jsonObja)
+  println(total)
 }
