@@ -1,10 +1,10 @@
 import groovy.json.*
 
-def call(bitbucket){
-/*def jsonString = jsondata
+def call(jsondata,bitbucket){
+def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
-int ecount = jsonObj.config.emails.email.size()*/
-def jsonString = bitbucket
-def jsonObj = readJSON text: jsonString
-println(jsonObj)
+int ecount = jsonObj.config.emails.email.size()
+def jsonStringa = bitbucket
+def jsonObja = readJSON text: jsonStringa
+println(jsonObja)
 }
