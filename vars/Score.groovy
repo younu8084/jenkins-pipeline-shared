@@ -49,11 +49,11 @@ def jsonObjb = readJSON text: jsonStringa[i]
     
    if(jsonStringa[i].contains("gitlab")
       {
-        def jsonObjc= readJSON text: jsonStringa[i]
+        def jsonObjc= readJSON text: jsonString
   //println(jsonObj)
   def cnt =jsonObjc.gitlab.commit_cnt
-         println(cnt)
-         if(cnt>5)
+    println(cnt)
+   if(cnt>5)
   {
     score=score*10
   }
