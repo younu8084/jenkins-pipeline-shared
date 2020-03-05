@@ -7,7 +7,7 @@ int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
-  println(jsonStringa)
+  //println(jsonStringa)
 /*def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
   
@@ -16,10 +16,10 @@ def jsonObjb = readJSON text: jsonStringb*/
  
 for(i=0;i<jsonStringa.size();i++)
   { 
-if(jsonStringa[i]==bitbucket)
+if(jsonStringa[i].contains("bitbucket"))
     {
 //def jsonStringa = bitbucket
-def jsonObja = readJSON text: jsonStringa
+def jsonObja = readJSON text: jsonStringa[i]
 int total=jsonObja.bitbucket.Commit_count
  // println(jsonObja)
   //println(total)
@@ -29,10 +29,10 @@ int total=jsonObja.bitbucket.Commit_count
     score=score*10
   }
   }
-   if(jsonStringa[i]==bamboo)
+   if(jsonStringa[i].contains("bamboo"))
     {
     //  def jsonStringb = bamboo
-def jsonObjb = readJSON text: jsonStringa
+def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
   def cnt =jsonObj.Bamboo.teamsuccessbuild_cnt
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
