@@ -7,6 +7,7 @@ int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
+  println(jsonStringa)
 /*def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
   
