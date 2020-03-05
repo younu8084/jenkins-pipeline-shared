@@ -1,12 +1,13 @@
 import groovy.json.*
 
-def call(jsondata,bitbucket,bamboo){
+def call(jsondata,bitbucket,bamboo,gitlab){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
+   jsonStringa.add(gitlab)
   //println(jsonStringa)
 /*def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
@@ -45,6 +46,17 @@ def jsonObjb = readJSON text: jsonStringa[i]
    score=1*10 
   }
     }
+    
+   if(jsonStringa[i].contains("gitlab")
+      {
+        def jsonObjc= readJSON text: jsonString
+  //println(jsonObj)
+  def cnt =jsonObjc.gitlab.commit_cnt
+         if(cnt>5)
+  {
+    score=score*10
+  }
+      }
     println(score)
   }
   
