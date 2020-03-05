@@ -110,11 +110,11 @@ def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
   def scnt =jsonObjb.Bamboo.individualsuccess[j].Success_cnt
   def fcnt =jsonObjb.Bamboo.individualfailure[j].Failure_cnt
- def email1=jsonObjb.bamboo.individualsuccess[j].email
+ def email1=jsonObjb.Bamboo.individualsuccess[j].email
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
- //println(cnt)
+ println(scnt)
  
  if(email==email1 && scnt>10)
   {
