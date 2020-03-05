@@ -14,7 +14,7 @@ def jsonObja = readJSON text: jsonStringa
   
 def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringb*/
-  int score1= new int[100]
+  int[] score1= new int[100]
  
 for(i=0;i<jsonStringa.size();i++)
   { 
