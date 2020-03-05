@@ -149,7 +149,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
     //score1[i]=score
     //println(score
     
-  }
+ 
      //JSON1[j]=LIST.clone()
    //JSON.add(["email":email,"metrics":JSON1[j]])
    // LIST.clear()
