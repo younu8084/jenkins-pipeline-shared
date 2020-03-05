@@ -44,7 +44,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
  
  if(cnt>10)
   {
-   score=+10 
+   score=score+10 
   }
     }
     
@@ -60,7 +60,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
   }
       }
     score1[i]=score
-    println(score)
+    //println(score)
   }
   
 }
