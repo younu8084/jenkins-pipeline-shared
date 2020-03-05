@@ -21,8 +21,8 @@ if(jsonStringa[i]==bitbucket)
 //def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
 int total=jsonObja.bitbucket.Commit_count
-  println(jsonObja)
-  println(total)
+ // println(jsonObja)
+  //println(total)
   int score=1
   if(total>5)
   {
