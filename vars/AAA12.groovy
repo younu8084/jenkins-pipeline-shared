@@ -26,6 +26,7 @@ echo "Total no.of commits in $repoName $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
+List<String> jsonStringa = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
 {	 
@@ -40,8 +41,21 @@ for(i=0;i<ecount;i++)
     JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	
 	 JSON.clear()
+	
 	  
 }
+	/*for(i=0;i<jsonStringa.size();i++)
+  { 
+    int score=0
+if(jsonStringa[i].contains("jsonObj.config.emails.email[i]"))
+    {
+def jsonObja = readJSON text: jsonStringa[i]
+int total=jsonObja.bitbucket.Commit_count 
+  if(total>5)
+  {
+    score=score+10
+  }
+  }*/
  def list = JCOPY.sort()
 
 def jsonBuilder = new groovy.json.JsonBuilder()
