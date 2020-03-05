@@ -26,7 +26,7 @@ echo "Total no.of commits in $repoName $total"
 //def commiter=1
 List<String> JSON = new ArrayList<String>();
 List<String> JCOPY = new ArrayList<String>();
-List<String> jsonStringa = new ArrayList<String>();
+//List<String> jsonStringa = new ArrayList<String>();
 
 for(i=0;i<ecount;i++)
 {	 
@@ -68,7 +68,7 @@ jsonBuilder.bitbucket(
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
 file.write(jsonBuilder.toPrettyString())
-	println(list)
+	//println(list)
 //def copyAndReplaceText(source, dest, targetText, replaceText){
    // file.write(jsonBuilder.toPrettyString())
 }
