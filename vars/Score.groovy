@@ -79,7 +79,7 @@ jsonBuilder(
   
   File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/Teamscore.json")
 file.write(jsonBuilder.toPrettyString())	*/
-   for(j=0;j<mailcount;j++)
+   for(j=0;j<ecount;j++)
    {
 	 def email=jsonObj.config.emails.email[j] 
   for(i=0;i<jsonStringa.size();i++)
