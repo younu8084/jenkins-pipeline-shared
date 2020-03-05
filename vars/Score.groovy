@@ -14,10 +14,11 @@ def jsonObja = readJSON text: jsonStringa
   
 def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringb*/
+  int score= new int[100]
  
 for(i=0;i<jsonStringa.size();i++)
   { 
-    int score=1
+    int score=0
 if(jsonStringa[i].contains("bitbucket"))
     {
 //def jsonStringa = bitbucket
@@ -28,7 +29,7 @@ int total=jsonObja.bitbucket.Commit_count
  
   if(total>5)
   {
-    score=score*10
+    score=score+10
   }
   }
    if(jsonStringa[i].contains("Bamboo"))
@@ -43,7 +44,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
  
  if(cnt>10)
   {
-   score=1*10 
+   score=+10 
   }
     }
     
@@ -55,9 +56,10 @@ def jsonObjb = readJSON text: jsonStringa[i]
     println(cnt)
    if(cnt>5)
   {
-    score=score*10
+    score=score+10
   }
       }
+    score[i]=score
     println(score)
   }
   
