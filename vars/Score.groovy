@@ -15,7 +15,7 @@ def jsonObja = readJSON text: jsonStringa
 def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringb*/
   int[] score1= new int[100]
- 
+ List<String> JSON = new ArrayList<String>();
 for(i=0;i<jsonStringa.size();i++)
   { 
     int score=0
@@ -60,7 +60,16 @@ def jsonObjb = readJSON text: jsonStringa[i]
   }
       }
     score1[i]=score
-    println(score)
+    //println(score)
+   JSON.add(["TeamName":"riglet_info","Tool":jsonStringa[i],"Score":score])  
   }
+def jsonBuilder = new groovy.json.JsonBuilder()
+
+jsonBuilder.bitbucket(
+  "Teamdetails" : JSON
   
+) 
+  
+  File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/Teamscore.json")
+file.write(jsonBuilder.toPrettyString())	
 }
