@@ -79,9 +79,7 @@ jsonBuilder(
   
   File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/Teamscore.json")
 file.write(jsonBuilder.toPrettyString())	*/
-   for(j=0;j<ecount;j++)
-   {
-	 def email=jsonObj.config.emails.email[j] 
+  
   for(i=0;i<jsonStringa.size();i++)
   { 
     int score=0
@@ -101,30 +99,39 @@ int total=jsonObja.bitbucket.Commit_count
   }
   }
    if(jsonStringa[i].contains("Bamboo"))
-    {
-      name="Bamboo"
+    { for(j=0;j<ecount;j++)
+   {
+	 def email=jsonObj.config.emails.email[j] 
+	   
+	    
+     // name="Bamboo"
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
-  def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
-  def fcnt =jsonObjb.Bamboo.teamfailurebuild_cnt
+  def scnt =jsonObjb.Bamboo.individualsuccess[j].Success_cnt
+  def fcnt =jsonObjb.Bamboo.individualfailure[j].Failure_cnt
+ def email1=jsonObjb.bamboo.individualsuccess[j].email
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
  
- if(scnt>10)
+ if(email==email1 && scnt>10)
   {
    score=score+10 
     LIST.add(["metric":"No of more successful builds","score":score])
     score=0
   }
-     if(fcnt<2)
+     if(email==email1 && fcnt<2)
   {
    score=score+10 
     LIST.add(["metric":"No of least failure builds","score":score])
     score=0
   }
+    }
+     JSON1[j]=LIST.clone()
+   JSON.add(["email":email,"metrics":JSON1[j]])
+    LIST.clear()
     }
     
    if(jsonStringa[i].contains("gitlab"))
@@ -143,9 +150,9 @@ def jsonObjb = readJSON text: jsonStringa[i]
     //println(score
     
   }
-     JSON1[j]=LIST.clone()
-   JSON.add(["email":email,"metrics":JSON1[j]])
-    LIST.clear()
+     //JSON1[j]=LIST.clone()
+   //JSON.add(["email":email,"metrics":JSON1[j]])
+   // LIST.clear()
    }
   println(JSON)
 }
