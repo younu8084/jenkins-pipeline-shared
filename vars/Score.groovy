@@ -30,7 +30,7 @@ int total=jsonObja.bitbucket.Commit_count
     score=score*10
   }
   }
-   if(jsonStringa[i].contains("bamboo"))
+   if(jsonStringa[i].contains("Bamboo"))
     {
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
