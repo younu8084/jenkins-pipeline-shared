@@ -14,9 +14,11 @@ def jsonObja = readJSON text: jsonStringa
   
 def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringb*/
-  int[] score1= new int[100]
+ // int[] score1= new int[100]
  List<String> JSON = new ArrayList<String>();
-for(i=0;i<jsonStringa.size();i++)
+  List<String> LIST = new ArrayList<String>();
+  List<String> JSON1 = new ArrayList<String>();
+/*for(i=0;i<jsonStringa.size();i++)
   { 
     int score=0
     String name="  "
@@ -40,7 +42,8 @@ int total=jsonObja.bitbucket.Commit_count
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
-  def cnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
+  def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
+      
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
@@ -75,5 +78,75 @@ jsonBuilder(
 ) 
   
   File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/Teamscore.json")
-file.write(jsonBuilder.toPrettyString())	
+file.write(jsonBuilder.toPrettyString())	*/
+   for(j=0;j<mailcount;j++)
+   {
+	 def email=jsonObj.config.emails.email[j] 
+  for(i=0;i<jsonStringa.size();i++)
+  { 
+    int score=0
+    String name="  "
+if(jsonStringa[i].contains("bitbucket"))
+    {
+      name="Bitbucket"
+//def jsonStringa = bitbucket
+def jsonObja = readJSON text: jsonStringa[i]
+int total=jsonObja.bitbucket.Commit_count
+ // println(jsonObja)
+  //println(total)
+ 
+  if(total>5)
+  {
+    score=score+10
+  }
+  }
+   if(jsonStringa[i].contains("Bamboo"))
+    {
+      name="Bamboo"
+    //  def jsonStringb = bamboo
+def jsonObjb = readJSON text: jsonStringa[i]
+  //println(jsonObj)
+  def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
+  def fcnt =jsonObjb.Bamboo.teamfailurebuild_cnt
+      
+ // def res=bamboo1.bamboo.teamsuccessbuild_cnt
+ // def obj = JSON.parse(bamboo1)
+ //println(cnt)
+ 
+ if(scnt>10)
+  {
+   score=score+10 
+    LIST.add(["metric":"No of more successful builds","score":score])
+    score=0
+  }
+     if(fcnt<2)
+  {
+   score=score+10 
+    LIST.add(["metric":"No of least failure builds","score":score])
+    score=0
+  }
+    }
+    
+   if(jsonStringa[i].contains("gitlab"))
+      {
+        name="Gitlab"
+        def jsonObjc= readJSON text: jsonStringa[i]
+  //println(jsonObj)
+  def cnt =jsonObjc.gitlab.commit_cnt
+   // println(cnt)
+   if(cnt>5)
+  {
+    score=score+10
+  }
+      }
+    //score1[i]=score
+    //println(score
+    
+  }
+     JSON1[j]=LIST.clone()
+   JSON.add(["email":email,"metrics":JSON1[j]])
+    LIST.clear()
+   }
+  println(JSON)
 }
+
