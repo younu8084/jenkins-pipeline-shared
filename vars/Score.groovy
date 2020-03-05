@@ -61,7 +61,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
       }
     score1[i]=score
     //println(score)
-   JSON.add(["TeamName":"riglet_info","Tool":jsonStringa[i],"Score":score])  
+   JSON.add(["TeamName":"riglet_info","Tool":jsonStringa,"Score":score])  
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
