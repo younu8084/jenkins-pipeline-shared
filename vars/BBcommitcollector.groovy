@@ -46,8 +46,7 @@ for(i=0;i<ecount;i++)
 	
 JSON.clear()
 }
-JCOPY.sort{it.Commit_count}
-JCOPY.reverse()
+JCOPY = JCOPY.sort { -it.Commit_count }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
