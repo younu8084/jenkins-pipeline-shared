@@ -42,10 +42,10 @@ for(i=0;i<ecount;i++)
 	 JSON.clear()
 	  
 }
- 
+ def list = JCOPY.sort()
 
 def jsonBuilder = new groovy.json.JsonBuilder()
-def jsonBuilder = JCOPY.sort()
+
 jsonBuilder.bitbucket(
   "total_commit": resultJson,
  "commit_count": resultJson.size(),
@@ -53,7 +53,8 @@ jsonBuilder.bitbucket(
 )
 
 File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/commits.json")
-file.write(jsonBuilder.toPrettyString())	
+file.write(jsonBuilder.toPrettyString())
+	println(list)
 //def copyAndReplaceText(source, dest, targetText, replaceText){
    // file.write(jsonBuilder.toPrettyString())
 }
