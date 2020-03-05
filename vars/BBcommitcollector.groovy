@@ -46,7 +46,7 @@ for(i=0;i<ecount;i++)
 	
 JSON.clear()
 }
-JCOPY = JCOPY.sort()
+Collections.sort(JCOPY);
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
