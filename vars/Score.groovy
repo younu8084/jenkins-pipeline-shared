@@ -47,7 +47,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
   }
     }
     
-   if(jsonStringa[i].contains("gitlab")
+   if(jsonStringa[i].contains("gitlab"))
       {
         def jsonObjc= readJSON text: jsonStringa[i]
   //println(jsonObj)
