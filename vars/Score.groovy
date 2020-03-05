@@ -40,7 +40,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
   def cnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
- println(cnt)
+ //println(cnt)
  
  if(cnt>10)
   {
@@ -53,14 +53,14 @@ def jsonObjb = readJSON text: jsonStringa[i]
         def jsonObjc= readJSON text: jsonStringa[i]
   //println(jsonObj)
   def cnt =jsonObjc.gitlab.commit_cnt
-    println(cnt)
+   // println(cnt)
    if(cnt>5)
   {
     score=score+10
   }
       }
     score1[i]=score
-    //println(score)
+    println(score)
   }
   
 }
