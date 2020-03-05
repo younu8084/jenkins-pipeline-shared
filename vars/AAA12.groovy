@@ -37,7 +37,7 @@ for(i=0;i<ecount;i++)
 	JSON.add(resultJson.values[j])
 	 }
  }
-   count=JSON.size()
+   count=JSON.size
     JCOPY.add(["email":jsonObj.config.emails.email[i],"Individual_commit":JsonOutput.toJson(JSON),"Commit_count":count])
 	
 	 JSON.clear()
