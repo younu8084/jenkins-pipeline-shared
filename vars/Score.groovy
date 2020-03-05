@@ -35,7 +35,7 @@ int total=jsonObja.bitbucket.Commit_count
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
-  def cnt =jsonObj.Bamboo.teamsuccessbuild_cnt
+  def cnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  println(cnt)
