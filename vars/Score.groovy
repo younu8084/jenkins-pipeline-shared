@@ -69,7 +69,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
-jsonBuilder.bitbucket(
+jsonBuilder(
   "Teamdetails" : JSON
   
 ) 
