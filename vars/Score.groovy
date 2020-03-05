@@ -17,7 +17,7 @@ for(i=0;i<jsonStringa.size();i++)
   { 
 if(jsonStringa[i]==bitbucket)
     {
-def jsonStringa = bitbucket
+//def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
 int total=jsonObja.bitbucket.Commit_count
   println(jsonObja)
@@ -30,8 +30,8 @@ int total=jsonObja.bitbucket.Commit_count
   }
    if(jsonStringa[i]==bamboo)
     {
-      def jsonStringa = bamboo
-def jsonObj = readJSON text: jsonString
+    //  def jsonStringb = bamboo
+def jsonObjb = readJSON text: jsonStringa
   //println(jsonObj)
   def cnt =jsonObj.Bamboo.teamsuccessbuild_cnt
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
