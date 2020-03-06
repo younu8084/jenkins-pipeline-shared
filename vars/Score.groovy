@@ -64,6 +64,7 @@ def total=jsonObjb.Bamboo.totalBuilds
 	     score=fcnt
 	    LIST.add(["toolName":name,"metric":"failure_builds","score":score])
 	    score=0
+    }
  /*if(cnt>10)
   {
    score=score+10 
