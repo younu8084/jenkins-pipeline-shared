@@ -48,7 +48,7 @@ def jsonObjb = readJSON text: jsonStringa[j]
     score=0
   }}
   
-  if(jsonStringa[i].contains("bitbucket"))
+  if(jsonStringa[j].contains("bitbucket"))
     {
     def jsonObja = readJSON text: jsonStringa[j]
 int total=jsonObja.bitbucket.Individual_commits[j].Commit_count
