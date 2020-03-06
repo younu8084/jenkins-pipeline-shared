@@ -103,15 +103,14 @@ int total=jsonObjb.bitbucket.Individual_commits[j].Commit_count
     LIST.clear()
 	reward=0    
     }
-	// def list =JSON.sort()
      def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
  "teamName":team,
-  "metrics" : JSON
+  "metrics" : JSON.sort()
   
 ) 
- 
+  
   File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/game.json")
 file.write(jsonBuilder.toPrettyString())
     
