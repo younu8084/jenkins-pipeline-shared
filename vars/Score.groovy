@@ -19,6 +19,7 @@ def jsonObjb = readJSON text: jsonStringb*/
  List<String> JSON = new ArrayList<String>();
   List<String> LIST = new ArrayList<String>();
   List<String> JSON1 = new ArrayList<String>();
+	
 for(i=0;i<jsonStringa.size();i++)
   { 
     int score=0
@@ -34,6 +35,7 @@ int total=jsonObja.bitbucket.Commit_count
  // println(jsonObja)
   //println(total)
  score=total
+	    LIST.add(["toolName":name,"metric":"commits","score":score])
  /* if(total>5)
   {
     score=score+10
@@ -42,23 +44,33 @@ int total=jsonObja.bitbucket.Commit_count
    if(jsonStringa[i].contains("Bamboo"))
     {
       name="bamboo"
-	    metric="successful builds"
+	   // metric="successfulbuilds"
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
+def total=jsonObjb.Bamboo.totalBuilds
   def scnt =jsonObjb.Bamboo.teamsuccessbuild_cnt
+	    def fcnt=jsonObjb.Bamboo.teamfailurebuild_cnt
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
+	    score=total
+	    LIST.add(["toolName":name,"metric":"total_builds","score":score])
+	    score=0
  score=scnt
+	    LIST.add(["toolName":name,"metric":"success_builds","score":score])
+	    score=0
+	     score=fcnt
+	    LIST.add(["toolName":name,"metric":"failure_builds","score":score])
+	    score=0
  /*if(cnt>10)
   {
    score=score+10 
   }*/
     }
     
-   if(jsonStringa[i].contains("gitlab"))
+  /* if(jsonStringa[i].contains("gitlab"))
       {
         name="gitlab"
 	      metric="commits"
@@ -67,14 +79,16 @@ def jsonObjb = readJSON text: jsonStringa[i]
   def cnt =jsonObjc.gitlab.commit_cnt
    // println(cnt)
 	      score=cnt
+	      LIST.add(["toolName":name,"metric":"success_builds","score":score])
   /* if(cnt>5)
   {
     score=score+10
   }*/
-      }
-    score1[i]=score
+      }*/
+   // score1[i]=score
+	  JSON1[i]=LIST.clone()
     //println(score)
-   JSON.add(["toolName":name,"metricName":metric,"value":score])  
+   JSON.add([JSON1[i]])  
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
