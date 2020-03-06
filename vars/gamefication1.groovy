@@ -1,6 +1,6 @@
 import groovy.json.*
 import groovy.json.JsonOutput
-def call(jsondata,bamboo1)
+def call(jsondata,bamboo,bitbucket)
 {
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
@@ -8,7 +8,7 @@ int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
-   jsonStringa.add(gitlab)
+   //jsonStringa.add(gitlab)
  
  List<String> JSON = new ArrayList<String>();
   List<String> LIST = new ArrayList<String>();
