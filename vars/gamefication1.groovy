@@ -56,11 +56,11 @@ for(i=0;i<ecount;i++)
  int total=jsonObja.bitbucket.Commit_count
 	    for(i=0;i<total;i++)
 	    {
-int total=jsonObja.bitbucket.Individual_commits[i].Commit_count
+int total1=jsonObja.bitbucket.Individual_commits[i].Commit_count
 def email1=jsonObja.bitbucket.Individual_commits[i].Email
     int score=0
 	   int reward=0
- if(email==email1 && total>2)
+ if(email==email1 && total1>2)
   {
    score=score+10 
     LIST.add(["metric":"Commits Score","score":score])
