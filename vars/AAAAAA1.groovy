@@ -45,8 +45,19 @@ for(i=0;i<ecount;i++)
  JCOPY.add(["Email":jsonObj.config.emails.email[i],"Individual_commit":JSON1[i],"Commit_count":count])
 	
 JSON.clear()
+	int score =0;
+	if(count>3)
+	{
+	score=score+10;
+	}
+	println(score)
 }
 def list = JCOPY.sort()
+//int score =0;
+//	if(count>3)
+//	{
+//	score=score+10;
+//	}
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
