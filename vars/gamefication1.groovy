@@ -1,6 +1,6 @@
 import groovy.json.*
 import groovy.json.JsonOutput
-impoet java.util.*;
+import java.util.*;
 def call(jsondata,bamboo,bitbucket)
 {
 def jsonString = jsondata
