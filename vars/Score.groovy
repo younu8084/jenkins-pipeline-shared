@@ -65,28 +65,7 @@ def total=jsonObjb.Bamboo.totalBuilds
 	    LIST.add(["toolName":name,"metric":"failure_builds","score":score])
 	    score=0
     }
- /*if(cnt>10)
-  {
-   score=score+10 
-  }*/
-    }
-    
-  /* if(jsonStringa[i].contains("gitlab"))
-      {
-        name="gitlab"
-	      metric="commits"
-        def jsonObjc= readJSON text: jsonStringa[i]
-  //println(jsonObj)
-  def cnt =jsonObjc.gitlab.commit_cnt
-   // println(cnt)
-	      score=cnt
-	      LIST.add(["toolName":name,"metric":"success_builds","score":score])
-  /* if(cnt>5)
-  {
-    score=score+10
-  }*/
-      }*/
-   // score1[i]=score
+
 	  JSON1[i]=LIST.clone()
     //println(score)
    JSON.add([JSON1[i]])  
