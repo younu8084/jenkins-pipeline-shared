@@ -14,19 +14,21 @@ List<String> jsonStringa= new ArrayList<String>();
   List<String> LIST = new ArrayList<String>();
   List<String> JSON1 = new ArrayList<String>();
 
-  for(j=0;j<ecount;j++)
+  for(j=0;j<jsonStringa.size();j++)
    {
 	 def email=jsonObj.config.emails.email[j] 
-	   
+	
 	 if(jsonStringa[j].contains("Bamboo"))
     {   
      // name="Bamboo"
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[j]
+for(i=0;i<ecount;i++)
+	   {
   //println(jsonObj)
-  def scnt =jsonObjb.Bamboo.individualsuccess[j].Success_cnt
-  def fcnt =jsonObjb.Bamboo.individualfailure[j].Failure_cnt
- def email1=jsonObjb.Bamboo.individualsuccess[j].email
+  def scnt =jsonObjb.Bamboo.individualsuccess[i].Success_cnt
+  def fcnt =jsonObjb.Bamboo.individualfailure[i].Failure_cnt
+ def email1=jsonObjb.Bamboo.individualsuccess[i].email
       
  // def res=bamboo1.bamboo.teamsuccessbuild_cnt
  // def obj = JSON.parse(bamboo1)
@@ -47,12 +49,15 @@ def jsonObjb = readJSON text: jsonStringa[j]
 	  reward=reward+score 
     score=0
   }}
-  
+	   }
   if(jsonStringa[j].contains("bitbucket"))
     {
     def jsonObja = readJSON text: jsonStringa[j]
-int total=jsonObja.bitbucket.Individual_commits[j].Commit_count
-def email1=jsonObja.bitbucket.Individual_commits[j].Email
+ int total=jsonObja.bitbucket.Commit_count
+	    for(i=0;i<total;i++)
+	    {
+int total=jsonObja.bitbucket.Individual_commits[i].Commit_count
+def email1=jsonObja.bitbucket.Individual_commits[i].Email
     int score=0
 	   int reward=0
  if(email==email1 && total>2)
@@ -62,6 +67,7 @@ def email1=jsonObja.bitbucket.Individual_commits[j].Email
 	reward=reward+score  
     score=0
   }
+	    }
     }
 	   JSON1=LIST.clone()
 	   
