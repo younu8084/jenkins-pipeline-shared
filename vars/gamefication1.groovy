@@ -90,10 +90,10 @@ int total=jsonObjb.bitbucket.Individual_commits[j].Commit_count
 	     
    
     }
-	 Comparator comparator = Collections.reverseOrder();
+	 
   
     
-    Collections.sort(JSON,comparator);
+  JSON.sort new OrderBy([{it.reward}, {it.email}])
      def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
