@@ -87,12 +87,14 @@ int total=jsonObjb.bitbucket.Individual_commits[j].Commit_count
    JSON.add(["email":email,"reward": reward,"metrics":JSON1[j]])
     LIST.clear()
 	reward=0    
+	   ArrayList<String> sortedArrayListDescending = JSON.sortDescending();         
+   
     }
      def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
  "teamName":team,
-  "metrics" : JSON
+  "metrics" : sortedArrayListDescending
   
 ) 
   
