@@ -46,13 +46,15 @@ for(i=0;i<ecount;i++)
 	
 JSON.clear()
 	int score =0;
-	if(count>3)
+	if(count>1)
 	{
 	score=score+10;
 	}
-	println(score)
+	
 }
+	println(score)
 def list = JCOPY.sort()
+	
 //int score =0;
 //	if(count>3)
 //	{
