@@ -66,16 +66,16 @@ def total=jsonObjb.Bamboo.totalBuilds
 	    score=0
     }
 
-	  JSON1[i]=LIST.clone()
+	  //JSON1[i]=LIST.clone()
     //println(score)
    //JSON.add(JSON1[i])  
-	  LIST.clear()
+	  //LIST.clear()
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
  "teamName":team,
-  "metrics" : JSON1
+  "metrics" : LIST
   
 ) 
   
