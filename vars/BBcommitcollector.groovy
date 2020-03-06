@@ -1,3 +1,4 @@
+@groovy.transform.Sortable
 import groovy.json.*
 import java.util.*; 
 
@@ -46,7 +47,7 @@ for(i=0;i<ecount;i++)
 	
 JSON.clear()
 }
-JCOPY.sort()
+JCOPY.toSorted()
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder.bitbucket(
