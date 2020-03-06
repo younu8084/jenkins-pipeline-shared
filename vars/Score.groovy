@@ -35,7 +35,7 @@ int total=jsonObja.bitbucket.Commit_count
  // println(jsonObja)
   //println(total)
  score=total
-	    LIST.add(["toolName":name,"metric":"commits","score":score])
+	    LIST.add(["toolName":name,"metric":"commits","value":score])
  /* if(total>5)
   {
     score=score+10
@@ -56,13 +56,13 @@ def total=jsonObjb.Bamboo.totalBuilds
  // def obj = JSON.parse(bamboo1)
  //println(cnt)
 	    score=total
-	    LIST.add(["toolName":name,"metric":"total_builds","score":score])
+	    LIST.add(["toolName":name,"metric":"total_builds","value":score])
 	    score=0
  score=scnt
-	    LIST.add(["toolName":name,"metric":"success_builds","score":score])
+	    LIST.add(["toolName":name,"metric":"success_builds","value":score])
 	    score=0
 	     score=fcnt
-	    LIST.add(["toolName":name,"metric":"failure_builds","score":score])
+	    LIST.add(["toolName":name,"metric":"failure_builds","value":score])
 	    score=0
     }
 
@@ -83,6 +83,6 @@ jsonBuilder(
 file.write(jsonBuilder.toPrettyString())	
   
  
-  println(JSON)
+  //println(JSON)
 }
 
