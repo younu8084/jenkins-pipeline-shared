@@ -23,9 +23,11 @@ for(i=0;i<jsonStringa.size();i++)
   { 
     int score=0
     String name="  "
+	  String metric=" "
 if(jsonStringa[i].contains("bitbucket"))
     {
       name="Bitbucket"
+	    metric="commits"
 //def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa[i]
 int total=jsonObja.bitbucket.Commit_count
@@ -40,6 +42,7 @@ int total=jsonObja.bitbucket.Commit_count
    if(jsonStringa[i].contains("Bamboo"))
     {
       name="Bamboo"
+	    metric="successful builds"
     //  def jsonStringb = bamboo
 def jsonObjb = readJSON text: jsonStringa[i]
   //println(jsonObj)
@@ -58,6 +61,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
    if(jsonStringa[i].contains("gitlab"))
       {
         name="Gitlab"
+	      metric="commits"
         def jsonObjc= readJSON text: jsonStringa[i]
   //println(jsonObj)
   def cnt =jsonObjc.gitlab.commit_cnt
@@ -70,7 +74,7 @@ def jsonObjb = readJSON text: jsonStringa[i]
       }
     score1[i]=score
     //println(score)
-   JSON.add(["Tool":name,"Score":score])  
+   JSON.add(["toolName":name,"metricName":metric,"value":score])  
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
