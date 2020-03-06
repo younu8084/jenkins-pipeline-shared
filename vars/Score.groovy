@@ -80,7 +80,7 @@ def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
  "TeamName":team,
-  "Teamdetails" : JSON
+  "metrics" : JSON
   
 ) 
   
