@@ -1,6 +1,6 @@
 import groovy.json.*
 
-def call(jsondata,bitbucket,bamboo,gitlab){
+def call(jsondata,bitbucket,bamboo){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 int ecount = jsonObj.config.emails.email.size()
@@ -8,7 +8,7 @@ int ecount = jsonObj.config.emails.email.size()
 List<String> jsonStringa= new ArrayList<String>();
   jsonStringa.add(bitbucket)
    jsonStringa.add(bamboo)
-   jsonStringa.add(gitlab)
+   //jsonStringa.add(gitlab)
   //println(jsonStringa)
 /*def jsonStringa = bitbucket
 def jsonObja = readJSON text: jsonStringa
@@ -68,13 +68,14 @@ def total=jsonObjb.Bamboo.totalBuilds
 
 	  JSON1[i]=LIST.clone()
     //println(score)
-   JSON.add([JSON1[i]])  
+   //JSON.add(JSON1[i])  
+	  LIST.clear()
   }
 def jsonBuilder = new groovy.json.JsonBuilder()
 
 jsonBuilder(
  "teamName":team,
-  "metrics" : JSON
+  "metrics" : JSON1
   
 ) 
   
