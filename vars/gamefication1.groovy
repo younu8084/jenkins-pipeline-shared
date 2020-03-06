@@ -89,7 +89,7 @@ int total=jsonObjb.bitbucket.Individual_commits[j].Commit_count
     LIST.clear()
 	reward=0    
 	     
-   
+   JSON=Collections.sort(JSON) 
     }
 	 
   
@@ -99,7 +99,7 @@ int total=jsonObjb.bitbucket.Individual_commits[j].Commit_count
 
 jsonBuilder(
  "teamName":team,
-	"metrics" : Collections.sort(JSON) 
+	"metrics" : JSON
   
 ) 
   
